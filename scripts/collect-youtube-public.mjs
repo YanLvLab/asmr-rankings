@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url'
 import { promisify } from 'node:util'
 import { parseClockDuration, screenCandidate, stripMarkup } from './screening.mjs'
 import { annotateHostProfiles } from './creator-profiles.mjs'
+import { publishedAtFromWatchHtml } from './youtube-date.mjs'
 
 const execFileAsync = promisify(execFile)
 const here = path.dirname(fileURLToPath(import.meta.url))
@@ -34,7 +35,7 @@ const maxSearchQueries = Number(process.env.MAX_SEARCH_QUERIES || searchQueries.
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
-async function fetchText(url, attempts = 3) {
+export async function fetchText(url, attempts = 3) {
   let lastError
   for (let attempt = 1; attempt <= attempts; attempt += 1) {
     if (process.platform === 'win32') {
@@ -153,6 +154,7 @@ async function enrichVideo(candidate) {
   const likeMatch = html.match(/accessibilityText":"like this video along with ([\d,]+) other people"/i)
   const subscriberMatch = html.match(/"subscriberCountText":\{.*?"simpleText":"([^"]+)"/s)
   const channelId = details.channelId || candidate.creatorId
+  const publishedAt = publishedAtFromWatchHtml(html, micro)
   const description = stripMarkup(details.shortDescription || candidate.description).slice(0, 260)
   const screening = screenCandidate({
     title: details.title || candidate.title,
@@ -172,7 +174,7 @@ async function enrichVideo(candidate) {
     creatorId: channelId,
     creatorName: stripMarkup(details.author || candidate.creatorName),
     creatorUrl: candidate.creatorUrl || `https://www.youtube.com/channel/${channelId}`,
-    publishedAt: micro.publishDate || micro.uploadDate || new Date().toISOString(),
+    publishedAt,
     durationSeconds: Number(details.lengthSeconds || candidate.durationSeconds),
     views: Number(details.viewCount || candidate.views || 0),
     likes: likeMatch ? Number(likeMatch[1].replace(/,/g, '')) : 0,
@@ -181,7 +183,7 @@ async function enrichVideo(candidate) {
     categories: screening.categories,
     screeningConfidence: screening.confidence,
     screeningReasons: screening.reasons,
-    approved: screening.approved,
+    approved: screening.approved && Boolean(publishedAt),
   }
 }
 
@@ -310,4 +312,4 @@ async function main() {
   console.log(`youtube: ${videos.length} videos, ${data.creators.youtube.length} creators`)
 }
 
-await main()
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await main()
