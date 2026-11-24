@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
+  ArrowUp,
   ArrowUpRight,
   CalendarDays,
   CheckCircle2,
@@ -87,7 +88,7 @@ function StatusPill({ platform, data }: { platform: Platform; data: RankingData 
 function VideoCard({ video, rank, rankingMode }: { video: RankedVideo; rank: number; rankingMode: RankingMode }) {
   const score = rankingMode === 'library' ? null : video.scores?.[rankingMode]
   return (
-    <article className="video-card">
+    <article className="video-card reveal-on-scroll">
       <a className="cover" href={video.url} target="_blank" rel="noreferrer" aria-label={`打开 ${video.title}`}>
         <img src={video.thumbnail} alt="" loading="lazy" referrerPolicy="no-referrer" />
         <span className="rank-number">{String(rank).padStart(2, '0')}</span>
@@ -122,7 +123,7 @@ function VideoCard({ video, rank, rankingMode }: { video: RankedVideo; rank: num
 
 function CreatorRow({ creator, rank }: { creator: RankedCreator; rank: number }) {
   return (
-    <a className="creator-row" href={creator.url} target="_blank" rel="noreferrer">
+    <a className="creator-row reveal-on-scroll" href={creator.url} target="_blank" rel="noreferrer">
       <span className="creator-rank">{String(rank).padStart(2, '0')}</span>
       <span className="creator-avatar">
         {creator.avatar ? <img src={creator.avatar} alt="" referrerPolicy="no-referrer" /> : creator.name.slice(0, 1)}
@@ -159,6 +160,28 @@ export default function App() {
   const [rankingMode, setRankingMode] = useState<RankingMode>('library')
   const [femaleOnly, setFemaleOnly] = useState(false)
   const [visibleCount, setVisibleCount] = useState(32)
+  const [showBackToTop, setShowBackToTop] = useState(false)
+  const progressRef = useRef<HTMLSpanElement>(null)
+
+  useEffect(() => {
+    let frame = 0
+    const updateScroll = () => {
+      frame = 0
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight
+      const progress = scrollable > 0 ? Math.min(1, window.scrollY / scrollable) : 0
+      if (progressRef.current) progressRef.current.style.transform = `scaleX(${progress})`
+      setShowBackToTop(window.scrollY > 560)
+    }
+    const onScroll = () => { if (!frame) frame = window.requestAnimationFrame(updateScroll) }
+    updateScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      if (frame) window.cancelAnimationFrame(frame)
+    }
+  }, [])
 
   useEffect(() => {
     fetch('./data/rankings.json', { cache: 'no-store' })
@@ -209,6 +232,20 @@ export default function App() {
       .sort((a, b) => b.followers - a.followers || b.qualifyingVideos - a.qualifyingVideos)
   }, [data, platform, category, search, femaleOnly])
 
+  useEffect(() => {
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return
+        entry.target.classList.add('is-visible')
+        observer.unobserve(entry.target)
+      })
+    }, { rootMargin: '0px 0px -34px 0px', threshold: 0.04 })
+    document.querySelectorAll('.reveal-on-scroll:not(.is-visible)').forEach((element) => observer.observe(element))
+    document.documentElement.classList.add('reveal-ready')
+    return () => observer.disconnect()
+  }, [loading, view, videos, creators, visibleCount])
+
   const totalVideos = data.videos.youtube.length + data.videos.bilibili.length
   const totalCreators = data.creators.youtube.length + data.creators.bilibili.length
   const femaleVideos = data.videos.youtube.filter((video) => video.femaleHost).length + data.videos.bilibili.filter((video) => video.femaleHost).length
@@ -234,6 +271,7 @@ export default function App() {
 
   return (
     <main>
+      <div className="reading-progress" aria-hidden="true"><span ref={progressRef} /></div>
       <div className="ambient ambient-one" />
       <div className="ambient ambient-two" />
       <header className="site-header">
@@ -282,7 +320,7 @@ export default function App() {
         </>}
       </section>
 
-      <section className="listening-paths" aria-label="快速开始">
+      <section className="listening-paths reveal-on-scroll" aria-label="快速开始">
         <div className="paths-intro"><span>00 / THE LISTENING ROOM</span><h2>从一种声音开始。</h2><p>给今晚一个方向，再去资源库慢慢挑。</p></div>
         <div className="path-grid">
           <a href="#rankings" className="path-card" onClick={() => chooseListeningPath('quiet')}><span className="path-index">01 / SILENCE</span><Waves size={28} strokeWidth={1.3} /><strong>无人声</strong><small>让触发音自己说话</small><ArrowUpRight size={17} className="path-arrow" /></a>
@@ -293,12 +331,12 @@ export default function App() {
       </section>
 
       <section className="rankings" id="rankings">
-        <div className="section-heading">
+        <div className="section-heading reveal-on-scroll">
           <div><span className="section-no">01</span><p>EXPLORE THE COLLECTION</p><h2>找到今晚想听的</h2></div>
           <p className="heading-note">从 {totalVideos} 支合格长视频和 {totalCreators} 位创作者中挑选，点开即去原平台收听。</p>
         </div>
 
-        <div className="host-filter" aria-label="博主偏好">
+        <div className="host-filter reveal-on-scroll" aria-label="博主偏好">
           <div className="host-filter-copy"><span>YOUR LISTENING PREFERENCE</span><strong>先选你想听谁</strong><small>此偏好同时作用于视频榜与博主榜</small></div>
           <div className="host-filter-options">
             <button type="button" className={!femaleOnly ? 'active' : ''} aria-pressed={!femaleOnly} onClick={() => setFemaleOnly(false)}><UsersRound size={19} /><span><strong>全部博主</strong><small>{totalCreators} 位创作者 · {totalVideos} 支视频</small></span></button>
@@ -307,7 +345,7 @@ export default function App() {
           <p>依据预置频道标注与明确自述筛选；未标注频道不被猜测归类。<a href="#method">了解口径 ↗</a></p>
         </div>
 
-        <div className="controls">
+        <div className="controls reveal-on-scroll">
           <div className="segmented view-switch">
             <button className={view === 'videos' ? 'active' : ''} aria-pressed={view === 'videos'} onClick={() => setView('videos')}><Play size={15} />视频榜</button>
             <button className={view === 'creators' ? 'active' : ''} aria-pressed={view === 'creators'} onClick={() => setView('creators')}><UsersRound size={15} />博主榜</button>
@@ -332,11 +370,11 @@ export default function App() {
           {view === 'videos' && rankingMode !== 'library' && <span className="fixed-sort"><CheckCircle2 size={15} />按榜单分排序</span>}
         </div>
 
-        {view === 'videos' && <div className="ranking-modes" aria-label="榜单类型">
+        {view === 'videos' && <div className="ranking-modes reveal-on-scroll" aria-label="榜单类型">
           {rankingModes.map((mode) => <button key={mode.key} className={rankingMode === mode.key ? 'active' : ''} aria-pressed={rankingMode === mode.key} onClick={() => { setRankingMode(mode.key); if (mode.key !== 'library') setPlatform('bilibili') }}><strong>{mode.key === 'rising' && !risingHasCompleteGrowth ? 'B站近期新作' : mode.label}</strong><small>{mode.key === 'rising' && !risingHasCompleteGrowth ? `近 30 天发布；${risingWithSnapshot}/${risingCandidates.length} 条有七日快照` : mode.note}</small></button>)}
         </div>}
 
-        <div className="categories" aria-label="内容分类">
+        <div className="categories reveal-on-scroll" aria-label="内容分类">
           {categoryOrder.map((item) => <button key={item} className={category === item ? 'active' : ''} aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}
         </div>
 
@@ -359,10 +397,10 @@ export default function App() {
       <section className="method" id="method">
         <div className="method-title"><span className="section-no">02</span><p>THE GATEKEEPER</p><h2>标签之外，<br />我们检查什么？</h2></div>
         <div className="method-grid">
-          <article><span>01</span><Waves /><h3>意图必须明确</h3><p>标题、简介和标签需要同时呈现睡眠、入睡、失眠或明确放松目的。只有 “ASMR” 一个词不会被收录。</p></article>
-          <article><span>02</span><Clock3 /><h3>至少三分钟</h3><p>少于 3 分钟直接排除；保留更完整的中长视频，同时过滤 Shorts、片段与高能剪辑。</p></article>
-          <article><span>03</span><CheckCircle2 /><h3>负面语义一票否决</h3><p>反应、测评、挑战、恶搞、游戏解说、教程和疑似二次搬运，即使包含助眠标签也会自动退出候选。</p></article>
-          <article><span>04</span><Heart /><h3>小姐姐频道怎么选</h3><p>根据预置频道 ID 或频道明确自述标注。新视频自动继承频道标注；未标注的频道留在“全部博主”中。此分类可能遗漏频道，也不代表平台提供的性别信息。</p></article>
+          <article className="reveal-on-scroll"><span>01</span><Waves /><h3>意图必须明确</h3><p>标题、简介和标签需要同时呈现睡眠、入睡、失眠或明确放松目的。只有 “ASMR” 一个词不会被收录。</p></article>
+          <article className="reveal-on-scroll"><span>02</span><Clock3 /><h3>至少三分钟</h3><p>少于 3 分钟直接排除；保留更完整的中长视频，同时过滤 Shorts、片段与高能剪辑。</p></article>
+          <article className="reveal-on-scroll"><span>03</span><CheckCircle2 /><h3>负面语义一票否决</h3><p>反应、测评、挑战、恶搞、游戏解说、教程和疑似二次搬运，即使包含助眠标签也会自动退出候选。</p></article>
+          <article className="reveal-on-scroll"><span>04</span><Heart /><h3>小姐姐频道怎么选</h3><p>根据预置频道 ID 或频道明确自述标注。新视频自动继承频道标注；未标注的频道留在“全部博主”中。此分类可能遗漏频道，也不代表平台提供的性别信息。</p></article>
         </div>
         <div className="method-footnote"><Info size={16} /><p>页面上的“已通过筛选”表示通过了本站的规则检查，不是平台认证；规则可能遗漏边界作品。缺少七日前快照时，榜单增速项按 0.5 的中性值计算。</p></div>
       </section>
@@ -372,6 +410,10 @@ export default function App() {
         <p>非 YouTube 或哔哩哔哩官方榜单。视频版权与平台数据归各自权利人所有。本网站不缓存或下载视频内容。</p>
         <div><a href="./privacy.html">隐私政策</a><a href="https://www.youtube.com/t/terms" target="_blank" rel="noreferrer">YouTube 条款</a><a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Google 隐私</a><a href="#method">筛选说明</a></div>
       </footer>
+      <a className={`return-home${showBackToTop ? ' is-visible' : ''}`} href="#top" aria-label="返回首页顶部" aria-hidden={!showBackToTop} tabIndex={showBackToTop ? 0 : -1}>
+        <span className="return-home-icon"><ArrowUp size={18} strokeWidth={1.7} /></span>
+        <span className="return-home-copy"><strong>返回首页</strong><small>BACK TO TOP</small></span>
+      </a>
     </main>
   )
 }
