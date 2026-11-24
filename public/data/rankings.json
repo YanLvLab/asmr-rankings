@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-11-24T03:19:17.361Z",
+  "generatedAt": "2026-11-24T04:27:46.750Z",
   "lookbackDays": 3650,
   "sources": {
     "youtube": {
       "status": "live",
-      "updatedAt": "2026-11-24T03:19:17.172Z",
-      "note": "公开页面无密钥采集；本次新增/更新 1 条"
+      "updatedAt": "2026-11-24T04:27:46.623Z",
+      "note": "公开页面无密钥采集；本次新增/更新 0 条"
     },
     "bilibili": {
       "status": "live",
-      "updatedAt": "2026-11-24T03:16:39.976Z"
+      "updatedAt": "2026-11-24T04:25:17.919Z"
     }
   },
   "videos": {
@@ -6255,8 +6255,8 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/ccfd0b909aaae564a9f13e655de92dc175243591.jpg",
         "publishedAt": "2025-09-08T14:00:00.000Z",
         "durationSeconds": 4095,
-        "views": 9604775,
-        "likes": 145119,
+        "views": 9605088,
+        "likes": 145125,
         "comments": 3219,
         "categories": [
           "耳语"
@@ -6268,7 +6268,7 @@
           "低刺激声音形式",
           "放松用途"
         ],
-        "favorites": 156580,
+        "favorites": 156582,
         "history": [
           {
             "capturedAt": "2026-11-04T04:31:59.000Z",
@@ -6283,10 +6283,10 @@
             "favorites": 155073
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 9604775,
-            "likes": 145119,
-            "favorites": 156580
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 9605088,
+            "likes": 145125,
+            "favorites": 156582
           }
         ],
         "scores": {
@@ -6309,7 +6309,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/10db2c687f2bd78b9b5c2c583524ae619c88c44a.jpg",
         "publishedAt": "2023-05-04T04:10:00.000Z",
         "durationSeconds": 1080,
-        "views": 8916696,
+        "views": 8916712,
         "likes": 96392,
         "favorites": 106833,
         "comments": 1157,
@@ -6331,8 +6331,8 @@
             "favorites": 106839
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 8916696,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 8916712,
             "likes": 96392,
             "favorites": 106833
           }
@@ -6357,7 +6357,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/14bc3b3059df263d37978bdc16d9e6793e24bd7f.jpg",
         "publishedAt": "2021-05-18T12:30:07.000Z",
         "durationSeconds": 1311,
-        "views": 7880621,
+        "views": 7880654,
         "likes": 92373,
         "comments": 2583,
         "categories": [
@@ -6370,7 +6370,7 @@
           "耳部触发音",
           "放松用途"
         ],
-        "favorites": 52046,
+        "favorites": 52047,
         "history": [
           {
             "capturedAt": "2026-11-04T04:31:59.000Z",
@@ -6385,10 +6385,10 @@
             "favorites": 52012
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 7880621,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 7880654,
             "likes": 92373,
-            "favorites": 52046
+            "favorites": 52047
           }
         ],
         "scores": {
@@ -6411,8 +6411,8 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/c357f99074f4b784de007dd3c9ebe08bef76cd98.jpg",
         "publishedAt": "2024-01-29T03:00:00.000Z",
         "durationSeconds": 3412,
-        "views": 7837879,
-        "likes": 206778,
+        "views": 7837901,
+        "likes": 206777,
         "comments": 5274,
         "categories": [
           "综合触发"
@@ -6438,9 +6438,9 @@
             "favorites": 245598
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 7837879,
-            "likes": 206778,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 7837901,
+            "likes": 206777,
             "favorites": 245926
           }
         ],
@@ -6464,10 +6464,10 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/c357f99074f4b784de007dd3c9ebe08bef76cd98.jpg",
         "publishedAt": "2025-07-02T11:44:14.000Z",
         "durationSeconds": 3445,
-        "views": 7828306,
-        "likes": 161591,
-        "favorites": 200326,
-        "comments": 3847,
+        "views": 7828509,
+        "likes": 161594,
+        "favorites": 200331,
+        "comments": 3848,
         "categories": [
           "无人声",
           "掏耳"
@@ -6487,10 +6487,10 @@
             "favorites": 199042
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 7828306,
-            "likes": 161591,
-            "favorites": 200326
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 7828509,
+            "likes": 161594,
+            "favorites": 200331
           }
         ],
         "scores": {
@@ -6513,7 +6513,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/4f7ce8cf32774229fa8202f38ceffa8d7587ddaf.jpg",
         "publishedAt": "2023-02-12T02:16:51.000Z",
         "durationSeconds": 1343,
-        "views": 7040427,
+        "views": 7040521,
         "likes": 46003,
         "comments": 1256,
         "categories": [
@@ -6540,8 +6540,8 @@
             "favorites": 86884
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 7040427,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 7040521,
             "likes": 46003,
             "favorites": 87034
           }
@@ -6566,7 +6566,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2024-05-02T14:30:00.000Z",
         "durationSeconds": 3232,
-        "views": 6907061,
+        "views": 6907152,
         "likes": 111013,
         "comments": 4337,
         "categories": [
@@ -6579,7 +6579,7 @@
           "低刺激声音形式",
           "典型 ASMR 触发"
         ],
-        "favorites": 183523,
+        "favorites": 183521,
         "history": [
           {
             "capturedAt": "2026-11-04T04:31:59.000Z",
@@ -6594,10 +6594,10 @@
             "favorites": 182820
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 6907061,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 6907152,
             "likes": 111013,
-            "favorites": 183523
+            "favorites": 183521
           }
         ],
         "scores": {
@@ -6620,7 +6620,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/32292384d9499f180dcf95fe189b31624d4deb7a.jpg",
         "publishedAt": "2025-07-22T13:00:00.000Z",
         "durationSeconds": 601,
-        "views": 6430394,
+        "views": 6430398,
         "likes": 66399,
         "favorites": 91531,
         "comments": 1158,
@@ -6641,8 +6641,8 @@
             "favorites": 91544
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 6430394,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 6430398,
             "likes": 66399,
             "favorites": 91531
           }
@@ -6667,9 +6667,9 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/cbc18421c7a9d708c8155ce73756996d634ba692.jpg",
         "publishedAt": "2024-10-12T16:10:42.000Z",
         "durationSeconds": 2154,
-        "views": 5829297,
-        "likes": 190342,
-        "favorites": 187047,
+        "views": 5829323,
+        "likes": 190343,
+        "favorites": 187045,
         "comments": 4157,
         "categories": [
           "综合触发"
@@ -6689,10 +6689,10 @@
             "favorites": 187043
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 5829297,
-            "likes": 190342,
-            "favorites": 187047
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 5829323,
+            "likes": 190343,
+            "favorites": 187045
           }
         ],
         "scores": {
@@ -6715,8 +6715,8 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/01438ace77c1fc60617d79c2950237b9792c4d2e.jpg",
         "publishedAt": "2025-08-23T13:00:00.000Z",
         "durationSeconds": 2010,
-        "views": 5738009,
-        "likes": 120394,
+        "views": 5738053,
+        "likes": 120396,
         "favorites": 120249,
         "comments": 1935,
         "categories": [
@@ -6736,9 +6736,9 @@
             "favorites": 119949
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 5738009,
-            "likes": 120394,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 5738053,
+            "likes": 120396,
             "favorites": 120249
           }
         ],
@@ -6762,7 +6762,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/b94af902ed5669af6d20377a5f8d97263a14bae6.jpg",
         "publishedAt": "2023-07-16T11:29:19.000Z",
         "durationSeconds": 2051,
-        "views": 5566914,
+        "views": 5566928,
         "likes": 96389,
         "comments": 1672,
         "categories": [
@@ -6790,8 +6790,8 @@
             "favorites": 97538
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 5566914,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 5566928,
             "likes": 96389,
             "favorites": 97603
           }
@@ -6816,9 +6816,9 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/cbc18421c7a9d708c8155ce73756996d634ba692.jpg",
         "publishedAt": "2024-11-05T15:21:59.000Z",
         "durationSeconds": 2059,
-        "views": 5296435,
-        "likes": 92504,
-        "favorites": 134150,
+        "views": 5296511,
+        "likes": 92505,
+        "favorites": 134154,
         "comments": 2892,
         "categories": [
           "无人声"
@@ -6838,10 +6838,10 @@
             "favorites": 133718
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 5296435,
-            "likes": 92504,
-            "favorites": 134150
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 5296511,
+            "likes": 92505,
+            "favorites": 134154
           }
         ],
         "scores": {
@@ -6864,7 +6864,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/garb/22a177a64f4d8ad3e9c2524bada7b23d1f49f438.png",
         "publishedAt": "2023-09-15T19:45:23.000Z",
         "durationSeconds": 4977,
-        "views": 5215773,
+        "views": 5215796,
         "likes": 72835,
         "favorites": 118996,
         "comments": 2731,
@@ -6884,8 +6884,8 @@
             "favorites": 119007
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 5215773,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 5215796,
             "likes": 72835,
             "favorites": 118996
           }
@@ -6910,8 +6910,8 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2025-06-02T14:30:00.000Z",
         "durationSeconds": 4190,
-        "views": 4850359,
-        "likes": 87901,
+        "views": 4850395,
+        "likes": 87902,
         "comments": 2614,
         "categories": [
           "无人声"
@@ -6923,7 +6923,7 @@
           "低刺激声音形式",
           "典型 ASMR 触发"
         ],
-        "favorites": 105195,
+        "favorites": 105196,
         "history": [
           {
             "capturedAt": "2026-11-04T04:31:59.000Z",
@@ -6938,14 +6938,14 @@
             "favorites": 104959
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 4850359,
-            "likes": 87901,
-            "favorites": 105195
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 4850395,
+            "likes": 87902,
+            "favorites": 105196
           }
         ],
         "scores": {
-          "hot": 0.0201,
+          "hot": 0.02,
           "rising": null,
           "longtail": 0.357,
           "hasSevenDaySnapshot": true
@@ -6964,8 +6964,8 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2024-09-09T14:30:00.000Z",
         "durationSeconds": 7490,
-        "views": 4742117,
-        "likes": 118001,
+        "views": 4742173,
+        "likes": 118003,
         "comments": 4000,
         "categories": [
           "无人声",
@@ -6978,7 +6978,7 @@
           "低刺激声音形式",
           "典型 ASMR 触发"
         ],
-        "favorites": 150529,
+        "favorites": 150530,
         "history": [
           {
             "capturedAt": "2026-11-04T04:31:59.000Z",
@@ -6993,10 +6993,10 @@
             "favorites": 149931
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 4742117,
-            "likes": 118001,
-            "favorites": 150529
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 4742173,
+            "likes": 118003,
+            "favorites": 150530
           }
         ],
         "scores": {
@@ -7019,7 +7019,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/00e236c0987d75a97b1889a8616ea166696264cc.jpg",
         "publishedAt": "2023-06-28T13:00:00.000Z",
         "durationSeconds": 691,
-        "views": 4671398,
+        "views": 4671408,
         "likes": 151848,
         "favorites": 107747,
         "comments": 2412,
@@ -7041,8 +7041,8 @@
             "favorites": 107736
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 4671398,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 4671408,
             "likes": 151848,
             "favorites": 107747
           }
@@ -7067,7 +7067,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/14bc3b3059df263d37978bdc16d9e6793e24bd7f.jpg",
         "publishedAt": "2023-06-28T13:41:38.000Z",
         "durationSeconds": 1223,
-        "views": 4643802,
+        "views": 4643813,
         "likes": 66410,
         "favorites": 30049,
         "comments": 3076,
@@ -7089,8 +7089,8 @@
             "favorites": 30022
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 4643802,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 4643813,
             "likes": 66410,
             "favorites": 30049
           }
@@ -7115,9 +7115,9 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/d239d9576f764f9f29d1dda1e9dc86ee993b3048.jpg",
         "publishedAt": "2023-09-25T14:32:23.000Z",
         "durationSeconds": 1679,
-        "views": 4615817,
+        "views": 4615876,
         "likes": 46206,
-        "favorites": 77914,
+        "favorites": 77915,
         "comments": 912,
         "categories": [
           "无人声",
@@ -7138,10 +7138,10 @@
             "favorites": 77746
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 4615817,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 4615876,
             "likes": 46206,
-            "favorites": 77914
+            "favorites": 77915
           }
         ],
         "scores": {
@@ -7164,8 +7164,8 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2024-04-25T13:38:56.000Z",
         "durationSeconds": 4290,
-        "views": 4505893,
-        "likes": 96290,
+        "views": 4505932,
+        "likes": 96291,
         "comments": 4963,
         "categories": [
           "无人声"
@@ -7177,7 +7177,7 @@
           "低刺激声音形式",
           "典型 ASMR 触发"
         ],
-        "favorites": 162643,
+        "favorites": 162644,
         "history": [
           {
             "capturedAt": "2026-11-04T04:31:59.000Z",
@@ -7192,10 +7192,10 @@
             "favorites": 162276
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 4505893,
-            "likes": 96290,
-            "favorites": 162643
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 4505932,
+            "likes": 96291,
+            "favorites": 162644
           }
         ],
         "scores": {
@@ -7258,7 +7258,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/c357f99074f4b784de007dd3c9ebe08bef76cd98.jpg",
         "publishedAt": "2024-01-31T07:53:29.000Z",
         "durationSeconds": 3360,
-        "views": 4202155,
+        "views": 4202178,
         "likes": 103088,
         "comments": 1242,
         "categories": [
@@ -7286,8 +7286,8 @@
             "favorites": 118920
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 4202155,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 4202178,
             "likes": 103088,
             "favorites": 119066
           }
@@ -7312,7 +7312,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/cbc18421c7a9d708c8155ce73756996d634ba692.jpg",
         "publishedAt": "2025-08-21T14:54:32.000Z",
         "durationSeconds": 2028,
-        "views": 4046214,
+        "views": 4046291,
         "likes": 48473,
         "favorites": 80139,
         "comments": 2752,
@@ -7335,8 +7335,8 @@
             "favorites": 79917
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 4046214,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 4046291,
             "likes": 48473,
             "favorites": 80139
           }
@@ -7361,7 +7361,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2024-04-11T14:30:00.000Z",
         "durationSeconds": 4752,
-        "views": 4039128,
+        "views": 4039140,
         "likes": 118755,
         "comments": 2629,
         "categories": [
@@ -7389,8 +7389,8 @@
             "favorites": 149215
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 4039128,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 4039140,
             "likes": 118755,
             "favorites": 149241
           }
@@ -7415,7 +7415,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2025-08-21T14:30:00.000Z",
         "durationSeconds": 2431,
-        "views": 3731904,
+        "views": 3731940,
         "likes": 136085,
         "comments": 2656,
         "categories": [
@@ -7429,7 +7429,7 @@
           "耳部触发音"
         ],
         "scores": {
-          "hot": 0.0345,
+          "hot": 0.0344,
           "rising": null,
           "longtail": 0.4255,
           "hasSevenDaySnapshot": true
@@ -7443,8 +7443,8 @@
             "favorites": 116407
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 3731904,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 3731940,
             "likes": 136085,
             "favorites": 116685
           }
@@ -7463,8 +7463,8 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/c1b1bc9c70d61a641455bdaf151b8907415fa947.jpg",
         "publishedAt": "2025-08-30T16:08:43.000Z",
         "durationSeconds": 2797,
-        "views": 3678196,
-        "likes": 58418,
+        "views": 3678260,
+        "likes": 58420,
         "comments": 1869,
         "categories": [
           "掏耳"
@@ -7491,9 +7491,9 @@
             "favorites": 68819
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 3678196,
-            "likes": 58418,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 3678260,
+            "likes": 58420,
             "favorites": 69127
           }
         ],
@@ -7511,9 +7511,9 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/1ab3589736449835a0b58a6f5b166b9f4ade3884.jpg",
         "publishedAt": "2023-11-15T16:17:26.000Z",
         "durationSeconds": 1383,
-        "views": 3643954,
-        "likes": 42606,
-        "favorites": 71320,
+        "views": 3644041,
+        "likes": 42608,
+        "favorites": 71321,
         "comments": 1857,
         "categories": [
           "无人声"
@@ -7533,10 +7533,10 @@
             "favorites": 71002
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 3643954,
-            "likes": 42606,
-            "favorites": 71320
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 3644041,
+            "likes": 42608,
+            "favorites": 71321
           }
         ],
         "scores": {
@@ -7559,7 +7559,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/2ba78986b351d64a56ee03084044daf262b50f3c.jpg",
         "publishedAt": "2024-05-27T09:04:24.000Z",
         "durationSeconds": 947,
-        "views": 3620573,
+        "views": 3620582,
         "likes": 89263,
         "favorites": 58276,
         "comments": 1976,
@@ -7582,8 +7582,8 @@
             "favorites": 58190
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 3620573,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 3620582,
             "likes": 89263,
             "favorites": 58276
           }
@@ -7608,7 +7608,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2024-05-06T15:15:00.000Z",
         "durationSeconds": 4472,
-        "views": 3512190,
+        "views": 3512217,
         "likes": 68154,
         "comments": 2000,
         "categories": [
@@ -7628,7 +7628,7 @@
           "longtail": 0.4001,
           "hasSevenDaySnapshot": true
         },
-        "favorites": 118884,
+        "favorites": 118883,
         "history": [
           {
             "capturedAt": "2026-11-17T06:18:07.359Z",
@@ -7637,10 +7637,10 @@
             "favorites": 118610
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 3512190,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 3512217,
             "likes": 68154,
-            "favorites": 118884
+            "favorites": 118883
           }
         ],
         "femaleHost": false
@@ -7657,7 +7657,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/b171fb1b9398d253f2d6e1e392176d1c2346a79e.jpg",
         "publishedAt": "2023-08-17T14:00:00.000Z",
         "durationSeconds": 1151,
-        "views": 3316665,
+        "views": 3316669,
         "likes": 76203,
         "favorites": 77359,
         "comments": 1583,
@@ -7680,8 +7680,8 @@
             "favorites": 77398
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 3316665,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 3316669,
             "likes": 76203,
             "favorites": 77359
           }
@@ -7706,9 +7706,9 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/358aaab33f8372e246fd5b7efdc2208ab4b88d7f.jpg",
         "publishedAt": "2024-07-06T13:23:02.000Z",
         "durationSeconds": 459,
-        "views": 3142727,
-        "likes": 63969,
-        "favorites": 65504,
+        "views": 3142744,
+        "likes": 63970,
+        "favorites": 65505,
         "comments": 1540,
         "categories": [
           "敲击"
@@ -7728,10 +7728,10 @@
             "favorites": 65389
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 3142727,
-            "likes": 63969,
-            "favorites": 65504
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 3142744,
+            "likes": 63970,
+            "favorites": 65505
           }
         ],
         "scores": {
@@ -7754,9 +7754,9 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2024-07-22T14:30:00.000Z",
         "durationSeconds": 4670,
-        "views": 3100089,
+        "views": 3100096,
         "likes": 66413,
-        "favorites": 93628,
+        "favorites": 93627,
         "comments": 1560,
         "categories": [
           "无人声"
@@ -7776,10 +7776,10 @@
             "favorites": 93657
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 3100089,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 3100096,
             "likes": 66413,
-            "favorites": 93628
+            "favorites": 93627
           }
         ],
         "scores": {
@@ -7802,8 +7802,8 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2026-01-29T14:30:00.000Z",
         "durationSeconds": 3320,
-        "views": 2955988,
-        "likes": 59624,
+        "views": 2956053,
+        "likes": 59628,
         "favorites": 53716,
         "comments": 2222,
         "categories": [
@@ -7824,9 +7824,9 @@
             "favorites": 53401
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2955988,
-            "likes": 59624,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2956053,
+            "likes": 59628,
             "favorites": 53716
           }
         ],
@@ -7850,7 +7850,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/cbc18421c7a9d708c8155ce73756996d634ba692.jpg",
         "publishedAt": "2025-05-04T15:53:10.000Z",
         "durationSeconds": 1975,
-        "views": 2855554,
+        "views": 2855582,
         "likes": 35124,
         "favorites": 47362,
         "comments": 2247,
@@ -7872,8 +7872,8 @@
             "favorites": 47329
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2855554,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2855582,
             "likes": 35124,
             "favorites": 47362
           }
@@ -7898,7 +7898,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/14bc3b3059df263d37978bdc16d9e6793e24bd7f.jpg",
         "publishedAt": "2023-03-14T14:04:23.000Z",
         "durationSeconds": 1211,
-        "views": 2821008,
+        "views": 2821013,
         "likes": 43235,
         "favorites": 15440,
         "comments": 1589,
@@ -7920,8 +7920,8 @@
             "favorites": 15429
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2821008,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2821013,
             "likes": 43235,
             "favorites": 15440
           }
@@ -7946,9 +7946,9 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/b171fb1b9398d253f2d6e1e392176d1c2346a79e.jpg",
         "publishedAt": "2024-08-08T13:00:00.000Z",
         "durationSeconds": 2216,
-        "views": 2810543,
+        "views": 2810556,
         "likes": 31175,
-        "favorites": 41703,
+        "favorites": 41704,
         "comments": 769,
         "categories": [
           "掏耳"
@@ -7968,10 +7968,10 @@
             "favorites": 41663
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2810543,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2810556,
             "likes": 31175,
-            "favorites": 41703
+            "favorites": 41704
           }
         ],
         "scores": {
@@ -7994,7 +7994,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/606bedf47456d79c1947943647786b5a1baab98c.gif",
         "publishedAt": "2025-08-10T14:35:00.000Z",
         "durationSeconds": 3695,
-        "views": 2704907,
+        "views": 2704943,
         "likes": 35310,
         "favorites": 49121,
         "comments": 989,
@@ -8017,8 +8017,8 @@
             "favorites": 49070
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2704907,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2704943,
             "likes": 35310,
             "favorites": 49121
           }
@@ -8043,7 +8043,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/a633c6376012cd8b24fafa169d7567f8ae765c4b.jpg",
         "publishedAt": "2023-12-19T10:37:06.000Z",
         "durationSeconds": 891,
-        "views": 2666412,
+        "views": 2666436,
         "likes": 22215,
         "favorites": 40759,
         "comments": 301,
@@ -8066,8 +8066,8 @@
             "favorites": 40751
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2666412,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2666436,
             "likes": 22215,
             "favorites": 40759
           }
@@ -8092,7 +8092,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/cedd3ba23fcca8993a1331eeb0f18cee8fc4ef69.jpg",
         "publishedAt": "2025-06-20T12:00:00.000Z",
         "durationSeconds": 720,
-        "views": 2586410,
+        "views": 2586458,
         "likes": 53497,
         "favorites": 71448,
         "comments": 2368,
@@ -8115,8 +8115,8 @@
             "favorites": 71144
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2586410,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2586458,
             "likes": 53497,
             "favorites": 71448
           }
@@ -8141,9 +8141,9 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/ccfd0b909aaae564a9f13e655de92dc175243591.jpg",
         "publishedAt": "2025-11-02T14:15:00.000Z",
         "durationSeconds": 4608,
-        "views": 2436127,
+        "views": 2436166,
         "likes": 39689,
-        "favorites": 36296,
+        "favorites": 36297,
         "comments": 1238,
         "categories": [
           "耳语"
@@ -8163,10 +8163,10 @@
             "favorites": 36126
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2436127,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2436166,
             "likes": 39689,
-            "favorites": 36296
+            "favorites": 36297
           }
         ],
         "scores": {
@@ -8189,7 +8189,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2025-07-28T14:30:00.000Z",
         "durationSeconds": 3139,
-        "views": 2401319,
+        "views": 2401321,
         "likes": 37298,
         "favorites": 33381,
         "comments": 1399,
@@ -8211,8 +8211,8 @@
             "favorites": 33343
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2401319,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2401321,
             "likes": 37298,
             "favorites": 33381
           }
@@ -8237,7 +8237,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/b171fb1b9398d253f2d6e1e392176d1c2346a79e.jpg",
         "publishedAt": "2023-07-13T14:00:00.000Z",
         "durationSeconds": 1538,
-        "views": 2394465,
+        "views": 2394467,
         "likes": 35478,
         "favorites": 50763,
         "comments": 1837,
@@ -8259,8 +8259,8 @@
             "favorites": 50773
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2394465,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2394467,
             "likes": 35478,
             "favorites": 50763
           }
@@ -8285,7 +8285,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/a6db61788cc2b41ecb70b8d077cb2814d195e549.jpg",
         "publishedAt": "2023-04-28T13:45:57.000Z",
         "durationSeconds": 2168,
-        "views": 2383178,
+        "views": 2383196,
         "likes": 24597,
         "favorites": 37969,
         "comments": 1059,
@@ -8308,8 +8308,8 @@
             "favorites": 37899
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2383178,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2383196,
             "likes": 24597,
             "favorites": 37969
           }
@@ -8334,7 +8334,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2024-07-01T14:30:00.000Z",
         "durationSeconds": 3608,
-        "views": 2361878,
+        "views": 2361893,
         "likes": 60257,
         "favorites": 52939,
         "comments": 1146,
@@ -8357,8 +8357,8 @@
             "favorites": 52856
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2361878,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2361893,
             "likes": 60257,
             "favorites": 52939
           }
@@ -8383,7 +8383,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/c357f99074f4b784de007dd3c9ebe08bef76cd98.jpg",
         "publishedAt": "2025-04-25T14:00:00.000Z",
         "durationSeconds": 2912,
-        "views": 2353763,
+        "views": 2353768,
         "likes": 109125,
         "favorites": 107006,
         "comments": 2824,
@@ -8405,8 +8405,8 @@
             "favorites": 107002
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2353763,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2353768,
             "likes": 109125,
             "favorites": 107006
           }
@@ -8431,7 +8431,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/e42fad7f4e374b012c916e6cdd4986f3e8c82bec.jpg",
         "publishedAt": "2024-03-08T14:00:00.000Z",
         "durationSeconds": 1679,
-        "views": 2275996,
+        "views": 2276001,
         "likes": 27719,
         "favorites": 38512,
         "comments": 652,
@@ -8453,8 +8453,8 @@
             "favorites": 38517
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2275996,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2276001,
             "likes": 27719,
             "favorites": 38512
           }
@@ -8479,7 +8479,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/00e236c0987d75a97b1889a8616ea166696264cc.jpg",
         "publishedAt": "2023-12-08T13:10:53.000Z",
         "durationSeconds": 1148,
-        "views": 2270062,
+        "views": 2270078,
         "likes": 29692,
         "favorites": 37039,
         "comments": 719,
@@ -8501,8 +8501,8 @@
             "favorites": 36991
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2270062,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2270078,
             "likes": 29692,
             "favorites": 37039
           }
@@ -8527,7 +8527,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/01438ace77c1fc60617d79c2950237b9792c4d2e.jpg",
         "publishedAt": "2024-06-29T13:00:00.000Z",
         "durationSeconds": 489,
-        "views": 2223077,
+        "views": 2223089,
         "likes": 58627,
         "favorites": 50704,
         "comments": 1040,
@@ -8548,8 +8548,8 @@
             "favorites": 50626
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2223077,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2223089,
             "likes": 58627,
             "favorites": 50704
           }
@@ -8574,9 +8574,9 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2024-08-05T14:55:00.000Z",
         "durationSeconds": 4283,
-        "views": 2221108,
+        "views": 2221131,
         "likes": 36142,
-        "favorites": 52879,
+        "favorites": 52880,
         "comments": 859,
         "categories": [
           "无人声",
@@ -8597,10 +8597,10 @@
             "favorites": 52597
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2221108,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2221131,
             "likes": 36142,
-            "favorites": 52879
+            "favorites": 52880
           }
         ],
         "scores": {
@@ -8623,9 +8623,9 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/cbc18421c7a9d708c8155ce73756996d634ba692.jpg",
         "publishedAt": "2024-12-05T15:49:03.000Z",
         "durationSeconds": 1498,
-        "views": 2208131,
+        "views": 2208172,
         "likes": 60510,
-        "favorites": 65468,
+        "favorites": 65469,
         "comments": 1273,
         "categories": [
           "无人声"
@@ -8645,10 +8645,10 @@
             "favorites": 65311
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2208131,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2208172,
             "likes": 60510,
-            "favorites": 65468
+            "favorites": 65469
           }
         ],
         "scores": {
@@ -8671,7 +8671,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/cb11d7b3a74fb0ae2a1649acaea061bb795924f6.jpg",
         "publishedAt": "2024-02-10T12:04:08.000Z",
         "durationSeconds": 3692,
-        "views": 2181772,
+        "views": 2181777,
         "likes": 30297,
         "favorites": 49915,
         "comments": 1420,
@@ -8694,8 +8694,8 @@
             "favorites": 49908
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2181772,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2181777,
             "likes": 30297,
             "favorites": 49915
           }
@@ -8720,7 +8720,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2025-08-14T14:30:00.000Z",
         "durationSeconds": 4600,
-        "views": 2157382,
+        "views": 2157390,
         "likes": 69024,
         "favorites": 81633,
         "comments": 2404,
@@ -8742,8 +8742,8 @@
             "favorites": 81563
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2157382,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2157390,
             "likes": 69024,
             "favorites": 81633
           }
@@ -8768,9 +8768,9 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/1bbd4d09027933a644fc84551716b15c27a27c28.jpg",
         "publishedAt": "2025-03-23T15:12:50.000Z",
         "durationSeconds": 581,
-        "views": 2150702,
-        "likes": 30342,
-        "favorites": 46843,
+        "views": 2150796,
+        "likes": 30341,
+        "favorites": 46844,
         "comments": 1201,
         "categories": [
           "掏耳"
@@ -8789,10 +8789,10 @@
             "favorites": 46080
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2150702,
-            "likes": 30342,
-            "favorites": 46843
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2150796,
+            "likes": 30341,
+            "favorites": 46844
           }
         ],
         "scores": {
@@ -8815,7 +8815,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/b94af902ed5669af6d20377a5f8d97263a14bae6.jpg",
         "publishedAt": "2023-12-16T12:53:30.000Z",
         "durationSeconds": 1695,
-        "views": 2124459,
+        "views": 2124472,
         "likes": 24266,
         "favorites": 25710,
         "comments": 698,
@@ -8838,8 +8838,8 @@
             "favorites": 25684
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2124459,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2124472,
             "likes": 24266,
             "favorites": 25710
           }
@@ -8864,9 +8864,9 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2025-08-11T14:30:00.000Z",
         "durationSeconds": 4105,
-        "views": 2096187,
+        "views": 2096209,
         "likes": 72015,
-        "favorites": 79475,
+        "favorites": 79474,
         "comments": 2339,
         "categories": [
           "无人声",
@@ -8887,10 +8887,10 @@
             "favorites": 79335
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2096187,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2096209,
             "likes": 72015,
-            "favorites": 79475
+            "favorites": 79474
           }
         ],
         "scores": {
@@ -8913,7 +8913,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/2ba78986b351d64a56ee03084044daf262b50f3c.jpg",
         "publishedAt": "2025-01-25T13:30:00.000Z",
         "durationSeconds": 1184,
-        "views": 2069813,
+        "views": 2069829,
         "likes": 48180,
         "favorites": 33939,
         "comments": 1436,
@@ -8935,8 +8935,8 @@
             "favorites": 33835
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2069813,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2069829,
             "likes": 48180,
             "favorites": 33939
           }
@@ -8961,7 +8961,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/01438ace77c1fc60617d79c2950237b9792c4d2e.jpg",
         "publishedAt": "2024-03-13T13:00:00.000Z",
         "durationSeconds": 366,
-        "views": 2061206,
+        "views": 2061231,
         "likes": 64980,
         "favorites": 61187,
         "comments": 1041,
@@ -8984,8 +8984,8 @@
             "favorites": 61096
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2061206,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2061231,
             "likes": 64980,
             "favorites": 61187
           }
@@ -9010,7 +9010,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/14bc3b3059df263d37978bdc16d9e6793e24bd7f.jpg",
         "publishedAt": "2024-08-19T14:06:43.000Z",
         "durationSeconds": 2338,
-        "views": 2020377,
+        "views": 2020380,
         "likes": 37746,
         "favorites": 17237,
         "comments": 2377,
@@ -9031,8 +9031,8 @@
             "favorites": 17225
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 2020377,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2020380,
             "likes": 37746,
             "favorites": 17237
           }
@@ -9057,7 +9057,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/cb11d7b3a74fb0ae2a1649acaea061bb795924f6.jpg",
         "publishedAt": "2023-10-11T10:35:50.000Z",
         "durationSeconds": 2985,
-        "views": 1956887,
+        "views": 1956897,
         "likes": 26611,
         "favorites": 36578,
         "comments": 1563,
@@ -9079,8 +9079,8 @@
             "favorites": 36571
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1956887,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1956897,
             "likes": 26611,
             "favorites": 36578
           }
@@ -9105,7 +9105,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/cbc18421c7a9d708c8155ce73756996d634ba692.jpg",
         "publishedAt": "2024-11-17T16:16:42.000Z",
         "durationSeconds": 1833,
-        "views": 1946230,
+        "views": 1946246,
         "likes": 52599,
         "favorites": 69185,
         "comments": 1116,
@@ -9128,8 +9128,8 @@
             "favorites": 69169
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1946230,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1946246,
             "likes": 52599,
             "favorites": 69185
           }
@@ -9154,9 +9154,9 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2025-04-10T14:30:00.000Z",
         "durationSeconds": 4085,
-        "views": 1933824,
+        "views": 1933843,
         "likes": 30978,
-        "favorites": 40553,
+        "favorites": 40554,
         "comments": 706,
         "categories": [
           "无人声"
@@ -9176,10 +9176,10 @@
             "favorites": 40466
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1933824,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1933843,
             "likes": 30978,
-            "favorites": 40553
+            "favorites": 40554
           }
         ],
         "scores": {
@@ -9202,9 +9202,9 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/437b96764294cac8d30e310e1c8613a7abcb9e01.jpg",
         "publishedAt": "2024-11-09T09:49:41.000Z",
         "durationSeconds": 281,
-        "views": 1923560,
+        "views": 1923568,
         "likes": 33936,
-        "favorites": 39002,
+        "favorites": 39001,
         "comments": 2330,
         "categories": [
           "敲击"
@@ -9224,10 +9224,10 @@
             "favorites": 38946
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1923560,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1923568,
             "likes": 33936,
-            "favorites": 39002
+            "favorites": 39001
           }
         ],
         "scores": {
@@ -9250,8 +9250,8 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2024-11-14T14:30:00.000Z",
         "durationSeconds": 7339,
-        "views": 1920027,
-        "likes": 52796,
+        "views": 1920034,
+        "likes": 52797,
         "favorites": 68253,
         "comments": 1235,
         "categories": [
@@ -9273,9 +9273,9 @@
             "favorites": 68152
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1920027,
-            "likes": 52796,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1920034,
+            "likes": 52797,
             "favorites": 68253
           }
         ],
@@ -9299,9 +9299,9 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/cbc18421c7a9d708c8155ce73756996d634ba692.jpg",
         "publishedAt": "2024-10-18T22:37:02.000Z",
         "durationSeconds": 1870,
-        "views": 1876125,
+        "views": 1876149,
         "likes": 36032,
-        "favorites": 44761,
+        "favorites": 44760,
         "comments": 753,
         "categories": [
           "无人声",
@@ -9316,10 +9316,10 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1876125,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1876149,
             "likes": 36032,
-            "favorites": 44761
+            "favorites": 44760
           }
         ],
         "scores": {
@@ -9342,7 +9342,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2025-12-08T14:30:00.000Z",
         "durationSeconds": 3736,
-        "views": 1860869,
+        "views": 1860894,
         "likes": 37684,
         "favorites": 58288,
         "comments": 2491,
@@ -9364,14 +9364,14 @@
             "favorites": 57998
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1860869,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1860894,
             "likes": 37684,
             "favorites": 58288
           }
         ],
         "scores": {
-          "hot": 0.0572,
+          "hot": 0.0571,
           "rising": null,
           "longtail": 0.3824,
           "hasSevenDaySnapshot": true
@@ -9390,7 +9390,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/cfe78e5681d49fcf3367d2f07e7b766d147bddfc.jpg",
         "publishedAt": "2023-12-14T13:00:00.000Z",
         "durationSeconds": 2244,
-        "views": 1770823,
+        "views": 1770838,
         "likes": 24203,
         "favorites": 21117,
         "comments": 730,
@@ -9412,8 +9412,8 @@
             "favorites": 21070
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1770823,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1770838,
             "likes": 24203,
             "favorites": 21117
           }
@@ -9438,7 +9438,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/1b0b7d0b39901ba8f4fef4340a61bbed0bcfb8ae.jpg",
         "publishedAt": "2023-08-16T13:52:49.000Z",
         "durationSeconds": 1377,
-        "views": 1768380,
+        "views": 1768382,
         "likes": 19948,
         "favorites": 38262,
         "comments": 627,
@@ -9455,8 +9455,8 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1768380,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1768382,
             "likes": 19948,
             "favorites": 38262
           }
@@ -9481,7 +9481,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/garb/22a177a64f4d8ad3e9c2524bada7b23d1f49f438.png",
         "publishedAt": "2024-02-05T20:11:17.000Z",
         "durationSeconds": 11674,
-        "views": 1751497,
+        "views": 1751514,
         "likes": 22937,
         "favorites": 39917,
         "comments": 782,
@@ -9497,8 +9497,8 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1751497,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1751514,
             "likes": 22937,
             "favorites": 39917
           }
@@ -9523,9 +9523,9 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/ed0fff24edfca4db6b748a0e8b97fdccda6494e6.jpg",
         "publishedAt": "2023-12-25T04:00:00.000Z",
         "durationSeconds": 1514,
-        "views": 1709428,
+        "views": 1709436,
         "likes": 16068,
-        "favorites": 11843,
+        "favorites": 11842,
         "comments": 409,
         "categories": [
           "掏耳"
@@ -9545,10 +9545,10 @@
             "favorites": 11850
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1709428,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1709436,
             "likes": 16068,
-            "favorites": 11843
+            "favorites": 11842
           }
         ],
         "scores": {
@@ -9571,7 +9571,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/ed0fff24edfca4db6b748a0e8b97fdccda6494e6.jpg",
         "publishedAt": "2023-12-11T04:00:00.000Z",
         "durationSeconds": 996,
-        "views": 1704460,
+        "views": 1704466,
         "likes": 30203,
         "favorites": 31858,
         "comments": 849,
@@ -9593,8 +9593,8 @@
             "favorites": 31867
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1704460,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1704466,
             "likes": 30203,
             "favorites": 31858
           }
@@ -9619,7 +9619,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/5be61949369dd844cc459eab808da151d8c363d2.gif",
         "publishedAt": "2024-01-01T12:17:42.000Z",
         "durationSeconds": 2231,
-        "views": 1680285,
+        "views": 1680291,
         "likes": 33788,
         "favorites": 31941,
         "comments": 763,
@@ -9635,8 +9635,8 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1680285,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1680291,
             "likes": 33788,
             "favorites": 31941
           }
@@ -9661,9 +9661,9 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/c1b1bc9c70d61a641455bdaf151b8907415fa947.jpg",
         "publishedAt": "2025-08-01T13:00:00.000Z",
         "durationSeconds": 1077,
-        "views": 1660860,
+        "views": 1660867,
         "likes": 48174,
-        "favorites": 44657,
+        "favorites": 44658,
         "comments": 1169,
         "categories": [
           "耳语",
@@ -9686,10 +9686,10 @@
             "favorites": 44618
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1660860,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1660867,
             "likes": 48174,
-            "favorites": 44657
+            "favorites": 44658
           }
         ],
         "scores": {
@@ -9712,7 +9712,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/b94af902ed5669af6d20377a5f8d97263a14bae6.jpg",
         "publishedAt": "2023-10-02T12:00:00.000Z",
         "durationSeconds": 2441,
-        "views": 1646291,
+        "views": 1646294,
         "likes": 17903,
         "favorites": 15794,
         "comments": 361,
@@ -9735,8 +9735,8 @@
             "favorites": 15799
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1646291,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1646294,
             "likes": 17903,
             "favorites": 15794
           }
@@ -9761,7 +9761,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/c1b1bc9c70d61a641455bdaf151b8907415fa947.jpg",
         "publishedAt": "2024-09-14T13:30:00.000Z",
         "durationSeconds": 2862,
-        "views": 1598530,
+        "views": 1598540,
         "likes": 44734,
         "favorites": 33567,
         "comments": 1295,
@@ -9786,8 +9786,8 @@
             "favorites": 33541
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1598530,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1598540,
             "likes": 44734,
             "favorites": 33567
           }
@@ -9812,7 +9812,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2025-09-01T14:30:00.000Z",
         "durationSeconds": 4957,
-        "views": 1573317,
+        "views": 1573329,
         "likes": 32645,
         "favorites": 51054,
         "comments": 1224,
@@ -9834,8 +9834,8 @@
             "favorites": 50923
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1573317,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1573329,
             "likes": 32645,
             "favorites": 51054
           }
@@ -9860,7 +9860,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/a633c6376012cd8b24fafa169d7567f8ae765c4b.jpg",
         "publishedAt": "2024-01-12T18:10:55.000Z",
         "durationSeconds": 591,
-        "views": 1443124,
+        "views": 1443129,
         "likes": 12558,
         "favorites": 22657,
         "comments": 351,
@@ -9877,8 +9877,8 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1443124,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1443129,
             "likes": 12558,
             "favorites": 22657
           }
@@ -9903,7 +9903,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
         "publishedAt": "2025-03-27T14:30:00.000Z",
         "durationSeconds": 4366,
-        "views": 1428896,
+        "views": 1428909,
         "likes": 54681,
         "favorites": 56202,
         "comments": 2427,
@@ -9926,8 +9926,8 @@
             "favorites": 56160
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1428896,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1428909,
             "likes": 54681,
             "favorites": 56202
           }
@@ -9952,7 +9952,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/706703ef6ae7c46ec6e3a7ac3afe9227adc730e7.jpg",
         "publishedAt": "2024-04-09T14:25:03.000Z",
         "durationSeconds": 1354,
-        "views": 1417038,
+        "views": 1417047,
         "likes": 38113,
         "favorites": 23684,
         "comments": 577,
@@ -9974,8 +9974,8 @@
             "favorites": 23674
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1417038,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1417047,
             "likes": 38113,
             "favorites": 23684
           }
@@ -10000,9 +10000,9 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/a633c6376012cd8b24fafa169d7567f8ae765c4b.jpg",
         "publishedAt": "2025-04-25T13:00:00.000Z",
         "durationSeconds": 1769,
-        "views": 1400852,
-        "likes": 14175,
-        "favorites": 28986,
+        "views": 1400871,
+        "likes": 14176,
+        "favorites": 28987,
         "comments": 432,
         "categories": [
           "掏耳",
@@ -10024,10 +10024,10 @@
             "favorites": 28948
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1400852,
-            "likes": 14175,
-            "favorites": 28986
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1400871,
+            "likes": 14176,
+            "favorites": 28987
           }
         ],
         "scores": {
@@ -10050,7 +10050,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/e66849e2e3bc979588f77148d3b3a3d6da538f7a.jpg",
         "publishedAt": "2023-08-04T04:00:00.000Z",
         "durationSeconds": 849,
-        "views": 1339394,
+        "views": 1339395,
         "likes": 18981,
         "favorites": 35555,
         "comments": 1188,
@@ -10066,8 +10066,8 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1339394,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1339395,
             "likes": 18981,
             "favorites": 35555
           }
@@ -10092,7 +10092,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/77a58d8b3a167f989f842cda550e7230ef4cad0a.jpg",
         "publishedAt": "2025-02-28T13:00:00.000Z",
         "durationSeconds": 898,
-        "views": 1266639,
+        "views": 1266646,
         "likes": 37240,
         "favorites": 28803,
         "comments": 1373,
@@ -10114,8 +10114,8 @@
             "favorites": 28799
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1266639,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1266646,
             "likes": 37240,
             "favorites": 28803
           }
@@ -10140,7 +10140,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/b94af902ed5669af6d20377a5f8d97263a14bae6.jpg",
         "publishedAt": "2024-05-23T11:30:00.000Z",
         "durationSeconds": 1502,
-        "views": 1262435,
+        "views": 1262447,
         "likes": 12133,
         "favorites": 10928,
         "comments": 288,
@@ -10163,8 +10163,8 @@
             "favorites": 10918
           },
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1262435,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1262447,
             "likes": 12133,
             "favorites": 10928
           }
@@ -10189,7 +10189,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/01438ace77c1fc60617d79c2950237b9792c4d2e.jpg",
         "publishedAt": "2025-12-24T13:00:00.000Z",
         "durationSeconds": 641,
-        "views": 1237374,
+        "views": 1237379,
         "likes": 54094,
         "favorites": 47557,
         "comments": 998,
@@ -10204,8 +10204,8 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1237374,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1237379,
             "likes": 54094,
             "favorites": 47557
           }
@@ -10390,6 +10390,48 @@
         "femaleHost": true
       },
       {
+        "id": "BV1vqyRzrENC",
+        "platform": "bilibili",
+        "title": "ASMR 自用| 此乃国宴啊啊!!🥹双胞胎姐姐の甜食麦克风prpr💞左右开弓🙌同时深入你的小耳朵🥰天灵盖爽飞哩..💗【Hires无损音质】",
+        "description": "这期不多说，绝绝子好叭~双胞胎姐姐的麦克风甜食👅双管齐下，感受耳朵被姐姐堵住逗弄的滑溜爽感~🥹 ♡₊˚・┈┈ 姐姐的充电计划进行中😘 ┈┈・˚₊♡ 💞加入充电 → 解锁更多专属内容叭： https://b23.tv/fM5CUIl ✨ 充电包含： ♡ 更多专属助眠视频好听好看~ ♡ 定期专属cos助眠直播 ♡ 往期充电内容和充电直播回放・一次全解锁 💌快来成为姐姐的专属宝贝吧～ ☁️⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯☁️ 观看小贴士： ◆ASMR视频为立体声，请务必戴上耳机，音量",
+        "url": "https://www.bilibili.com/video/BV1vqyRzrENC",
+        "thumbnail": "https://i2.hdslb.com/bfs/archive/06c7ca9fa0ac2b750f4a857d54b2310919400588.jpg",
+        "creatorId": "3493297555245371",
+        "creatorName": "梵拉-Valar",
+        "creatorAvatar": "https://i2.hdslb.com/bfs/face/ed0fff24edfca4db6b748a0e8b97fdccda6494e6.jpg",
+        "publishedAt": "2026-11-24T04:00:00.000Z",
+        "durationSeconds": 1220,
+        "views": 3948,
+        "likes": 158,
+        "favorites": 181,
+        "comments": 21,
+        "categories": [
+          "口腔音"
+        ],
+        "screeningConfidence": 99,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图",
+          "典型 ASMR 触发",
+          "放松用途"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 3948,
+            "likes": 158,
+            "favorites": 181
+          }
+        ],
+        "scores": {
+          "hot": 0.4233,
+          "rising": 0.4473,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
         "id": "BV1mMyXzXEsF",
         "platform": "bilibili",
         "title": "ASMR 随机触发",
@@ -10401,10 +10443,10 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/e035a59243de4ac2799cbafc5acdc3266f9d9f62.jpg",
         "publishedAt": "2026-11-23T15:39:09.000Z",
         "durationSeconds": 343,
-        "views": 1725,
-        "likes": 107,
-        "favorites": 89,
-        "comments": 7,
+        "views": 1785,
+        "likes": 113,
+        "favorites": 93,
+        "comments": 6,
         "categories": [
           "无人声",
           "敲击"
@@ -10418,15 +10460,15 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1725,
-            "likes": 107,
-            "favorites": 89
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1785,
+            "likes": 113,
+            "favorites": 93
           }
         ],
         "scores": {
-          "hot": 0.4504,
-          "rising": 0.4765,
+          "hot": 0.454,
+          "rising": 0.4784,
           "longtail": null,
           "hasSevenDaySnapshot": false
         },
@@ -10444,10 +10486,10 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/6e42721e650afa66df6ad8cda4161bade9e5e9e0.jpg",
         "publishedAt": "2026-11-23T16:06:00.000Z",
         "durationSeconds": 2666,
-        "views": 1150,
-        "likes": 68,
-        "favorites": 87,
-        "comments": 12,
+        "views": 1210,
+        "likes": 72,
+        "favorites": 96,
+        "comments": 13,
         "categories": [
           "耳语"
         ],
@@ -10460,15 +10502,15 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1150,
-            "likes": 68,
-            "favorites": 87
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 1210,
+            "likes": 72,
+            "favorites": 96
           }
         ],
         "scores": {
-          "hot": 0.4768,
-          "rising": 0.5037,
+          "hot": 0.4846,
+          "rising": 0.5087,
           "longtail": null,
           "hasSevenDaySnapshot": false
         },
@@ -10486,9 +10528,9 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/bcfb4333f59ef22884c8ed50faa49dede89b5f66.jpg",
         "publishedAt": "2026-11-23T15:00:00.000Z",
         "durationSeconds": 5406,
-        "views": 655,
-        "likes": 39,
-        "favorites": 53,
+        "views": 723,
+        "likes": 42,
+        "favorites": 60,
         "comments": 7,
         "categories": [
           "无人声",
@@ -10503,15 +10545,56 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 655,
-            "likes": 39,
-            "favorites": 53
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 723,
+            "likes": 42,
+            "favorites": 60
           }
         ],
         "scores": {
           "hot": null,
-          "rising": 0.5107,
+          "rising": 0.5118,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
+        "id": "BV1yLyRzdEc9",
+        "platform": "bilibili",
+        "title": "【神崎宁宁 ASMR 】绫地宁宁cos💕我要回家家，我要睡觉觉",
+        "description": "ciallo，up已经成长成会开播的人了，每晚23点-凌晨3点直播，需要助眠的一定要来我直播间睡觉哦。当当当，我的粉丝群也有啦，很高兴跟你分享，超欢迎你加入 1087312221 爱好缝纫，已经手搓了很多cos服，请多多支持我吧 cos服自己手搓的，我要听牛掰plus",
+        "url": "https://www.bilibili.com/video/BV1yLyRzdEc9",
+        "thumbnail": "https://i0.hdslb.com/bfs/archive/545f8c73590afa9032766301e81b18cb341d55c9.jpg",
+        "creatorId": "3690990325991930",
+        "creatorName": "神崎宁宁Nini",
+        "creatorAvatar": "https://i2.hdslb.com/bfs/face/9e0d2933812ca204e53e58828807920f1c69d509.jpg",
+        "publishedAt": "2026-11-24T03:00:00.000Z",
+        "durationSeconds": 1516,
+        "views": 554,
+        "likes": 38,
+        "favorites": 43,
+        "comments": 1,
+        "categories": [
+          "综合触发"
+        ],
+        "screeningConfidence": 92,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图",
+          "放松用途"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 554,
+            "likes": 38,
+            "favorites": 43
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": 0.5156,
           "longtail": null,
           "hasSevenDaySnapshot": false
         },
@@ -10529,7 +10612,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/657be84ad138d2160adc88598cc4446bba54373c.jpg",
         "publishedAt": "2026-11-23T16:00:00.000Z",
         "durationSeconds": 3468,
-        "views": 426,
+        "views": 444,
         "likes": 7,
         "favorites": 6,
         "comments": 4,
@@ -10546,15 +10629,15 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 426,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 444,
             "likes": 7,
             "favorites": 6
           }
         ],
         "scores": {
           "hot": null,
-          "rising": 0.384,
+          "rising": 0.3827,
           "longtail": null,
           "hasSevenDaySnapshot": false
         },
@@ -10616,9 +10699,9 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/9f18c80e7b41c5c81003755aad43620dfef3c83f.jpg",
         "publishedAt": "2026-11-23T18:25:17.000Z",
         "durationSeconds": 358,
-        "views": 268,
-        "likes": 14,
-        "favorites": 8,
+        "views": 299,
+        "likes": 16,
+        "favorites": 11,
         "comments": 5,
         "categories": [
           "敲击"
@@ -10632,15 +10715,15 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 268,
-            "likes": 14,
-            "favorites": 8
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 299,
+            "likes": 16,
+            "favorites": 11
           }
         ],
         "scores": {
           "hot": null,
-          "rising": 0.4396,
+          "rising": 0.4495,
           "longtail": null,
           "hasSevenDaySnapshot": false
         },
@@ -10741,10 +10824,10 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/member/noface.jpg",
         "publishedAt": "2026-11-23T15:24:37.000Z",
         "durationSeconds": 21198,
-        "views": 236,
-        "likes": 6,
-        "favorites": 18,
-        "comments": 0,
+        "views": 249,
+        "likes": 7,
+        "favorites": 21,
+        "comments": 1,
         "categories": [
           "掏耳",
           "口腔音"
@@ -10758,15 +10841,15 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 236,
-            "likes": 6,
-            "favorites": 18
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 249,
+            "likes": 7,
+            "favorites": 21
           }
         ],
         "scores": {
           "hot": null,
-          "rising": 0.4708,
+          "rising": 0.4835,
           "longtail": null,
           "hasSevenDaySnapshot": false
         },
@@ -10809,47 +10892,6 @@
         "scores": {
           "hot": null,
           "rising": 0.4832,
-          "longtail": null,
-          "hasSevenDaySnapshot": false
-        },
-        "femaleHost": false
-      },
-      {
-        "id": "BV1yLyRzdEc9",
-        "platform": "bilibili",
-        "title": "【神崎宁宁 ASMR 】绫地宁宁cos💕我要回家家，我要睡觉觉",
-        "description": "ciallo，up已经成长成会开播的人了，每晚23点-凌晨3点直播，需要助眠的一定要来我直播间睡觉哦。当当当，我的粉丝群也有啦，很高兴跟你分享，超欢迎你加入 1087312221 爱好缝纫，已经手搓了很多cos服，请多多支持我吧 cos服自己手搓的，我要听牛掰plus",
-        "url": "https://www.bilibili.com/video/BV1yLyRzdEc9",
-        "thumbnail": "https://i0.hdslb.com/bfs/archive/545f8c73590afa9032766301e81b18cb341d55c9.jpg",
-        "creatorId": "3690990325991930",
-        "creatorName": "神崎宁宁Nini",
-        "creatorAvatar": "https://i2.hdslb.com/bfs/face/9e0d2933812ca204e53e58828807920f1c69d509.jpg",
-        "publishedAt": "2026-11-24T03:00:00.000Z",
-        "durationSeconds": 1516,
-        "views": 205,
-        "likes": 11,
-        "favorites": 18,
-        "comments": 1,
-        "categories": [
-          "综合触发"
-        ],
-        "screeningConfidence": 92,
-        "screeningReasons": [
-          "适合长时间收听",
-          "明确助眠意图",
-          "放松用途"
-        ],
-        "history": [
-          {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 205,
-            "likes": 11,
-            "favorites": 18
-          }
-        ],
-        "scores": {
-          "hot": null,
-          "rising": 0.5134,
           "longtail": null,
           "hasSevenDaySnapshot": false
         },
@@ -10910,7 +10952,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/9d5ec9abc0181603a95720d4965dc52db0ab3c65.jpg",
         "publishedAt": "2026-11-23T16:24:57.000Z",
         "durationSeconds": 4113,
-        "views": 186,
+        "views": 201,
         "likes": 4,
         "favorites": 6,
         "comments": 0,
@@ -10927,15 +10969,15 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 186,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 201,
             "likes": 4,
             "favorites": 6
           }
         ],
         "scores": {
           "hot": null,
-          "rising": null,
+          "rising": 0.4072,
           "longtail": null,
           "hasSevenDaySnapshot": false
         },
@@ -11068,6 +11110,92 @@
         "femaleHost": false
       },
       {
+        "id": "BV1voyHzSEfB",
+        "platform": "bilibili",
+        "title": "UPJ｜飞粉浓郁染色一次 asmr 镁粉块自剪 助眠 简姐又来填桶hhh",
+        "description": "外网搬运",
+        "url": "https://www.bilibili.com/video/BV1voyHzSEfB",
+        "thumbnail": "https://i0.hdslb.com/bfs/archive/5c08ce3c23b70887c9eb6555e5c7818af5a0d977.jpg",
+        "creatorId": "382088568",
+        "creatorName": "我的心里五谷杂粮i",
+        "creatorAvatar": "https://i0.hdslb.com/bfs/face/9caffd5ec82243dd834d6b0d5920b52dbeb07aea.jpg",
+        "publishedAt": "2026-11-24T01:33:02.000Z",
+        "durationSeconds": 810,
+        "views": 144,
+        "likes": 17,
+        "favorites": 31,
+        "comments": 1,
+        "categories": [
+          "无人声"
+        ],
+        "screeningConfidence": 99,
+        "screeningReasons": [
+          "达到 3 分钟收录门槛",
+          "明确助眠意图",
+          "低刺激声音形式",
+          "典型 ASMR 触发"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 144,
+            "likes": 17,
+            "favorites": 31
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
+        "id": "BV1G7y9ziEGd",
+        "platform": "bilibili",
+        "title": "【 ASMR Karta】『2026.11.24』深度采耳+听力检查 双耳环绕 助眠",
+        "description": "舒缓的深度采耳与听力检查角色扮演，双耳近距离音效。内容包含耳刷轻扫、棉签清洁、泡沫清洗、耳道轻刮和耳部按摩，帮你放松入睡。",
+        "url": "https://www.bilibili.com/video/BV1G7y9ziEGd",
+        "thumbnail": "https://i0.hdslb.com/bfs/archive/4260b8d2981f1ecaebce16077109d6e1966bbaa9.jpg",
+        "creatorId": "3707022790887607",
+        "creatorName": "蛋挞皮榴莲blue",
+        "creatorAvatar": "https://i1.hdslb.com/bfs/face/ea2ad1bad12fdb8f34a84436a1ec03889f502056.jpg",
+        "publishedAt": "2026-11-23T20:23:37.000Z",
+        "durationSeconds": 1688,
+        "views": 131,
+        "likes": 1,
+        "favorites": 6,
+        "comments": 0,
+        "categories": [
+          "无人声",
+          "掏耳",
+          "角色扮演"
+        ],
+        "screeningConfidence": 99,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图",
+          "低刺激声音形式",
+          "耳部触发音"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 131,
+            "likes": 1,
+            "favorites": 6
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
         "id": "BV172sN6CE4B",
         "platform": "bilibili",
         "title": "kig丨 ASMR 丨桥桥的OOTD丨擦掉你的烦恼丨刮擦衣物鞋子袜子丨 无人声",
@@ -11106,6 +11234,48 @@
           "rising": null,
           "longtail": null,
           "hasSevenDaySnapshot": true
+        },
+        "femaleHost": false
+      },
+      {
+        "id": "BV1CiyQz1E5h",
+        "platform": "bilibili",
+        "title": "【 ASMR 】真实头部按摩｜头皮按摩＋梳头＋珠子 触发音 ✨｜空间感音效｜沉浸式助眠放松",
+        "description": "✨ 欢迎来到沉浸式真实头部按摩 ASMR！ 本期带来真实感十足的头部与头皮按摩体验，结合轻柔的头皮揉按、细致的梳头声、珠子触发音以及富有空间感的立体音效，让你仿佛置身于一场舒适的头部SPA。 🎧 本期声音体验： 💆 真实头部与头皮按摩 🪮 轻柔梳头与发丝触发音 ✨ 珠子碰撞与细腻触发音 🌌 沉浸式空间感音效 😴 放松、解压与睡前助眠 戴上耳机，闭上眼睛，放下疲惫，让每一个细微的声音带你进入放松状态，享受属于自己的宁静时刻。 希望这段 ASMR 能陪伴你入睡、放松或专",
+        "url": "https://www.bilibili.com/video/BV1CiyQz1E5h",
+        "thumbnail": "https://i1.hdslb.com/bfs/archive/57a990bf257d6a6277a2fb3aa860679eedff8604.jpg",
+        "creatorId": "3744987676151278",
+        "creatorName": "C4meow",
+        "creatorAvatar": "https://i1.hdslb.com/bfs/face/53ca9559e68d024b5d4f563c0fac9b97b8f59aca.jpg",
+        "publishedAt": "2026-11-23T16:15:41.000Z",
+        "durationSeconds": 2869,
+        "views": 124,
+        "likes": 3,
+        "favorites": 4,
+        "comments": 0,
+        "categories": [
+          "综合触发"
+        ],
+        "screeningConfidence": 99,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图",
+          "典型 ASMR 触发",
+          "放松用途"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 124,
+            "likes": 3,
+            "favorites": 4
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
         },
         "femaleHost": false
       },
@@ -11152,6 +11322,48 @@
         "femaleHost": false
       },
       {
+        "id": "BV1Roydz2E6t",
+        "platform": "bilibili",
+        "title": "鲨的双声道 asmr - 迷你名画但是有哪里不对",
+        "description": "",
+        "url": "https://www.bilibili.com/video/BV1Roydz2E6t",
+        "thumbnail": "https://i2.hdslb.com/bfs/archive/4b05e9ae551dc76078e74b2acbb40786995d9e3e.jpg",
+        "creatorId": "3747572166430030",
+        "creatorName": "普通路过鲨类",
+        "creatorAvatar": "https://i1.hdslb.com/bfs/face/9372acd112897907300b2cc8c0b97cd8f1dfc485.jpg",
+        "publishedAt": "2026-11-23T23:14:14.000Z",
+        "durationSeconds": 687,
+        "views": 117,
+        "likes": 10,
+        "favorites": 14,
+        "comments": 2,
+        "categories": [
+          "无人声"
+        ],
+        "screeningConfidence": 99,
+        "screeningReasons": [
+          "达到 3 分钟收录门槛",
+          "明确助眠意图",
+          "低刺激声音形式",
+          "典型 ASMR 触发"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 117,
+            "likes": 10,
+            "favorites": 14
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
         "id": "BV1P2WT6tERJ",
         "platform": "bilibili",
         "title": "【 ASMR 无人声】深度放松的睡前声音，安静陪伴入睡｜Ana_Aster官方账号",
@@ -11194,92 +11406,6 @@
         "femaleHost": false
       },
       {
-        "id": "BV1CiyQz1E5h",
-        "platform": "bilibili",
-        "title": "【 ASMR 】真实头部按摩｜头皮按摩＋梳头＋珠子 触发音 ✨｜空间感音效｜沉浸式助眠放松",
-        "description": "✨ 欢迎来到沉浸式真实头部按摩 ASMR！ 本期带来真实感十足的头部与头皮按摩体验，结合轻柔的头皮揉按、细致的梳头声、珠子触发音以及富有空间感的立体音效，让你仿佛置身于一场舒适的头部SPA。 🎧 本期声音体验： 💆 真实头部与头皮按摩 🪮 轻柔梳头与发丝触发音 ✨ 珠子碰撞与细腻触发音 🌌 沉浸式空间感音效 😴 放松、解压与睡前助眠 戴上耳机，闭上眼睛，放下疲惫，让每一个细微的声音带你进入放松状态，享受属于自己的宁静时刻。 希望这段 ASMR 能陪伴你入睡、放松或专",
-        "url": "https://www.bilibili.com/video/BV1CiyQz1E5h",
-        "thumbnail": "https://i1.hdslb.com/bfs/archive/57a990bf257d6a6277a2fb3aa860679eedff8604.jpg",
-        "creatorId": "3744987676151278",
-        "creatorName": "C4meow",
-        "creatorAvatar": "https://i1.hdslb.com/bfs/face/53ca9559e68d024b5d4f563c0fac9b97b8f59aca.jpg",
-        "publishedAt": "2026-11-23T16:15:41.000Z",
-        "durationSeconds": 2869,
-        "views": 113,
-        "likes": 3,
-        "favorites": 4,
-        "comments": 0,
-        "categories": [
-          "综合触发"
-        ],
-        "screeningConfidence": 99,
-        "screeningReasons": [
-          "适合长时间收听",
-          "明确助眠意图",
-          "典型 ASMR 触发",
-          "放松用途"
-        ],
-        "history": [
-          {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 113,
-            "likes": 3,
-            "favorites": 4
-          }
-        ],
-        "scores": {
-          "hot": null,
-          "rising": null,
-          "longtail": null,
-          "hasSevenDaySnapshot": false
-        },
-        "femaleHost": false
-      },
-      {
-        "id": "BV1G7y9ziEGd",
-        "platform": "bilibili",
-        "title": "【 ASMR Karta】『2026.11.24』深度采耳+听力检查 双耳环绕 助眠",
-        "description": "舒缓的深度采耳与听力检查角色扮演，双耳近距离音效。内容包含耳刷轻扫、棉签清洁、泡沫清洗、耳道轻刮和耳部按摩，帮你放松入睡。",
-        "url": "https://www.bilibili.com/video/BV1G7y9ziEGd",
-        "thumbnail": "https://i0.hdslb.com/bfs/archive/4260b8d2981f1ecaebce16077109d6e1966bbaa9.jpg",
-        "creatorId": "3707022790887607",
-        "creatorName": "蛋挞皮榴莲blue",
-        "creatorAvatar": "https://i1.hdslb.com/bfs/face/ea2ad1bad12fdb8f34a84436a1ec03889f502056.jpg",
-        "publishedAt": "2026-11-23T20:23:37.000Z",
-        "durationSeconds": 1688,
-        "views": 113,
-        "likes": 1,
-        "favorites": 6,
-        "comments": 0,
-        "categories": [
-          "无人声",
-          "掏耳",
-          "角色扮演"
-        ],
-        "screeningConfidence": 99,
-        "screeningReasons": [
-          "适合长时间收听",
-          "明确助眠意图",
-          "低刺激声音形式",
-          "耳部触发音"
-        ],
-        "history": [
-          {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 113,
-            "likes": 1,
-            "favorites": 6
-          }
-        ],
-        "scores": {
-          "hot": null,
-          "rising": null,
-          "longtail": null,
-          "hasSevenDaySnapshot": false
-        },
-        "femaleHost": false
-      },
-      {
         "id": "BV1s3sL67E4M",
         "platform": "bilibili",
         "title": "shirtlesstalker asmr",
@@ -11318,48 +11444,6 @@
           "rising": null,
           "longtail": null,
           "hasSevenDaySnapshot": true
-        },
-        "femaleHost": false
-      },
-      {
-        "id": "BV1voyHzSEfB",
-        "platform": "bilibili",
-        "title": "UPJ｜飞粉浓郁染色一次 asmr 镁粉块自剪 助眠 简姐又来填桶hhh",
-        "description": "外网搬运",
-        "url": "https://www.bilibili.com/video/BV1voyHzSEfB",
-        "thumbnail": "https://i0.hdslb.com/bfs/archive/5c08ce3c23b70887c9eb6555e5c7818af5a0d977.jpg",
-        "creatorId": "382088568",
-        "creatorName": "我的心里五谷杂粮i",
-        "creatorAvatar": "https://i0.hdslb.com/bfs/face/9caffd5ec82243dd834d6b0d5920b52dbeb07aea.jpg",
-        "publishedAt": "2026-11-24T01:33:02.000Z",
-        "durationSeconds": 810,
-        "views": 83,
-        "likes": 14,
-        "favorites": 23,
-        "comments": 0,
-        "categories": [
-          "无人声"
-        ],
-        "screeningConfidence": 99,
-        "screeningReasons": [
-          "达到 3 分钟收录门槛",
-          "明确助眠意图",
-          "低刺激声音形式",
-          "典型 ASMR 触发"
-        ],
-        "history": [
-          {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 83,
-            "likes": 14,
-            "favorites": 23
-          }
-        ],
-        "scores": {
-          "hot": null,
-          "rising": null,
-          "longtail": null,
-          "hasSevenDaySnapshot": false
         },
         "femaleHost": false
       },
@@ -11416,7 +11500,7 @@
         "creatorAvatar": "https://i0.hdslb.com/bfs/face/92ec2e9f30304cafe983e3a25edd9cca87978085.jpg",
         "publishedAt": "2026-11-23T15:00:00.000Z",
         "durationSeconds": 2414,
-        "views": 77,
+        "views": 78,
         "likes": 0,
         "favorites": 4,
         "comments": 0,
@@ -11434,8 +11518,8 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 77,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 78,
             "likes": 0,
             "favorites": 4
           }
@@ -11460,7 +11544,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/5dfbb1c8a7beaa625a480bac88fd8ccb9d0884fb.jpg",
         "publishedAt": "2026-11-23T20:52:26.000Z",
         "durationSeconds": 327,
-        "views": 75,
+        "views": 76,
         "likes": 18,
         "favorites": 4,
         "comments": 1,
@@ -11477,10 +11561,52 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 75,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 76,
             "likes": 18,
             "favorites": 4
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
+        "id": "BV1sdyRzbEEp",
+        "platform": "bilibili",
+        "title": "《Sleepy Sab ASMR 》：锁骨 敲击 +布料抓挠+皮肤抓挠",
+        "description": "https://getsnap.link/DQf7M1xnn6K?share_arg3=copy%20link",
+        "url": "https://www.bilibili.com/video/BV1sdyRzbEEp",
+        "thumbnail": "https://i1.hdslb.com/bfs/archive/0bcfe8a81453cf323fdf76d6b6607a971ff3865a.jpg",
+        "creatorId": "3546981395860307",
+        "creatorName": "饼干助眠分享",
+        "creatorAvatar": "https://i2.hdslb.com/bfs/face/66ab4b83cff199a02c9f3f8c047286fed5a55fa2.jpg",
+        "publishedAt": "2026-11-24T01:02:42.000Z",
+        "durationSeconds": 1097,
+        "views": 76,
+        "likes": 5,
+        "favorites": 10,
+        "comments": 1,
+        "categories": [
+          "敲击"
+        ],
+        "screeningConfidence": 99,
+        "screeningReasons": [
+          "达到 3 分钟收录门槛",
+          "明确助眠意图",
+          "明确睡眠意图",
+          "典型 ASMR 触发"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 76,
+            "likes": 5,
+            "favorites": 10
           }
         ],
         "scores": {
@@ -11620,6 +11746,46 @@
         "femaleHost": false
       },
       {
+        "id": "BV1NByZzBEmS",
+        "platform": "bilibili",
+        "title": "ASMR ｜沪式东北味师傅给你搓澡加按摩服务",
+        "description": "-",
+        "url": "https://www.bilibili.com/video/BV1NByZzBEmS",
+        "thumbnail": "https://i2.hdslb.com/bfs/archive/e770f34217019993c916b02fbdf3f883b52ddd83.jpg",
+        "creatorId": "1188554306",
+        "creatorName": "司礼Celine",
+        "creatorAvatar": "https://i2.hdslb.com/bfs/face/24551f22cb2b7906918a939f1b30005dc6779524.jpg",
+        "publishedAt": "2026-11-24T03:59:06.000Z",
+        "durationSeconds": 1219,
+        "views": 57,
+        "likes": 10,
+        "favorites": 5,
+        "comments": 2,
+        "categories": [
+          "综合触发"
+        ],
+        "screeningConfidence": 84,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 57,
+            "likes": 10,
+            "favorites": 5
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
         "id": "BV15RyQzYEpP",
         "platform": "bilibili",
         "title": "【HalO||轻语 ASMR 】 aoooooooo术魔刃 261119",
@@ -11631,7 +11797,7 @@
         "creatorAvatar": "https://i1.hdslb.com/bfs/face/9d5ec9abc0181603a95720d4965dc52db0ab3c65.jpg",
         "publishedAt": "2026-11-23T16:32:45.000Z",
         "durationSeconds": 5545,
-        "views": 53,
+        "views": 56,
         "likes": 0,
         "favorites": 2,
         "comments": 0,
@@ -11648,8 +11814,8 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 53,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 56,
             "likes": 0,
             "favorites": 2
           }
@@ -11661,6 +11827,48 @@
           "hasSevenDaySnapshot": false
         },
         "femaleHost": false
+      },
+      {
+        "id": "BV1LHyZzJEoZ",
+        "platform": "bilibili",
+        "title": "【 ASMR 】外表很mean但实际很热心的女生给你化去见crush的妆",
+        "description": "哈喽大家，呼声最高的模拟化妆来啦～ PS：演绎需要，动作表情需要夸张，不喜勿喷哟～",
+        "url": "https://www.bilibili.com/video/BV1LHyZzJEoZ",
+        "thumbnail": "https://i1.hdslb.com/bfs/archive/70abfd0272926247e1fb4fcea56208a31774a971.jpg",
+        "creatorId": "354114367",
+        "creatorName": "月亮眠音馆",
+        "creatorAvatar": "https://i1.hdslb.com/bfs/face/1e4e803270680ed2b82a5d9f99955a150563c3f6.jpg",
+        "publishedAt": "2026-11-24T03:14:38.000Z",
+        "durationSeconds": 1420,
+        "views": 53,
+        "likes": 9,
+        "comments": 4,
+        "categories": [
+          "耳语"
+        ],
+        "screeningConfidence": 99,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图",
+          "低刺激声音形式",
+          "放松用途"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 53,
+            "likes": 9,
+            "favorites": 5
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false,
+        "favorites": 5
       },
       {
         "id": "BV1HwydzsEvi",
@@ -11705,6 +11913,130 @@
         "femaleHost": false
       },
       {
+        "id": "BV1b2yRzvELN",
+        "platform": "bilibili",
+        "title": "【Starling ASMR ｜沉浸式夜间颅神经检查 角色扮演 轻语 助眠 】星河垂野阔，月色润江南",
+        "description": "“浩瀚的星河低垂在空旷的原野上，柔和的月色滋润着江南大地。在万物归于平静的时刻，感受那份温柔的安宁与松弛，让所有的疲惫随风飘散，安然坠入深梦。” 本期带来夜间颅神经检查的角色扮演沉浸式体验。全程伴随轻声细语，通过快速且充满未知的医疗检查流程，细腻的动作微响与轻柔的低语交织，带来极强的沉浸感，陪伴你慢慢卸下压力、放松入眠。 ✨ 核心看点 · 夜间颅神经检查角色扮演：以夜间为背景展开的医疗检查，带来极强的沉浸感。 · 未知的检查节奏：充满未知的测试流程与细腻的触碰微响交织，有效舒",
+        "url": "https://www.bilibili.com/video/BV1b2yRzvELN",
+        "thumbnail": "https://i0.hdslb.com/bfs/archive/274c77d036c1df6dd59274feb30f1b2125370550.jpg",
+        "creatorId": "3493127239240114",
+        "creatorName": "白日梦疗愈所",
+        "creatorAvatar": "https://i1.hdslb.com/bfs/face/657be84ad138d2160adc88598cc4446bba54373c.jpg",
+        "publishedAt": "2026-11-24T04:00:00.000Z",
+        "durationSeconds": 1585,
+        "views": 49,
+        "likes": 1,
+        "favorites": 3,
+        "comments": 0,
+        "categories": [
+          "耳语",
+          "角色扮演"
+        ],
+        "screeningConfidence": 99,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图",
+          "低刺激声音形式",
+          "典型 ASMR 触发"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 49,
+            "likes": 1,
+            "favorites": 3
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
+        "id": "BV1WZyXzJEwn",
+        "platform": "bilibili",
+        "title": "[抖音]-[728905076443]-[恩七不甜【 助眠ASMR 】]-[欢迎来到，声音的背面]-【2026-11-23-22-18-48】",
+        "description": "",
+        "url": "https://www.bilibili.com/video/BV1WZyXzJEwn",
+        "thumbnail": "https://i1.hdslb.com/bfs/archive/90d0f003badc74246c2462c62481b11bcebfdf1c.jpg",
+        "creatorId": "3706933676608165",
+        "creatorName": "As1992mr",
+        "creatorAvatar": "https://i1.hdslb.com/bfs/face/69cf932ad511a71f44a1c23dee776859b8635b36.jpg",
+        "publishedAt": "2026-11-24T03:00:00.000Z",
+        "durationSeconds": 14311,
+        "views": 48,
+        "likes": 1,
+        "comments": 0,
+        "categories": [
+          "综合触发"
+        ],
+        "screeningConfidence": 84,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 48,
+            "likes": 1,
+            "favorites": 1
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false,
+        "favorites": 1
+      },
+      {
+        "id": "BV1GpyZzUEf3",
+        "platform": "bilibili",
+        "title": "【 ASMR 】PRPR~专属小猫耳边舔水~",
+        "description": "请主人开启HIRES佩戴耳机听小猫舔~",
+        "url": "https://www.bilibili.com/video/BV1GpyZzUEf3",
+        "thumbnail": "https://i0.hdslb.com/bfs/archive/91d25a3b4c93417e4d0ec2673effc7ff18163b42.jpg",
+        "creatorId": "3691008095160833",
+        "creatorName": "凛眠眠Mino",
+        "creatorAvatar": "https://i2.hdslb.com/bfs/face/4670a73ec294ee86fe032f87582a6b87f4cbb7fb.jpg",
+        "publishedAt": "2026-11-24T03:14:37.000Z",
+        "durationSeconds": 951,
+        "views": 46,
+        "likes": 9,
+        "comments": 0,
+        "categories": [
+          "综合触发"
+        ],
+        "screeningConfidence": 88,
+        "screeningReasons": [
+          "达到 3 分钟收录门槛",
+          "明确助眠意图",
+          "放松用途"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 46,
+            "likes": 9,
+            "favorites": 2
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false,
+        "favorites": 2
+      },
+      {
         "id": "BV1YkyRzMEw3",
         "platform": "bilibili",
         "title": "【Karta】 ASMR 深度耳部清洁与听力检测👂 从一只耳朵到另一只耳朵的全面检查",
@@ -11745,48 +12077,6 @@
         },
         "femaleHost": false,
         "favorites": 2
-      },
-      {
-        "id": "BV1Roydz2E6t",
-        "platform": "bilibili",
-        "title": "鲨的双声道 asmr - 迷你名画但是有哪里不对",
-        "description": "",
-        "url": "https://www.bilibili.com/video/BV1Roydz2E6t",
-        "thumbnail": "https://i2.hdslb.com/bfs/archive/4b05e9ae551dc76078e74b2acbb40786995d9e3e.jpg",
-        "creatorId": "3747572166430030",
-        "creatorName": "普通路过鲨类",
-        "creatorAvatar": "https://i1.hdslb.com/bfs/face/9372acd112897907300b2cc8c0b97cd8f1dfc485.jpg",
-        "publishedAt": "2026-11-23T23:14:14.000Z",
-        "durationSeconds": 687,
-        "views": 42,
-        "likes": 6,
-        "favorites": 9,
-        "comments": 1,
-        "categories": [
-          "无人声"
-        ],
-        "screeningConfidence": 99,
-        "screeningReasons": [
-          "达到 3 分钟收录门槛",
-          "明确助眠意图",
-          "低刺激声音形式",
-          "典型 ASMR 触发"
-        ],
-        "history": [
-          {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 42,
-            "likes": 6,
-            "favorites": 9
-          }
-        ],
-        "scores": {
-          "hot": null,
-          "rising": null,
-          "longtail": null,
-          "hasSevenDaySnapshot": false
-        },
-        "femaleHost": false
       },
       {
         "id": "BV1uhydzvE6e",
@@ -11941,10 +12231,94 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
+            "capturedAt": "2026-11-24T04:25:17.919Z",
             "views": 35,
             "likes": 0,
             "favorites": 5
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
+        "id": "BV1SAs46pEi6",
+        "platform": "bilibili",
+        "title": "ASMR 长筒袜抓挠与软耳清洁【无人声】",
+        "description": "-",
+        "url": "https://www.bilibili.com/video/BV1SAs46pEi6",
+        "thumbnail": "https://i2.hdslb.com/bfs/archive/c12366a3af1e7c25255b6c77b9b65ecd70cc900a.jpg",
+        "creatorId": "51026088",
+        "creatorName": "波导蓝色大狗",
+        "creatorAvatar": "https://i0.hdslb.com/bfs/face/256afa2380f63d5e2d74be7ac555144c1cfa8d44.jpg",
+        "publishedAt": "2026-11-23T16:00:00.000Z",
+        "durationSeconds": 775,
+        "views": 34,
+        "likes": 4,
+        "favorites": 3,
+        "comments": 0,
+        "categories": [
+          "无人声",
+          "掏耳"
+        ],
+        "screeningConfidence": 99,
+        "screeningReasons": [
+          "达到 3 分钟收录门槛",
+          "明确助眠意图",
+          "低刺激声音形式",
+          "耳部触发音"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 34,
+            "likes": 4,
+            "favorites": 3
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
+        "id": "BV1rYsW6NEfW",
+        "platform": "bilibili",
+        "title": "Kiko Practice ASMR",
+        "description": "Kiko Practice ASMR",
+        "url": "https://www.bilibili.com/video/BV1rYsW6NEfW",
+        "thumbnail": "https://i1.hdslb.com/bfs/archive/513f70882eaaf5e9a47439ed934973eda02cdb76.jpg",
+        "creatorId": "3494373509564882",
+        "creatorName": "优质肌肉哄睡ASMR",
+        "creatorAvatar": "https://i2.hdslb.com/bfs/face/b7e63699b76350795402c01e312979ff300e0982.jpg",
+        "publishedAt": "2026-11-24T04:13:36.000Z",
+        "durationSeconds": 607,
+        "views": 33,
+        "likes": 1,
+        "comments": 1,
+        "categories": [
+          "综合触发"
+        ],
+        "screeningConfidence": 96,
+        "screeningReasons": [
+          "达到 3 分钟收录门槛",
+          "明确助眠意图",
+          "典型 ASMR 触发",
+          "放松用途"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 33,
+            "likes": 1,
+            "favorites": 0
           }
         ],
         "scores": {
@@ -11987,49 +12361,6 @@
             "views": 31,
             "likes": 1,
             "favorites": 1
-          }
-        ],
-        "scores": {
-          "hot": null,
-          "rising": null,
-          "longtail": null,
-          "hasSevenDaySnapshot": false
-        },
-        "femaleHost": false
-      },
-      {
-        "id": "BV1SAs46pEi6",
-        "platform": "bilibili",
-        "title": "ASMR 长筒袜抓挠与软耳清洁【无人声】",
-        "description": "-",
-        "url": "https://www.bilibili.com/video/BV1SAs46pEi6",
-        "thumbnail": "https://i2.hdslb.com/bfs/archive/c12366a3af1e7c25255b6c77b9b65ecd70cc900a.jpg",
-        "creatorId": "51026088",
-        "creatorName": "波导蓝色大狗",
-        "creatorAvatar": "https://i0.hdslb.com/bfs/face/256afa2380f63d5e2d74be7ac555144c1cfa8d44.jpg",
-        "publishedAt": "2026-11-23T16:00:00.000Z",
-        "durationSeconds": 775,
-        "views": 31,
-        "likes": 3,
-        "favorites": 3,
-        "comments": 0,
-        "categories": [
-          "无人声",
-          "掏耳"
-        ],
-        "screeningConfidence": 99,
-        "screeningReasons": [
-          "达到 3 分钟收录门槛",
-          "明确助眠意图",
-          "低刺激声音形式",
-          "耳部触发音"
-        ],
-        "history": [
-          {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 31,
-            "likes": 3,
-            "favorites": 3
           }
         ],
         "scores": {
@@ -12208,6 +12539,48 @@
         "femaleHost": false
       },
       {
+        "id": "BV1masE68EZt",
+        "platform": "bilibili",
+        "title": "【1080P】解压 助眠 的理发 | 434：日本札幌的理发店，理发剃须按摩，放松解压 | ASMR",
+        "description": "闲厨主打ASMR解压风，视频素材来源于网络。有什么想看的留言或私信我，尽力满足。本人不会什么所谓的留钩子，主打一个实在！掏心掏肺掏家底，欢迎您的一键三连加关注！谢谢！衷心感谢列位云股东！ 素材来源：Tokyo Barber Club",
+        "url": "https://www.bilibili.com/video/BV1masE68EZt",
+        "thumbnail": "https://i1.hdslb.com/bfs/archive/870924f89fc7a7f5b259a4a49dbbac50da083a18.jpg",
+        "creatorId": "364896294",
+        "creatorName": "荒野闲厨",
+        "creatorAvatar": "https://i0.hdslb.com/bfs/face/2c7b0d117b309a8990f6d391a9e781d1f31381a6.jpg",
+        "publishedAt": "2026-11-24T03:30:00.000Z",
+        "durationSeconds": 2333,
+        "views": 20,
+        "likes": 1,
+        "favorites": 3,
+        "comments": 0,
+        "categories": [
+          "综合触发"
+        ],
+        "screeningConfidence": 99,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图",
+          "典型 ASMR 触发",
+          "放松用途"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 20,
+            "likes": 1,
+            "favorites": 3
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
         "id": "BV1MLsg6gECv",
         "platform": "bilibili",
         "title": "[2026-11-16 06-22-59][丸子（ 助眠 版）][随机挑选一个当夜宵]",
@@ -12259,7 +12632,7 @@
         "creatorAvatar": "https://i2.hdslb.com/bfs/face/5b0cd83e85800f57fc84483900d4d6eb512a62a7.jpg",
         "publishedAt": "2026-11-24T01:07:57.000Z",
         "durationSeconds": 12780,
-        "views": 16,
+        "views": 19,
         "likes": 0,
         "favorites": 1,
         "comments": 0,
@@ -12275,8 +12648,8 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 16,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 19,
             "likes": 0,
             "favorites": 1
           }
@@ -12358,7 +12731,7 @@
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
+            "capturedAt": "2026-11-24T04:25:17.919Z",
             "views": 15,
             "likes": 1,
             "favorites": 1
@@ -12414,6 +12787,90 @@
         "femaleHost": false
       },
       {
+        "id": "BV1S1yXztE4R",
+        "platform": "bilibili",
+        "title": "【 ASMR 】早早睡了",
+        "description": "-",
+        "url": "https://www.bilibili.com/video/BV1S1yXztE4R",
+        "thumbnail": "https://i2.hdslb.com/bfs/archive/53a9ea661ef538b97d705ca9fab6a5be6b6705d9.jpg",
+        "creatorId": "252581259",
+        "creatorName": "唐不苦爱吃糖",
+        "creatorAvatar": "https://i0.hdslb.com/bfs/face/b6b653c9bb5e30438649d1da693bfc0aff344682.jpg",
+        "publishedAt": "2026-11-23T21:59:46.000Z",
+        "durationSeconds": 24195,
+        "views": 14,
+        "likes": 1,
+        "favorites": 2,
+        "comments": 0,
+        "categories": [
+          "综合触发"
+        ],
+        "screeningConfidence": 99,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图",
+          "典型 ASMR 触发",
+          "放松用途"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 14,
+            "likes": 1,
+            "favorites": 2
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
+        "id": "BV1KqyZzuEDH",
+        "platform": "bilibili",
+        "title": "【恩七不甜【 助眠ASMR 】】［欢迎来到，声音的背面］2026.11.23 22-19",
+        "description": "抖音-恩七不甜【助眠ASMR】",
+        "url": "https://www.bilibili.com/video/BV1KqyZzuEDH",
+        "thumbnail": "https://i0.hdslb.com/bfs/archive/927d22004ff8bba8869167ba449dc17b2992fee5.jpg",
+        "creatorId": "495504444",
+        "creatorName": "碎蛋机器",
+        "creatorAvatar": "https://i0.hdslb.com/bfs/face/2fe8a0ce13b7176580028d00f5e03348c34757b3.jpg",
+        "publishedAt": "2026-11-24T04:01:48.000Z",
+        "durationSeconds": 14275,
+        "views": 13,
+        "likes": 0,
+        "comments": 0,
+        "categories": [
+          "无人声",
+          "口腔音"
+        ],
+        "screeningConfidence": 99,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图",
+          "低刺激声音形式",
+          "典型 ASMR 触发"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 13,
+            "likes": 0,
+            "favorites": 0
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
         "id": "BV1vysg6JEAc",
         "platform": "bilibili",
         "title": "[2026-11-16 22-45-27][芒果小布丁 ASMR ][0点后无人声 助眠 ]",
@@ -12451,6 +12908,48 @@
           "rising": null,
           "longtail": null,
           "hasSevenDaySnapshot": true
+        },
+        "femaleHost": false
+      },
+      {
+        "id": "BV1uWy9zaEys",
+        "platform": "bilibili",
+        "title": "【Violet Haven】『2026.11.24』 ASMR 一小时麦克风触发音 深度 助眠 （ 无人声 ）",
+        "description": "全程无人声，一小时密集麦克风触发音。刮麦、刷麦、酥麻棒音效轮番响起，帮你放松身心、专注学习或是沉沉入睡。",
+        "url": "https://www.bilibili.com/video/BV1uWy9zaEys",
+        "thumbnail": "https://i2.hdslb.com/bfs/archive/0b36ac2f77aa43cb2c6e0daa1a36f0236b6af867.jpg",
+        "creatorId": "3707022790887607",
+        "creatorName": "蛋挞皮榴莲blue",
+        "creatorAvatar": "https://i1.hdslb.com/bfs/face/ea2ad1bad12fdb8f34a84436a1ec03889f502056.jpg",
+        "publishedAt": "2026-11-23T21:15:50.000Z",
+        "durationSeconds": 3745,
+        "views": 12,
+        "likes": 0,
+        "comments": 0,
+        "categories": [
+          "无人声",
+          "刷麦"
+        ],
+        "screeningConfidence": 99,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图",
+          "低刺激声音形式",
+          "典型 ASMR 触发"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 12,
+            "likes": 0,
+            "favorites": 0
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
         },
         "femaleHost": false
       },
@@ -12495,76 +12994,36 @@
         "femaleHost": false
       },
       {
-        "id": "BV1WZyXzJEwn",
+        "id": "BV1GxyZz2ExH",
         "platform": "bilibili",
-        "title": "[抖音]-[728905076443]-[恩七不甜【 助眠ASMR 】]-[欢迎来到，声音的背面]-【2026-11-23-22-18-48】",
+        "title": "Coromo Sara -- 3.5h超长 ASMR ｜酥麻到睡着的触发音",
         "description": "",
-        "url": "https://www.bilibili.com/video/BV1WZyXzJEwn",
-        "thumbnail": "https://i1.hdslb.com/bfs/archive/90d0f003badc74246c2462c62481b11bcebfdf1c.jpg",
-        "creatorId": "3706933676608165",
-        "creatorName": "As1992mr",
-        "creatorAvatar": "https://i1.hdslb.com/bfs/face/69cf932ad511a71f44a1c23dee776859b8635b36.jpg",
-        "publishedAt": "2026-11-24T03:00:00.000Z",
-        "durationSeconds": 14311,
+        "url": "https://www.bilibili.com/video/BV1GxyZz2ExH",
+        "thumbnail": "https://i2.hdslb.com/bfs/archive/074e0d6832480daf1aca72f52c3cb76b9452a8de.jpg",
+        "creatorId": "525654709",
+        "creatorName": "迟睡QvQ",
+        "creatorAvatar": "https://i1.hdslb.com/bfs/face/6f66e3e63e9040a098d78ee64f6e67a631c20c4f.jpg",
+        "publishedAt": "2026-11-24T03:19:25.000Z",
+        "durationSeconds": 12683,
         "views": 11,
-        "likes": 1,
+        "likes": 0,
+        "favorites": 1,
         "comments": 0,
         "categories": [
           "综合触发"
         ],
-        "screeningConfidence": 84,
+        "screeningConfidence": 92,
         "screeningReasons": [
           "适合长时间收听",
-          "明确助眠意图"
-        ],
-        "history": [
-          {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 11,
-            "likes": 1,
-            "favorites": 0
-          }
-        ],
-        "scores": {
-          "hot": null,
-          "rising": null,
-          "longtail": null,
-          "hasSevenDaySnapshot": false
-        },
-        "femaleHost": false
-      },
-      {
-        "id": "BV1sdyRzbEEp",
-        "platform": "bilibili",
-        "title": "《Sleepy Sab ASMR 》：锁骨 敲击 +布料抓挠+皮肤抓挠",
-        "description": "https://getsnap.link/DQf7M1xnn6K?share_arg3=copy%20link",
-        "url": "https://www.bilibili.com/video/BV1sdyRzbEEp",
-        "thumbnail": "https://i1.hdslb.com/bfs/archive/0bcfe8a81453cf323fdf76d6b6607a971ff3865a.jpg",
-        "creatorId": "3546981395860307",
-        "creatorName": "饼干助眠分享",
-        "creatorAvatar": "https://i2.hdslb.com/bfs/face/66ab4b83cff199a02c9f3f8c047286fed5a55fa2.jpg",
-        "publishedAt": "2026-11-24T01:02:42.000Z",
-        "durationSeconds": 1097,
-        "views": 10,
-        "likes": 2,
-        "favorites": 2,
-        "comments": 0,
-        "categories": [
-          "敲击"
-        ],
-        "screeningConfidence": 99,
-        "screeningReasons": [
-          "达到 3 分钟收录门槛",
           "明确助眠意图",
-          "明确睡眠意图",
           "典型 ASMR 触发"
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 10,
-            "likes": 2,
-            "favorites": 2
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 11,
+            "likes": 0,
+            "favorites": 1
           }
         ],
         "scores": {
@@ -12616,48 +13075,6 @@
         "femaleHost": true
       },
       {
-        "id": "BV1uWy9zaEys",
-        "platform": "bilibili",
-        "title": "【Violet Haven】『2026.11.24』 ASMR 一小时麦克风触发音 深度 助眠 （ 无人声 ）",
-        "description": "全程无人声，一小时密集麦克风触发音。刮麦、刷麦、酥麻棒音效轮番响起，帮你放松身心、专注学习或是沉沉入睡。",
-        "url": "https://www.bilibili.com/video/BV1uWy9zaEys",
-        "thumbnail": "https://i2.hdslb.com/bfs/archive/0b36ac2f77aa43cb2c6e0daa1a36f0236b6af867.jpg",
-        "creatorId": "3707022790887607",
-        "creatorName": "蛋挞皮榴莲blue",
-        "creatorAvatar": "https://i1.hdslb.com/bfs/face/ea2ad1bad12fdb8f34a84436a1ec03889f502056.jpg",
-        "publishedAt": "2026-11-23T21:15:50.000Z",
-        "durationSeconds": 3745,
-        "views": 9,
-        "likes": 0,
-        "comments": 0,
-        "categories": [
-          "无人声",
-          "刷麦"
-        ],
-        "screeningConfidence": 99,
-        "screeningReasons": [
-          "适合长时间收听",
-          "明确助眠意图",
-          "低刺激声音形式",
-          "典型 ASMR 触发"
-        ],
-        "history": [
-          {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 9,
-            "likes": 0,
-            "favorites": 0
-          }
-        ],
-        "scores": {
-          "hot": null,
-          "rising": null,
-          "longtail": null,
-          "hasSevenDaySnapshot": false
-        },
-        "femaleHost": false
-      },
-      {
         "id": "BV1ZWyXzkE9o",
         "platform": "bilibili",
         "title": "【Emma’s Myspace】『2025.07.22』 ASMR （不是标题党）",
@@ -12685,6 +13102,88 @@
         "history": [
           {
             "capturedAt": "2026-11-24T03:16:39.976Z",
+            "views": 9,
+            "likes": 0,
+            "favorites": 0
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
+        "id": "BV1eqyRzrEwN",
+        "platform": "bilibili",
+        "title": "ASMR 稀有口腔音",
+        "description": "Lin ASMR",
+        "url": "https://www.bilibili.com/video/BV1eqyRzrEwN",
+        "thumbnail": "https://i0.hdslb.com/bfs/archive/3dcb53cd06055062b8b18aa6a7116a8d2671be8c.jpg",
+        "creatorId": "1934292432",
+        "creatorName": "Asmr-yy",
+        "creatorAvatar": "https://i0.hdslb.com/bfs/face/17114dd2f915b717f67475e843d1440a9d1e310f.jpg",
+        "publishedAt": "2026-11-24T03:10:00.000Z",
+        "durationSeconds": 1553,
+        "views": 9,
+        "likes": 1,
+        "favorites": 3,
+        "comments": 0,
+        "categories": [
+          "口腔音"
+        ],
+        "screeningConfidence": 92,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图",
+          "典型 ASMR 触发"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 9,
+            "likes": 1,
+            "favorites": 3
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
+        "id": "BV1Vjy9zTEHy",
+        "platform": "bilibili",
+        "title": "【Elena Andreea】『2026.08.14』 ASMR ｜催眠手部触发音 宇宙特辑 一场太空视觉之旅",
+        "description": "催眠向手部视觉触发音宇宙特辑。跟随舒缓的手部动作，在星光、行星与星系交织的画面里，开启一场治愈的太空漫游，放松心神。",
+        "url": "https://www.bilibili.com/video/BV1Vjy9zTEHy",
+        "thumbnail": "https://i0.hdslb.com/bfs/archive/5d14d2441333690a629764796b1cacce42c856fa.jpg",
+        "creatorId": "3707022790887607",
+        "creatorName": "蛋挞皮榴莲blue",
+        "creatorAvatar": "https://i1.hdslb.com/bfs/face/ea2ad1bad12fdb8f34a84436a1ec03889f502056.jpg",
+        "publishedAt": "2026-11-24T03:32:00.000Z",
+        "durationSeconds": 2131,
+        "views": 9,
+        "likes": 0,
+        "comments": 0,
+        "categories": [
+          "综合触发"
+        ],
+        "screeningConfidence": 99,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图",
+          "典型 ASMR 触发",
+          "放松用途"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
             "views": 9,
             "likes": 0,
             "favorites": 0
@@ -12739,36 +13238,34 @@
         "femaleHost": true
       },
       {
-        "id": "BV1S1yXztE4R",
+        "id": "BV1MeyZz3Etr",
         "platform": "bilibili",
-        "title": "【 ASMR 】早早睡了",
-        "description": "-",
-        "url": "https://www.bilibili.com/video/BV1S1yXztE4R",
-        "thumbnail": "https://i2.hdslb.com/bfs/archive/53a9ea661ef538b97d705ca9fab6a5be6b6705d9.jpg",
-        "creatorId": "252581259",
-        "creatorName": "唐不苦爱吃糖",
-        "creatorAvatar": "https://i0.hdslb.com/bfs/face/b6b653c9bb5e30438649d1da693bfc0aff344682.jpg",
-        "publishedAt": "2026-11-23T21:59:46.000Z",
-        "durationSeconds": 24195,
-        "views": 8,
-        "likes": 1,
+        "title": "【 ASMR 】国度打呼噜一小时版本",
+        "description": "大概是朋友要我就做了一个，希望你们喜欢两个版本的ASMR！ 主要来源是自己做的国度桌宠躺下的呼噜声音 有做放大声音和缩小声音的处理，毕竟一直都是一个声音的话听起来烦躁嘛 背景图是《明日方舟》EP - [classified]entity.dominion.turmoil",
+        "url": "https://www.bilibili.com/video/BV1MeyZz3Etr",
+        "thumbnail": "https://i0.hdslb.com/bfs/archive/cac719b054be100974f208cc72068d792d0826ba.jpg",
+        "creatorId": "403350645",
+        "creatorName": "Artellience人型智能",
+        "creatorAvatar": "https://i0.hdslb.com/bfs/face/230a26187c75ae55efe55e80fb93265ace125726.jpg",
+        "publishedAt": "2026-11-24T03:49:33.000Z",
+        "durationSeconds": 3601,
+        "views": 7,
+        "likes": 3,
         "favorites": 1,
         "comments": 0,
         "categories": [
           "综合触发"
         ],
-        "screeningConfidence": 99,
+        "screeningConfidence": 84,
         "screeningReasons": [
           "适合长时间收听",
-          "明确助眠意图",
-          "典型 ASMR 触发",
-          "放松用途"
+          "明确助眠意图"
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 8,
-            "likes": 1,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 7,
+            "likes": 3,
             "favorites": 1
           }
         ],
@@ -12809,6 +13306,46 @@
             "views": 5,
             "likes": 0,
             "favorites": 0
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
+        "id": "BV13tyZzLEun",
+        "platform": "bilibili",
+        "title": "等等！我脑子疼！【 ASMR 】",
+        "description": "视频来源于YouTube",
+        "url": "https://www.bilibili.com/video/BV13tyZzLEun",
+        "thumbnail": "https://i2.hdslb.com/bfs/archive/e86bf8c477fbbc9eca74705be53d3087186449e5.jpg",
+        "creatorId": "524349331",
+        "creatorName": "窝滴宝是卡齐娜",
+        "creatorAvatar": "https://i1.hdslb.com/bfs/face/bc86902240806b07a538cee9a085598f2f658dc8.jpg",
+        "publishedAt": "2026-11-24T04:10:20.000Z",
+        "durationSeconds": 1326,
+        "views": 5,
+        "likes": 0,
+        "favorites": 1,
+        "comments": 0,
+        "categories": [
+          "综合触发"
+        ],
+        "screeningConfidence": 84,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 5,
+            "likes": 0,
+            "favorites": 1
           }
         ],
         "scores": {
@@ -12896,47 +13433,6 @@
           "rising": null,
           "longtail": null,
           "hasSevenDaySnapshot": true
-        },
-        "femaleHost": false
-      },
-      {
-        "id": "BV1eqyRzrEwN",
-        "platform": "bilibili",
-        "title": "ASMR 稀有口腔音",
-        "description": "Lin ASMR",
-        "url": "https://www.bilibili.com/video/BV1eqyRzrEwN",
-        "thumbnail": "https://i0.hdslb.com/bfs/archive/3dcb53cd06055062b8b18aa6a7116a8d2671be8c.jpg",
-        "creatorId": "1934292432",
-        "creatorName": "Asmr-yy",
-        "creatorAvatar": "https://i0.hdslb.com/bfs/face/17114dd2f915b717f67475e843d1440a9d1e310f.jpg",
-        "publishedAt": "2026-11-24T03:10:00.000Z",
-        "durationSeconds": 1553,
-        "views": 4,
-        "likes": 1,
-        "favorites": 2,
-        "comments": 0,
-        "categories": [
-          "口腔音"
-        ],
-        "screeningConfidence": 92,
-        "screeningReasons": [
-          "适合长时间收听",
-          "明确助眠意图",
-          "典型 ASMR 触发"
-        ],
-        "history": [
-          {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 4,
-            "likes": 1,
-            "favorites": 2
-          }
-        ],
-        "scores": {
-          "hot": null,
-          "rising": null,
-          "longtail": null,
-          "hasSevenDaySnapshot": false
         },
         "femaleHost": false
       },
@@ -13147,6 +13643,47 @@
         "favorites": 1
       },
       {
+        "id": "BV1MeyZz3Etm",
+        "platform": "bilibili",
+        "title": "【 ASMR 】国度打呼噜一小时 | 雪落篝火",
+        "description": "如果是单个打呼噜就有点太素了 抱着这个想法制作的加入 篝火/下雪 的再次版本 同样希望你们喜欢 背景图是《明日方舟》EP - [classified]entity.dominion.turmoil",
+        "url": "https://www.bilibili.com/video/BV1MeyZz3Etm",
+        "thumbnail": "https://i0.hdslb.com/bfs/archive/10363077db7ecd3de9e994dc48ad64d06e640f52.jpg",
+        "creatorId": "403350645",
+        "creatorName": "Artellience人型智能",
+        "creatorAvatar": "https://i0.hdslb.com/bfs/face/230a26187c75ae55efe55e80fb93265ace125726.jpg",
+        "publishedAt": "2026-11-24T03:55:04.000Z",
+        "durationSeconds": 3601,
+        "views": 2,
+        "likes": 2,
+        "favorites": 1,
+        "comments": 0,
+        "categories": [
+          "环境音"
+        ],
+        "screeningConfidence": 92,
+        "screeningReasons": [
+          "适合长时间收听",
+          "明确助眠意图",
+          "放松用途"
+        ],
+        "history": [
+          {
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 2,
+            "likes": 2,
+            "favorites": 1
+          }
+        ],
+        "scores": {
+          "hot": null,
+          "rising": null,
+          "longtail": null,
+          "hasSevenDaySnapshot": false
+        },
+        "femaleHost": false
+      },
+      {
         "id": "BV15nxS6AErS",
         "platform": "bilibili",
         "title": "【日常自存】sofia asmr助眠合集三",
@@ -13349,34 +13886,35 @@
         "femaleHost": false
       },
       {
-        "id": "BV1GpyZzUEf3",
+        "id": "BV1qAsA6NE5s",
         "platform": "bilibili",
-        "title": "【 ASMR 】PRPR~专属小猫耳边舔水~",
-        "description": "请主人开启HIRES佩戴耳机听小猫舔~",
-        "url": "https://www.bilibili.com/video/BV1GpyZzUEf3",
-        "thumbnail": "https://i0.hdslb.com/bfs/archive/91d25a3b4c93417e4d0ec2673effc7ff18163b42.jpg",
-        "creatorId": "3691008095160833",
-        "creatorName": "凛眠眠Mino",
-        "creatorAvatar": "https://i2.hdslb.com/bfs/face/4670a73ec294ee86fe032f87582a6b87f4cbb7fb.jpg",
-        "publishedAt": "2026-11-24T03:14:37.000Z",
-        "durationSeconds": 951,
-        "views": 1,
-        "likes": 4,
+        "title": "【充电视频之按摩大杂烩】 ASMR 极近 耳语 和柔面接触 深度个人注意",
+        "description": "【充电视频之按摩大杂烩】ASMR极近耳语和柔面接触 深度个人注意",
+        "url": "https://www.bilibili.com/video/BV1qAsA6NE5s",
+        "thumbnail": "https://i1.hdslb.com/bfs/archive/8ac68cc99c976fd85c96ec31f3cd831b9e9f7161.jpg",
+        "creatorId": "96768807",
+        "creatorName": "90后-经典助眠分享",
+        "creatorAvatar": "https://i0.hdslb.com/bfs/face/d59e5b63bb96a8255b9dce07786d60007164b49f.jpg",
+        "publishedAt": "2026-11-24T04:25:00.000Z",
+        "durationSeconds": 510,
+        "views": 0,
+        "likes": 0,
         "comments": 0,
         "categories": [
-          "综合触发"
+          "耳语"
         ],
-        "screeningConfidence": 88,
+        "screeningConfidence": 99,
         "screeningReasons": [
           "达到 3 分钟收录门槛",
           "明确助眠意图",
+          "低刺激声音形式",
           "放松用途"
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
-            "views": 1,
-            "likes": 4,
+            "capturedAt": "2026-11-24T04:25:17.919Z",
+            "views": 0,
+            "likes": 0,
             "favorites": 0
           }
         ],
@@ -13389,33 +13927,34 @@
         "femaleHost": false
       },
       {
-        "id": "BV1LHyZzJEoZ",
+        "id": "BV14fyozNE6n",
         "platform": "bilibili",
-        "title": "【 ASMR 】外表很mean但实际很热心的女生给你化去见crush的妆",
-        "description": "哈喽大家，呼声最高的模拟化妆来啦～ PS：演绎需要，动作表情需要夸张，不喜勿喷哟～",
-        "url": "https://www.bilibili.com/video/BV1LHyZzJEoZ",
-        "thumbnail": "https://i1.hdslb.com/bfs/archive/70abfd0272926247e1fb4fcea56208a31774a971.jpg",
-        "creatorId": "354114367",
-        "creatorName": "月亮眠音馆",
-        "creatorAvatar": "https://i1.hdslb.com/bfs/face/1e4e803270680ed2b82a5d9f99955a150563c3f6.jpg",
-        "publishedAt": "2026-11-24T03:14:38.000Z",
-        "durationSeconds": 1420,
+        "title": "Moon Blitz ASMR ｜漫长一天后的轻语",
+        "description": "",
+        "url": "https://www.bilibili.com/video/BV14fyozNE6n",
+        "thumbnail": "https://i0.hdslb.com/bfs/archive/12e0db3c4504920834b6cc8d7e992eb8e0ae498e.jpg",
+        "creatorId": "3706951816973181",
+        "creatorName": "蜜音精选_助眠翻译官",
+        "creatorAvatar": "https://i0.hdslb.com/bfs/face/1bbef550c5a6ce2c340f66fc3d81ae9c3de16a25.jpg",
+        "publishedAt": "2026-11-24T04:22:13.000Z",
+        "durationSeconds": 564,
         "views": 0,
         "likes": 0,
         "comments": 0,
         "categories": [
-          "耳语"
+          "耳语",
+          "口腔音"
         ],
         "screeningConfidence": 99,
         "screeningReasons": [
-          "适合长时间收听",
+          "达到 3 分钟收录门槛",
           "明确助眠意图",
           "低刺激声音形式",
-          "放松用途"
+          "典型 ASMR 触发"
         ],
         "history": [
           {
-            "capturedAt": "2026-11-24T03:16:39.976Z",
+            "capturedAt": "2026-11-24T04:25:17.919Z",
             "views": 0,
             "likes": 0,
             "favorites": 0
@@ -15016,7 +15555,7 @@
         "name": "AIChannel中国绊爱",
         "url": "https://space.bilibili.com/484322035",
         "avatar": "https://i1.hdslb.com/bfs/face/77a58d8b3a167f989f842cda550e7230ef4cad0a.jpg",
-        "followers": 1812030,
+        "followers": 1812037,
         "qualifyingVideos": 1,
         "topCategories": [
           "耳语"
@@ -15030,7 +15569,7 @@
         "name": "Bakery不失眠",
         "url": "https://space.bilibili.com/477137495",
         "avatar": "https://i2.hdslb.com/bfs/face/03a92512130dc2262c994a5bc2aa059eece81511.jpg",
-        "followers": 1331434,
+        "followers": 1331445,
         "qualifyingVideos": 20,
         "topCategories": [
           "无人声",
@@ -15060,7 +15599,7 @@
         "name": "是Sumimi呀",
         "url": "https://space.bilibili.com/921044",
         "avatar": "https://i2.hdslb.com/bfs/face/b171fb1b9398d253f2d6e1e392176d1c2346a79e.jpg",
-        "followers": 1183633,
+        "followers": 1183636,
         "qualifyingVideos": 3,
         "topCategories": [
           "掏耳",
@@ -15108,10 +15647,11 @@
         "url": "https://space.bilibili.com/3493297555245371",
         "avatar": "https://i2.hdslb.com/bfs/face/ed0fff24edfca4db6b748a0e8b97fdccda6494e6.jpg",
         "followers": 771127,
-        "qualifyingVideos": 2,
+        "qualifyingVideos": 3,
         "topCategories": [
           "掏耳",
-          "耳语"
+          "耳语",
+          "口腔音"
         ],
         "femaleHostEvidence": null,
         "femaleHost": false
@@ -15122,7 +15662,7 @@
         "name": "你的圈圈儿",
         "url": "https://space.bilibili.com/629545145",
         "avatar": "https://i2.hdslb.com/bfs/face/a633c6376012cd8b24fafa169d7567f8ae765c4b.jpg",
-        "followers": 761071,
+        "followers": 761072,
         "qualifyingVideos": 3,
         "topCategories": [
           "掏耳",
@@ -15228,7 +15768,7 @@
         "name": "嘉儿哄睡屋",
         "url": "https://space.bilibili.com/5651823",
         "avatar": "https://i0.hdslb.com/bfs/face/cedd3ba23fcca8993a1331eeb0f18cee8fc4ef69.jpg",
-        "followers": 502805,
+        "followers": 502807,
         "qualifyingVideos": 1,
         "topCategories": [
           "无人声",
@@ -15257,7 +15797,7 @@
         "name": "JYsASMR",
         "url": "https://space.bilibili.com/176647698",
         "avatar": "https://i0.hdslb.com/bfs/face/01438ace77c1fc60617d79c2950237b9792c4d2e.jpg",
-        "followers": 472387,
+        "followers": 472388,
         "qualifyingVideos": 4,
         "topCategories": [
           "综合触发",
@@ -15320,7 +15860,7 @@
         "name": "大猜",
         "url": "https://space.bilibili.com/1764419593",
         "avatar": "https://i1.hdslb.com/bfs/face/00e236c0987d75a97b1889a8616ea166696264cc.jpg",
-        "followers": 377034,
+        "followers": 377037,
         "qualifyingVideos": 2,
         "topCategories": [
           "敲击",
@@ -15401,12 +15941,26 @@
         "femaleHost": false
       },
       {
+        "id": "96768807",
+        "platform": "bilibili",
+        "name": "90后-经典助眠分享",
+        "url": "https://space.bilibili.com/96768807",
+        "avatar": "https://i0.hdslb.com/bfs/face/d59e5b63bb96a8255b9dce07786d60007164b49f.jpg",
+        "followers": 81140,
+        "qualifyingVideos": 1,
+        "topCategories": [
+          "耳语"
+        ],
+        "femaleHostEvidence": null,
+        "femaleHost": false
+      },
+      {
         "id": "3690990325991930",
         "platform": "bilibili",
         "name": "神崎宁宁Nini",
         "url": "https://space.bilibili.com/3690990325991930",
         "avatar": "https://i2.hdslb.com/bfs/face/9e0d2933812ca204e53e58828807920f1c69d509.jpg",
-        "followers": 43548,
+        "followers": 43554,
         "qualifyingVideos": 1,
         "topCategories": [
           "综合触发"
@@ -15465,11 +16019,12 @@
         "name": "白日梦疗愈所",
         "url": "https://space.bilibili.com/3493127239240114",
         "avatar": "https://i1.hdslb.com/bfs/face/657be84ad138d2160adc88598cc4446bba54373c.jpg",
-        "followers": 37107,
-        "qualifyingVideos": 1,
+        "followers": 37108,
+        "qualifyingVideos": 2,
         "topCategories": [
           "无人声",
-          "掏耳"
+          "掏耳",
+          "耳语"
         ],
         "femaleHostEvidence": null,
         "femaleHost": false
@@ -15568,8 +16123,8 @@
         "name": "优质肌肉哄睡ASMR",
         "url": "https://space.bilibili.com/3494373509564882",
         "avatar": "https://i2.hdslb.com/bfs/face/b7e63699b76350795402c01e312979ff300e0982.jpg",
-        "followers": 21657,
-        "qualifyingVideos": 1,
+        "followers": 21884,
+        "qualifyingVideos": 2,
         "topCategories": [
           "综合触发"
         ],
@@ -15596,7 +16151,7 @@
         "name": "鸡米花asmr",
         "url": "https://space.bilibili.com/1587514665",
         "avatar": "https://i0.hdslb.com/bfs/face/437b96764294cac8d30e310e1c8613a7abcb9e01.jpg",
-        "followers": 18975,
+        "followers": 18976,
         "qualifyingVideos": 1,
         "topCategories": [
           "敲击"
@@ -15625,7 +16180,7 @@
         "name": "泡泡浴想睡觉",
         "url": "https://space.bilibili.com/277966291",
         "avatar": "https://i1.hdslb.com/bfs/face/e035a59243de4ac2799cbafc5acdc3266f9d9f62.jpg",
-        "followers": 17443,
+        "followers": 17444,
         "qualifyingVideos": 1,
         "topCategories": [
           "无人声",
@@ -15677,6 +16232,21 @@
         "femaleHost": false
       },
       {
+        "id": "495504444",
+        "platform": "bilibili",
+        "name": "碎蛋机器",
+        "url": "https://space.bilibili.com/495504444",
+        "avatar": "https://i0.hdslb.com/bfs/face/2fe8a0ce13b7176580028d00f5e03348c34757b3.jpg",
+        "followers": 15110,
+        "qualifyingVideos": 1,
+        "topCategories": [
+          "无人声",
+          "口腔音"
+        ],
+        "femaleHostEvidence": null,
+        "femaleHost": false
+      },
+      {
         "id": "131674575",
         "platform": "bilibili",
         "name": "fufu助眠频道",
@@ -15720,6 +16290,20 @@
         "femaleHost": false
       },
       {
+        "id": "364896294",
+        "platform": "bilibili",
+        "name": "荒野闲厨",
+        "url": "https://space.bilibili.com/364896294",
+        "avatar": "https://i0.hdslb.com/bfs/face/2c7b0d117b309a8990f6d391a9e781d1f31381a6.jpg",
+        "followers": 10281,
+        "qualifyingVideos": 1,
+        "topCategories": [
+          "综合触发"
+        ],
+        "femaleHostEvidence": null,
+        "femaleHost": false
+      },
+      {
         "id": "3546970150930973",
         "platform": "bilibili",
         "name": "空空煮面",
@@ -15754,7 +16338,7 @@
         "name": "蓝布拉Lambra",
         "url": "https://space.bilibili.com/3493107939150057",
         "avatar": "https://i0.hdslb.com/bfs/face/6e42721e650afa66df6ad8cda4161bade9e5e9e0.jpg",
-        "followers": 9078,
+        "followers": 9079,
         "qualifyingVideos": 1,
         "topCategories": [
           "耳语"
@@ -15784,7 +16368,7 @@
         "name": "As1992mr",
         "url": "https://space.bilibili.com/3706933676608165",
         "avatar": "https://i1.hdslb.com/bfs/face/69cf932ad511a71f44a1c23dee776859b8635b36.jpg",
-        "followers": 8287,
+        "followers": 8288,
         "qualifyingVideos": 1,
         "topCategories": [
           "综合触发"
@@ -15812,7 +16396,7 @@
         "name": "好梦基拉祈",
         "url": "https://space.bilibili.com/3546957396052617",
         "avatar": "https://i0.hdslb.com/bfs/face/1726486ede5eba62b66747fe1c47a28e1c865918.jpg",
-        "followers": 7908,
+        "followers": 7909,
         "qualifyingVideos": 1,
         "topCategories": [
           "综合触发"
@@ -15998,12 +16582,26 @@
         "name": "蛋挞皮榴莲blue",
         "url": "https://space.bilibili.com/3707022790887607",
         "avatar": "https://i1.hdslb.com/bfs/face/ea2ad1bad12fdb8f34a84436a1ec03889f502056.jpg",
-        "followers": 3208,
-        "qualifyingVideos": 5,
+        "followers": 3209,
+        "qualifyingVideos": 6,
         "topCategories": [
           "无人声",
-          "掏耳",
-          "角色扮演"
+          "综合触发",
+          "掏耳"
+        ],
+        "femaleHostEvidence": null,
+        "femaleHost": false
+      },
+      {
+        "id": "1188554306",
+        "platform": "bilibili",
+        "name": "司礼Celine",
+        "url": "https://space.bilibili.com/1188554306",
+        "avatar": "https://i2.hdslb.com/bfs/face/24551f22cb2b7906918a939f1b30005dc6779524.jpg",
+        "followers": 3151,
+        "qualifyingVideos": 1,
+        "topCategories": [
+          "综合触发"
         ],
         "femaleHostEvidence": null,
         "femaleHost": false
@@ -16108,6 +16706,21 @@
         "femaleHost": false
       },
       {
+        "id": "3706951816973181",
+        "platform": "bilibili",
+        "name": "蜜音精选_助眠翻译官",
+        "url": "https://space.bilibili.com/3706951816973181",
+        "avatar": "https://i0.hdslb.com/bfs/face/1bbef550c5a6ce2c340f66fc3d81ae9c3de16a25.jpg",
+        "followers": 1553,
+        "qualifyingVideos": 1,
+        "topCategories": [
+          "耳语",
+          "口腔音"
+        ],
+        "femaleHostEvidence": null,
+        "femaleHost": false
+      },
+      {
         "id": "3546981395860307",
         "platform": "bilibili",
         "name": "饼干助眠分享",
@@ -16199,7 +16812,7 @@
         "name": "C4meow",
         "url": "https://space.bilibili.com/3744987676151278",
         "avatar": "https://i1.hdslb.com/bfs/face/53ca9559e68d024b5d4f563c0fac9b97b8f59aca.jpg",
-        "followers": 869,
+        "followers": 870,
         "qualifyingVideos": 1,
         "topCategories": [
           "综合触发"
@@ -16227,10 +16840,11 @@
         "name": "迟睡QvQ",
         "url": "https://space.bilibili.com/525654709",
         "avatar": "https://i1.hdslb.com/bfs/face/6f66e3e63e9040a098d78ee64f6e67a631c20c4f.jpg",
-        "followers": 806,
-        "qualifyingVideos": 2,
+        "followers": 810,
+        "qualifyingVideos": 3,
         "topCategories": [
-          "掏耳"
+          "掏耳",
+          "综合触发"
         ],
         "femaleHostEvidence": null,
         "femaleHost": false
@@ -16241,7 +16855,7 @@
         "name": "Asmr-yy",
         "url": "https://space.bilibili.com/1934292432",
         "avatar": "https://i0.hdslb.com/bfs/face/17114dd2f915b717f67475e843d1440a9d1e310f.jpg",
-        "followers": 395,
+        "followers": 396,
         "qualifyingVideos": 1,
         "topCategories": [
           "口腔音"
@@ -16285,7 +16899,7 @@
         "name": "月亮眠音馆",
         "url": "https://space.bilibili.com/354114367",
         "avatar": "https://i1.hdslb.com/bfs/face/1e4e803270680ed2b82a5d9f99955a150563c3f6.jpg",
-        "followers": 280,
+        "followers": 285,
         "qualifyingVideos": 1,
         "topCategories": [
           "耳语"
@@ -16314,6 +16928,35 @@
         "url": "https://space.bilibili.com/9334748",
         "avatar": "https://i2.hdslb.com/bfs/face/940e0ebb9e5a5f454108a134cec20d03abbc0be0.jpg",
         "followers": 200,
+        "qualifyingVideos": 1,
+        "topCategories": [
+          "综合触发"
+        ],
+        "femaleHostEvidence": null,
+        "femaleHost": false
+      },
+      {
+        "id": "403350645",
+        "platform": "bilibili",
+        "name": "Artellience人型智能",
+        "url": "https://space.bilibili.com/403350645",
+        "avatar": "https://i0.hdslb.com/bfs/face/230a26187c75ae55efe55e80fb93265ace125726.jpg",
+        "followers": 177,
+        "qualifyingVideos": 2,
+        "topCategories": [
+          "综合触发",
+          "环境音"
+        ],
+        "femaleHostEvidence": null,
+        "femaleHost": false
+      },
+      {
+        "id": "524349331",
+        "platform": "bilibili",
+        "name": "窝滴宝是卡齐娜",
+        "url": "https://space.bilibili.com/524349331",
+        "avatar": "https://i1.hdslb.com/bfs/face/bc86902240806b07a538cee9a085598f2f658dc8.jpg",
+        "followers": 152,
         "qualifyingVideos": 1,
         "topCategories": [
           "综合触发"
