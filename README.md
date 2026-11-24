@@ -1,5 +1,7 @@
 # 静响榜 · HUSH INDEX
 
+🌐 **在线网站：[立即打开静响榜](https://yanlvlab.github.io/asmr-rankings/)**
+
 一个可以直接部署的 YouTube 与哔哩哔哩助眠 ASMR 资源中转站，包含视频库、创作者榜和 B站独立算法榜。
 
 ## 已完成
