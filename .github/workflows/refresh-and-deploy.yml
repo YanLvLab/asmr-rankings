@@ -38,14 +38,14 @@ jobs:
       - name: Collect Bilibili public data
         env:
           LOOKBACK_DAYS: '3650'
-          MAX_VIDEOS_PER_PLATFORM: '120'
-          LIBRARY_LIMIT_PER_PLATFORM: '240'
+          MAX_VIDEOS_PER_PLATFORM: '240'
+          LIBRARY_LIMIT_PER_PLATFORM: '400'
         run: npm run collect
 
       - name: Collect YouTube public data without API key
         env:
-          MAX_YOUTUBE_VIDEOS: '120'
-          LIBRARY_LIMIT_PER_PLATFORM: '240'
+          MAX_YOUTUBE_VIDEOS: '240'
+          LIBRARY_LIMIT_PER_PLATFORM: '400'
         run: npm run collect:youtube
 
       - name: Re-apply duration and relevance rules

@@ -153,7 +153,7 @@ export default function App() {
   const [platform, setPlatform] = useState<'all' | Platform>('all')
   const [category, setCategory] = useState('全部')
   const [period, setPeriod] = useState<'7' | '30' | 'all'>('all')
-  const [sort, setSort] = useState<'views' | 'likes' | 'latest' | 'duration'>('views')
+  const [sort, setSort] = useState<'views' | 'likes' | 'latest' | 'duration'>('latest')
   const [duration, setDuration] = useState<'all' | 'short' | 'mid' | 'long'>('all')
   const [search, setSearch] = useState('')
   const [view, setView] = useState<'videos' | 'creators'>('videos')
@@ -247,6 +247,8 @@ export default function App() {
   }, [loading, view, videos, creators, visibleCount])
 
   const totalVideos = data.videos.youtube.length + data.videos.bilibili.length
+  const recentVideos = [...data.videos.youtube, ...data.videos.bilibili]
+    .filter((video) => new Date(video.publishedAt).getTime() >= Date.now() - 30 * 86400000).length
   const totalCreators = data.creators.youtube.length + data.creators.bilibili.length
   const femaleVideos = data.videos.youtube.filter((video) => video.femaleHost).length + data.videos.bilibili.filter((video) => video.femaleHost).length
   const femaleCreators = data.creators.youtube.filter((creator) => creator.femaleHost).length + data.creators.bilibili.filter((creator) => creator.femaleHost).length
@@ -267,6 +269,17 @@ export default function App() {
     setCategory(path === 'quiet' ? '无人声' : path === 'whisper' ? '耳语' : '全部')
     setDuration(path === 'long' ? 'long' : 'all')
     setFemaleOnly(path === 'female')
+  }
+
+  function showLatest() {
+    setView('videos')
+    setRankingMode('library')
+    setPlatform('all')
+    setPeriod('30')
+    setSort('latest')
+    setCategory('全部')
+    setDuration('all')
+    setSearch('')
   }
 
   return (
@@ -295,6 +308,7 @@ export default function App() {
           <div className="hero-actions">
             <a className="primary-cta" href="#rankings"><Headphones size={18} />进入资源库<span>↗</span></a>
             <a className="secondary-cta" href="#rankings" onClick={() => setFemaleOnly(true)}><Heart size={17} />只看小姐姐</a>
+            <a className="latest-cta" href="#rankings" onClick={showLatest}>看近期新作 <ArrowUpRight size={15} /></a>
           </div>
           <div className="hero-countline"><span><strong>{totalVideos}</strong> 支长视频</span><i /><span><strong>{totalCreators}</strong> 位创作者</span><i /><span><strong>2</strong> 个平台</span></div>
         </div>
@@ -333,7 +347,7 @@ export default function App() {
       <section className="rankings" id="rankings">
         <div className="section-heading reveal-on-scroll">
           <div><span className="section-no">01</span><p>EXPLORE THE COLLECTION</p><h2>找到今晚想听的</h2></div>
-          <p className="heading-note">从 {totalVideos} 支合格长视频和 {totalCreators} 位创作者中挑选，点开即去原平台收听。</p>
+          <div className="heading-side"><p className="heading-note">从 {totalVideos} 支合格长视频和 {totalCreators} 位创作者中挑选，点开即去原平台收听。</p><button className="latest-shortcut" type="button" onClick={showLatest}><span>NEW / 近 30 天</span><strong>{recentVideos} 支近期新作</strong><ArrowUpRight size={17} /></button></div>
         </div>
 
         <div className="host-filter reveal-on-scroll" aria-label="博主偏好">
@@ -365,7 +379,7 @@ export default function App() {
             <label className="select-box"><Clock3 size={15} /><select value={duration} onChange={(event) => setDuration(event.target.value as typeof duration)}><option value="all">全部时长</option><option value="short">3–15 分钟</option><option value="mid">15–60 分钟</option><option value="long">60 分钟以上</option></select><ChevronDown size={14} /></label>
           )}
           {view === 'videos' && rankingMode === 'library' && (
-            <label className="select-box"><Waves size={15} /><select value={sort} onChange={(event) => setSort(event.target.value as typeof sort)}><option value="views">播放最多</option><option value="likes">点赞最多</option><option value="latest">最新发布</option><option value="duration">时长最长</option></select><ChevronDown size={14} /></label>
+            <label className="select-box"><Waves size={15} /><select value={sort} onChange={(event) => setSort(event.target.value as typeof sort)}><option value="latest">最新发布</option><option value="views">播放最多</option><option value="likes">点赞最多</option><option value="duration">时长最长</option></select><ChevronDown size={14} /></label>
           )}
           {view === 'videos' && rankingMode !== 'library' && <span className="fixed-sort"><CheckCircle2 size={15} />按榜单分排序</span>}
         </div>

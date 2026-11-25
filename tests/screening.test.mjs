@@ -56,6 +56,15 @@ test('rejects suggestive high-stimulation content', () => {
   assert.ok(result.reasons.some((reason) => reason.includes('擦边')))
 })
 
+test('rejects newly observed suggestive and unrelated search results', () => {
+  for (const title of [
+    'ASMR 打劫幼女反被吸到腿软，睡前故事',
+    '极寒末日来临前躲进超市庇护所｜ASMR 助眠',
+  ]) {
+    assert.equal(screenCandidate({ title, tags: 'asmr,助眠', durationSeconds: 1800 }).approved, false)
+  }
+})
+
 test('rejects likely republishing channels', () => {
   const result = screenCandidate({
     title: 'ASMR 无人声助眠，放松入睡',

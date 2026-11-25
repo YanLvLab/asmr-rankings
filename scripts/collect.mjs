@@ -8,8 +8,8 @@ import { annotateHostProfiles } from './creator-profiles.mjs'
 const here = path.dirname(fileURLToPath(import.meta.url))
 const outputPath = path.resolve(here, '../public/data/rankings.json')
 const lookbackDays = Number(process.env.LOOKBACK_DAYS || 3650)
-const maxVideos = Number(process.env.MAX_VIDEOS_PER_PLATFORM || 120)
-const libraryLimit = Number(process.env.LIBRARY_LIMIT_PER_PLATFORM || 240)
+const maxVideos = Number(process.env.MAX_VIDEOS_PER_PLATFORM || 240)
+const libraryLimit = Number(process.env.LIBRARY_LIMIT_PER_PLATFORM || 400)
 const cutoff = Date.now() - lookbackDays * 86400000
 
 const queries = {
@@ -18,6 +18,8 @@ const queries = {
     'ASMR 助眠', 'ASMR 无人声助眠', 'ASMR 耳语助眠', 'ASMR 轻语入睡',
     'ASMR 掏耳助眠', 'ASMR 敲击音助眠', 'ASMR 白噪音睡眠', 'ASMR 角色扮演助眠',
     'ASMR 刷麦助眠', 'ASMR 触发音睡眠', 'ASMR 雨声睡眠', 'ASMR 深度睡眠',
+    'ASMR 采耳 哄睡', 'ASMR 头疗 助眠', 'ASMR 轻语 陪伴', 'ASMR 敲击 无人声',
+    'ASMR 睡前 放松', '助眠 白噪音 无人声', 'ASMR 睡眠 角色扮演', 'ASMR 按摩 助眠',
   ],
 }
 

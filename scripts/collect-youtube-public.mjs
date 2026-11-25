@@ -10,8 +10,8 @@ import { publishedAtFromWatchHtml } from './youtube-date.mjs'
 const execFileAsync = promisify(execFile)
 const here = path.dirname(fileURLToPath(import.meta.url))
 const outputPath = path.resolve(here, '../public/data/rankings.json')
-const maxVideos = Number(process.env.MAX_YOUTUBE_VIDEOS || 120)
-const libraryLimit = Number(process.env.LIBRARY_LIMIT_PER_PLATFORM || 240)
+const maxVideos = Number(process.env.MAX_YOUTUBE_VIDEOS || 240)
+const libraryLimit = Number(process.env.LIBRARY_LIMIT_PER_PLATFORM || 400)
 const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36'
 const searchQueries = [
   'ASMR sleep',
@@ -30,6 +30,18 @@ const searchQueries = [
   'ASMR ear to ear sleep',
   'ASMR white noise deep sleep',
   'ASMR triggers for sleep no talking',
+  'ASMR sleep 2026',
+  'ASMR no talking deep relaxation',
+  'ASMR scalp massage sleep',
+  'ASMR cozy bedtime roleplay',
+  'ASMR soft whisper insomnia',
+  'ASMR gentle tapping no talking',
+  'ASMR hair brushing sleep',
+  'ASMR ear massage sleep',
+  'ASMR sleep clinic roleplay',
+  'ASMR guided sleep personal attention',
+  'ASMR quiet night sounds',
+  'ASMR calming triggers for sleep',
 ]
 const maxSearchQueries = Number(process.env.MAX_SEARCH_QUERIES || searchQueries.length)
 
@@ -263,18 +275,25 @@ function creatorsForLibrary(videos, previousCreators = [], freshCreators = []) {
 
 async function main() {
   const candidates = new Map()
+  let failedSearches = 0
   for (const query of searchQueries.slice(0, maxSearchQueries)) {
-    const html = await fetchText(`https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`)
-    const initialData = extractAssignedJson(html, 'var ytInitialData = ')
-      || extractAssignedJson(html, 'ytInitialData = ')
-    if (!initialData) throw new Error(`无法解析 YouTube 搜索结果：${query}`)
-    for (const renderer of collectRenderers(initialData)) {
-      const candidate = parseSearchRenderer(renderer)
-      if (candidate.id && candidate.durationSeconds >= 180 && !candidates.has(candidate.id)) candidates.set(candidate.id, candidate)
+    try {
+      const html = await fetchText(`https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`)
+      const initialData = extractAssignedJson(html, 'var ytInitialData = ')
+        || extractAssignedJson(html, 'ytInitialData = ')
+      if (!initialData) throw new Error('搜索页没有可解析的视频结果')
+      for (const renderer of collectRenderers(initialData)) {
+        const candidate = parseSearchRenderer(renderer)
+        if (candidate.id && candidate.durationSeconds >= 180 && !candidates.has(candidate.id)) candidates.set(candidate.id, candidate)
+      }
+      console.log(`search: ${query} (${candidates.size} unique)`)
+    } catch (error) {
+      failedSearches += 1
+      console.warn(`search unavailable: ${query} (${String(error.message || error)})`)
     }
-    console.log(`search: ${query} (${candidates.size} unique)`)
     await sleep(280)
   }
+  if (candidates.size === 0) throw new Error(`YouTube 搜索均不可用（${failedSearches} 个关键词），保留上一版数据`)
 
   const candidateList = [...candidates.values()].slice(0, Math.max(maxVideos * 2, 72))
   const enriched = []
