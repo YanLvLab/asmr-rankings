@@ -87,6 +87,8 @@ function StatusPill({ platform, data }: { platform: Platform; data: RankingData 
 
 function VideoCard({ video, rank, rankingMode }: { video: RankedVideo; rank: number; rankingMode: RankingMode }) {
   const score = rankingMode === 'library' ? null : video.scores?.[rankingMode]
+  const age = Date.now() - new Date(video.publishedAt).getTime()
+  const isNew = age >= 0 && age < 7 * 86400000
   return (
     <article className="video-card reveal-on-scroll">
       <a className="cover" href={video.url} target="_blank" rel="noreferrer" aria-label={`打开 ${video.title}`}>
@@ -97,7 +99,7 @@ function VideoCard({ video, rank, rankingMode }: { video: RankedVideo; rank: num
       </a>
       <div className="video-copy">
         <div className="eyebrow-row">
-          <span className={`platform-tag ${video.platform}`}>{platformLabel[video.platform]}</span>
+          <span className="eyebrow-platform"><span className={`platform-tag ${video.platform}`}>{platformLabel[video.platform]}</span>{isNew && <span className="new-video-tag">近 7 天</span>}</span>
           <span>{dateLabel(video.publishedAt)}</span>
         </div>
         <h3><a href={video.url} target="_blank" rel="noreferrer">{video.title}</a></h3>
@@ -282,8 +284,23 @@ export default function App() {
     setSearch('')
   }
 
+  function resetFilters() {
+    setRankingMode('library')
+    setPlatform('all')
+    setPeriod('all')
+    setSort('latest')
+    setCategory('全部')
+    setDuration('all')
+    setSearch('')
+    setFemaleOnly(false)
+  }
+
+  const hasActiveFilters = femaleOnly || platform !== 'all' || category !== '全部' || search.trim() !== ''
+    || (view === 'videos' && (period !== 'all' || duration !== 'all' || sort !== 'latest' || rankingMode !== 'library'))
+
   return (
     <main>
+      <a className="skip-link" href="#rankings">跳转到榜单</a>
       <div className="reading-progress" aria-hidden="true"><span ref={progressRef} /></div>
       <div className="ambient ambient-one" />
       <div className="ambient ambient-two" />
@@ -298,6 +315,7 @@ export default function App() {
           <a href="#data">数据状态</a>
         </nav>
         <div className="live-badge"><Radio size={14} /> THE NIGHTLY EDITION</div>
+        <a className="mobile-nav" href="#rankings"><Search size={16} />浏览榜单</a>
       </header>
 
       <section className="hero" id="top">
@@ -398,14 +416,14 @@ export default function App() {
           <div className="state-card warning"><Info /><strong>榜单数据读取失败</strong><span>请检查 public/data/rankings.json 是否已由采集任务生成。</span></div>
         ) : view === 'videos' ? (
           videos.length ? <>
-            <div className="results-meta"><strong>{videos.length}</strong> 条符合当前条件 · {femaleOnly ? '只看已标注小姐姐频道 · ' : ''}最低时长 3 分钟{rankingMode !== 'library' ? ' · B站独立公式榜' : ''}{rankingMode === 'rising' && !risingHasCompleteGrowth ? ` · ${risingWithSnapshot}/${risingCandidates.length} 条有七日快照` : ''}</div>
+            <div className="results-toolbar"><div className="results-meta"><span className="results-kicker">LISTENING INDEX / {rankingMode === 'library' ? 'COLLECTION' : 'BILIBILI'}</span><span><strong>{videos.length}</strong> 条符合当前条件 · {femaleOnly ? '只看已标注小姐姐频道 · ' : ''}最低时长 3 分钟{rankingMode !== 'library' ? ' · B站独立公式榜' : ''}{rankingMode === 'rising' && !risingHasCompleteGrowth ? ` · ${risingWithSnapshot}/${risingCandidates.length} 条有七日快照` : ''}</span></div>{hasActiveFilters && <button className="reset-filters" type="button" onClick={resetFilters}>清除筛选 <span aria-hidden="true">×</span></button>}</div>
             <div className="video-grid">{videos.slice(0, visibleCount).map((video, index) => <VideoCard key={`${video.platform}-${video.id}`} video={video} rank={index + 1} rankingMode={rankingMode} />)}</div>
             {visibleCount < videos.length && <button className="load-more" onClick={() => setVisibleCount((count) => count + 24)}>再加载 24 条 <span>{visibleCount}/{videos.length}</span></button>}
           </>
-          : <div className="state-card"><MoonStar /><strong>这个筛选下没有合格视频</strong><span>可以切换平台、时段或博主偏好。</span></div>
+          : <div className="state-card"><MoonStar /><strong>这个筛选下没有合格视频</strong><span>可以切换平台、时段或博主偏好。</span><button type="button" className="state-reset" onClick={resetFilters}>查看全部视频 <ArrowUpRight size={15} /></button></div>
         ) : creators.length ? (
-          <div className="creator-list">{creators.map((creator, index) => <CreatorRow key={`${creator.platform}-${creator.id}`} creator={creator} rank={index + 1} />)}</div>
-        ) : <div className="state-card"><UsersRound /><strong>这个筛选下没有合格创作者</strong></div>}
+          <><div className="results-toolbar"><div className="results-meta"><span className="results-kicker">LISTENING INDEX / CREATORS</span><span><strong>{creators.length}</strong> 位创作者符合当前条件</span></div>{hasActiveFilters && <button className="reset-filters" type="button" onClick={resetFilters}>清除筛选 <span aria-hidden="true">×</span></button>}</div><div className="creator-list">{creators.map((creator, index) => <CreatorRow key={`${creator.platform}-${creator.id}`} creator={creator} rank={index + 1} />)}</div></>
+        ) : <div className="state-card"><UsersRound /><strong>这个筛选下没有合格创作者</strong><button type="button" className="state-reset" onClick={() => { resetFilters(); setView('videos') }}>查看全部视频 <ArrowUpRight size={15} /></button></div>}
       </section>
 
       <section className="method" id="method">
