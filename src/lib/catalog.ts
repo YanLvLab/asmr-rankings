@@ -1,4 +1,5 @@
 import type { Platform, RankedCreator, RankedVideo, RankingData } from '../types'
+import { getLanguage, t } from './i18n'
 
 export type Scope = 'all' | Platform
 export type DurationFilter = 'all' | 'short' | 'medium' | 'long'
@@ -22,13 +23,13 @@ export const creatorKey = (creator: Pick<RankedCreator, 'platform' | 'id'>) => `
 export const allVideos = (data: RankingData) => [...data.videos.youtube, ...data.videos.bilibili]
 export const allCreators = (data: RankingData) => [...data.creators.youtube, ...data.creators.bilibili]
 export const categories = (data: RankingData) => ['全部类型', ...Array.from(new Set(allVideos(data).flatMap(video => video.categories))).sort((a, b) => a.localeCompare(b, 'zh-CN'))]
-export const formatNumber = (value: number) => new Intl.NumberFormat('zh-CN', { notation: 'compact', maximumFractionDigits: 1 }).format(value)
+export const formatNumber = (value: number) => new Intl.NumberFormat(getLanguage() === 'en' ? 'en-US' : 'zh-CN', { notation: 'compact', maximumFractionDigits: 1 }).format(value)
 export const formatDuration = (seconds: number) => {
   const hours = Math.floor(seconds / 3600)
   const minutes = Math.floor((seconds % 3600) / 60)
   return hours ? `${hours}:${String(minutes).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}` : `${minutes}:${String(seconds % 60).padStart(2, '0')}`
 }
-export const formatDate = (value: string | null) => value && !Number.isNaN(Date.parse(value)) ? new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(value)) : '暂无数据'
+export const formatDate = (value: string | null) => value && !Number.isNaN(Date.parse(value)) ? new Intl.DateTimeFormat(getLanguage() === 'en' ? 'en-US' : 'zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(value)) : t('暂无数据')
 
 export function safeExternalUrl(url: string, platform: Platform, kind: 'video' | 'creator') {
   try {

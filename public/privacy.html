@@ -3,31 +3,52 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>隐私政策 · 静响榜</title>
+  <meta name="theme-color" content="#f2f0e8" />
+  <title>隐私说明 · 静响榜</title>
   <style>
-    :root { color-scheme: dark; font-family: "Noto Serif SC", "Songti SC", serif; background:#07110f; color:#e9eee7 }
-    body { margin:0; background:radial-gradient(circle at 15% 10%,#18352a 0,transparent 35%),#07110f; }
-    main { max-width:760px; margin:auto; padding:80px 24px 120px; }
-    a { color:#d6ef71; } small { color:#9dd7b8; letter-spacing:.2em; }
-    h1 { font-size:clamp(40px,8vw,72px); margin:20px 0 60px; font-weight:500; }
-    h2 { margin-top:42px; font-size:20px; } p,li { color:#a8b3ad; line-height:2; font-size:14px; }
-    .back { display:inline-block; margin-top:55px; border:1px solid #3d584c; padding:12px 18px; text-decoration:none; }
+    :root { font-family: "PingFang SC","Microsoft YaHei",sans-serif; background:#f2f0e8; color:#292a24 }
+    * { box-sizing:border-box } body { margin:0 } main { max-width:760px; margin:auto; padding:38px 22px 90px }
+    header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #d6d2c6; padding-bottom:22px }
+    .brand { font-family:"Songti SC",serif; font-size:22px; font-weight:bold } button { border:1px solid #d6d2c6; background:transparent; color:#667251; padding:8px 12px; cursor:pointer }
+    h1 { font-family:"Songti SC",serif; font-size:clamp(30px,6vw,46px); margin:44px 0 28px } h2 { font-size:17px; margin:30px 0 9px }
+    p { color:#61645b; line-height:1.85; font-size:14px } a { color:#667251 } .back { display:inline-block; margin-top:32px }
+    [hidden] { display:none !important }
   </style>
 </head>
 <body><main>
-  <small>HUSH INDEX / PRIVACY</small>
-  <h1>隐私政策</h1>
-  <p>静响榜是一个自动整理公开 ASMR 视频信息的静态网站。网站本身不要求登录，不建立用户画像，也不收集姓名、邮箱或其他身份信息。</p>
-  <h2>数据来源</h2>
-  <p>网站前端内置经过筛选的公开视频资料，并通过原平台链接和缩略图进行展示。当前版本不需要任何 API 密钥，也不下载、缓存或重新分发视频文件。</p>
-  <h2>第三方服务</h2>
-  <p>当你打开视频链接或第三方缩略图时，相应平台可能按照其政策处理网络请求。使用 YouTube 相关功能即表示你同意 <a href="https://www.youtube.com/t/terms">YouTube 服务条款</a>。请同时阅读 <a href="https://policies.google.com/privacy">Google 隐私政策</a>。</p>
-  <h2>数据保存与刷新</h2>
-  <p>榜单仅保存展示所需的有限公开字段和本站自己的内容分类结果。失效或被删除的视频会在后续版本中移除。</p>
-  <h2>本地存储</h2>
-  <p>当前版本不使用广告 Cookie，也不保存浏览历史。若以后加入统计服务，本政策将先行更新并明确说明。</p>
-  <h2>联系与删除</h2>
-  <p>创作者如希望更正信息或移除本站记录，可通过项目 GitHub Issues 提交请求；核实后会在七日内处理。</p>
-  <a class="back" href="./">← 返回静响榜</a>
-</main></body>
+  <header><span class="brand">静响榜 <small>HUSH INDEX</small></span><button id="language" type="button">EN</button></header>
+  <section id="zh">
+    <h1>隐私说明</h1>
+    <h2>本站使用哪些数据</h2>
+    <p>静响榜展示 YouTube 与哔哩哔哩的公开视频及创作者资料，并直接链接至原平台。本站没有账号、站内播放器或广告追踪服务。</p>
+    <h2>浏览器本地记录</h2>
+    <p>收藏、筛选偏好和最近主动打开的视频保存在你的浏览器 LocalStorage 中，不上传到本站。最近访问记录可在收藏页关闭或清空；所有本地数据可导出及导入。清除浏览器数据可能使记录丢失。</p>
+    <h2>第三方平台</h2>
+    <p>打开视频、创作者主页或加载封面时，浏览器会与相应平台建立连接；平台可能按自身政策处理请求。请参阅 <a href="https://www.youtube.com/t/terms">YouTube 服务条款</a>及 <a href="https://policies.google.com/privacy">Google 隐私政策</a>。</p>
+    <a class="back" href="./">← 返回静响榜</a>
+  </section>
+  <section id="en" hidden>
+    <h1>Privacy</h1>
+    <h2>What this site uses</h2>
+    <p>HUSH INDEX displays public video and creator information from YouTube and Bilibili, with direct links to the original platforms. It has no account system, in-site player or advertising tracker.</p>
+    <h2>Data in your browser</h2>
+    <p>Saved items, filter preferences and videos you choose to open are stored in your browser's LocalStorage. They are not uploaded to this site. You can turn off or clear recent opens on the Saved page, and export or import local data. Clearing browser data may remove these records.</p>
+    <h2>Third-party platforms</h2>
+    <p>Opening a video or creator page, or loading a thumbnail, connects your browser to the relevant platform. That platform may process requests under its own policies. See the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> and <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+    <a class="back" href="./">← Back to HUSH INDEX</a>
+  </section>
+</main><script>
+  const key = 'hush-index:v2';
+  let language = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'zh';
+  if (!location.search) { try { language = JSON.parse(localStorage.getItem(key) || '{}').language === 'en' ? 'en' : 'zh' } catch {} }
+  function render() {
+    document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
+    document.title = language === 'en' ? 'Privacy · HUSH INDEX' : '隐私说明 · 静响榜';
+    document.getElementById('zh').hidden = language !== 'zh';
+    document.getElementById('en').hidden = language !== 'en';
+    document.getElementById('language').textContent = language === 'zh' ? 'EN' : '中文';
+  }
+  document.getElementById('language').addEventListener('click', () => { language = language === 'zh' ? 'en' : 'zh'; render() });
+  render();
+</script></body>
 </html>

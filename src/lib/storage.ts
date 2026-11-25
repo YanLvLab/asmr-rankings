@@ -1,4 +1,5 @@
 import { defaultFilters, type Filters } from './catalog'
+import type { Language } from './i18n'
 
 export type RecentItem = { key: string; openedAt: string }
 export type LocalState = {
@@ -10,10 +11,11 @@ export type LocalState = {
   filters: Filters
   display: 'grid' | 'list'
   theme: 'midnight' | 'deep'
+  language: Language
 }
 const KEY = 'hush-index:v2'
 const LEGACY_KEYS = ['hush-index:v1', 'hush-index']
-export const initialState: LocalState = { version: 2, savedVideos: [], savedCreators: [], recent: [], rememberRecent: true, filters: defaultFilters, display: 'grid', theme: 'midnight' }
+export const initialState: LocalState = { version: 2, savedVideos: [], savedCreators: [], recent: [], rememberRecent: true, filters: defaultFilters, display: 'grid', theme: 'midnight', language: 'zh' }
 const validKey = (value: unknown) => typeof value === 'string' && /^(youtube|bilibili):[\w-]+$/.test(value)
 const strings = (value: unknown) => Array.isArray(value) ? [...new Set(value.filter(validKey))] as string[] : []
 
@@ -33,7 +35,7 @@ export function normalizeState(value: unknown): LocalState {
   const recent = Array.isArray(input.recent) ? input.recent.filter((item): item is RecentItem => !!item && typeof item === 'object' && validKey(item.key) && typeof item.openedAt === 'string' && !Number.isNaN(Date.parse(item.openedAt))).slice(0, 50) : []
   return { version: 2, savedVideos: strings(input.savedVideos), savedCreators: strings(input.savedCreators), recent,
     rememberRecent: input.rememberRecent !== false, filters: f,
-    display: input.display === 'list' ? 'list' : 'grid', theme: input.theme === 'deep' ? 'deep' : 'midnight' }
+    display: input.display === 'list' ? 'list' : 'grid', theme: input.theme === 'deep' ? 'deep' : 'midnight', language: input.language === 'en' ? 'en' : 'zh' }
 }
 
 export function readState(): LocalState {

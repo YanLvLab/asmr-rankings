@@ -24,6 +24,8 @@
 | ![改版前桌面](before-desktop.png) | ![改版后桌面](after-desktop.png) |
 | ![改版前手机](before-mobile.png) | ![改版后手机](after-mobile.png) |
 
+英文界面验收：[桌面截图](english-desktop.png) · [手机截图](english-mobile.png)。导航、筛选、榜单、创作者、收藏、说明及独立隐私页均支持中英切换；原平台视频标题和创作者名称保留原文。
+
 ## 本地验收
 
 - `npm test`：14 项通过。
