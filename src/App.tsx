@@ -1,451 +1,158 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
-import {
-  ArrowUp,
-  ArrowUpRight,
-  CalendarDays,
-  CheckCircle2,
-  ChevronDown,
-  Clock3,
-  Headphones,
-  Heart,
-  Info,
-  MoonStar,
-  Play,
-  Radio,
-  RefreshCw,
-  Search,
-  Star,
-  UsersRound,
-  Waves,
-} from 'lucide-react'
-import type { Platform, RankedCreator, RankedVideo, RankingData } from './types'
+import { getLanguage, setLanguage, t } from "./lib/i18n";import { useEffect, useMemo, useRef, useState } from 'react';
+import { ArrowRight, ArrowUp, Bookmark, Compass, Download, Grid2X2, List, Search, Shuffle, SlidersHorizontal, Trash2, Trophy, Upload, Users, X } from 'lucide-react';
+import VideoCard from './components/VideoCard';
+import CreatorCard from './components/CreatorCard';
+import type { RankedVideo, RankingData } from './types';
+import { allCreators, allVideos, categories, creatorKey, defaultFilters, filterCreators, filterVideos, formatDate, platformName, rankVideos, safeExternalUrl, videoKey, type Filters, type RankingKey, type Scope } from './lib/catalog';
+import { exportState, importState, readState, writeState, type LocalState } from './lib/storage';
 
-const emptyData: RankingData = {
-  generatedAt: new Date(0).toISOString(),
-  lookbackDays: 365,
-  sources: {
-    youtube: { status: 'unavailable', updatedAt: null },
-    bilibili: { status: 'unavailable', updatedAt: null },
-  },
-  videos: { youtube: [], bilibili: [] },
-  creators: { youtube: [], bilibili: [] },
+type Page = 'discover' | 'rankings' | 'creators' | 'saved' | 'about';
+type SavedTab = 'videos' | 'creators' | 'recent';
+const pageNames: Record<Page, string> = { discover: '作品目录', rankings: '排行榜', creators: '创作者', saved: '收藏', about: '关于' };
+const nav = [{ key: 'discover' as Page, icon: Compass }, { key: 'rankings' as Page, icon: Trophy }, { key: 'creators' as Page, icon: Users }, { key: 'saved' as Page, icon: Bookmark }];
+const boards: Array<{key: RankingKey;label: string;note: string;}> = [
+{ key: 'hot', label: 'B站今日热榜', note: '播放、互动、增速与发布时间' },
+{ key: 'rising', label: '本周上升', note: '近 30 天作品，侧重七日增速' },
+{ key: 'longtail', label: '长尾常听', note: '发布超过 30 天，侧重收藏率' },
+{ key: 'youtube', label: 'YouTube 热门', note: '按公开播放量排列' },
+{ key: 'bilibili', label: 'B站热门', note: '按公开播放量排列' }];
+
+const route = (): Page => {const path = location.hash.slice(2).split('?')[0];return ['discover', 'rankings', 'creators', 'saved', 'about'].includes(path) ? path as Page : 'discover';};
+function fromUrl(base: Filters): Filters {
+  const p = new URLSearchParams(location.hash.split('?')[1] || '');
+  if (!p.size) return base;
+  return {
+    query: p.get('q')?.slice(0, 200) ?? base.query,
+    platform: ['all', 'youtube', 'bilibili'].includes(p.get('platform') || '') ? p.get('platform') as Filters['platform'] : base.platform,
+    category: p.get('category') || base.category,
+    duration: ['all', 'short', 'medium', 'long'].includes(p.get('duration') || '') ? p.get('duration') as Filters['duration'] : base.duration,
+    period: ['all', '7', '30', '365'].includes(p.get('period') || '') ? p.get('period') as Filters['period'] : base.period,
+    femaleOnly: p.has('female') ? p.get('female') === '1' : base.femaleOnly,
+    sort: ['latest', 'views', 'likes', 'duration', 'captured'].includes(p.get('sort') || '') ? p.get('sort') as Filters['sort'] : base.sort
+  };
 }
-
-const platformLabel: Record<Platform, string> = { youtube: 'YouTube', bilibili: '哔哩哔哩' }
-const categoryOrder = ['全部', '无人声', '耳语', '敲击', '掏耳', '角色扮演', '口腔音', '刷麦', '环境音', '综合触发']
-type RankingMode = 'library' | 'hot' | 'rising' | 'longtail'
-
-const rankingModes: Array<{ key: RankingMode; label: string; note: string }> = [
-  { key: 'library', label: '双平台资源库', note: '按公开数据排序，汇总全部合格内容' },
-  { key: 'hot', label: 'B站今日热榜', note: '播放、点赞率、收藏率、增速与时间衰减' },
-  { key: 'rising', label: 'B站本周上升', note: '近 30 天发布，以七日增速为主' },
-  { key: 'longtail', label: 'B站长尾常听', note: '发布超过 30 天，收藏率权重最高' },
-]
-
-function compactNumber(value: number) {
-  return new Intl.NumberFormat('zh-CN', { notation: 'compact', maximumFractionDigits: 1 }).format(value)
+function toQuery(f: Filters) {
+  const p = new URLSearchParams();
+  if (f.query) p.set('q', f.query);
+  if (f.platform !== 'all') p.set('platform', f.platform);
+  if (f.category !== '全部类型') p.set('category', f.category);
+  if (f.duration !== 'all') p.set('duration', f.duration);
+  if (f.period !== 'all') p.set('period', f.period);
+  if (f.femaleOnly) p.set('female', '1');
+  if (f.sort !== 'latest') p.set('sort', f.sort);
+  return p.toString();
 }
-
-function dateLabel(value: string) {
-  return new Intl.DateTimeFormat('zh-CN', { month: 'short', day: 'numeric', year: 'numeric' }).format(new Date(value))
-}
-
-function durationLabel(seconds: number) {
-  const hours = Math.floor(seconds / 3600)
-  const minutes = Math.floor((seconds % 3600) / 60)
-  return hours ? `${hours} 小时${minutes ? ` ${minutes} 分钟` : ''}` : `${minutes} 分钟`
-}
-
-function relativeUpdate(value: string | null) {
-  if (!value) return '尚未更新'
-  const minutes = Math.max(0, Math.floor((Date.now() - new Date(value).getTime()) / 60000))
-  if (minutes < 60) return `${minutes} 分钟前更新`
-  if (minutes < 1440) return `${Math.floor(minutes / 60)} 小时前更新`
-  return `${Math.floor(minutes / 1440)} 天前更新`
-}
-
-function WaveMark() {
-  return (
-    <div className="wave-mark" aria-hidden="true">
-      {[18, 31, 45, 23, 54, 38, 66, 29, 47, 20, 35, 16].map((height, index) => (
-        <i key={index} style={{ height, animationDelay: `${index * -90}ms` }} />
-      ))}
-    </div>
-  )
-}
-
-function StatusPill({ platform, data }: { platform: Platform; data: RankingData }) {
-  const source = data.sources[platform]
-  return (
-    <div className={`source-pill source-${source.status}`} title={source.note || ''}>
-      <span className="status-dot" />
-      <strong>{platformLabel[platform]}</strong>
-      <span>{relativeUpdate(source.updatedAt)}</span>
-    </div>
-  )
-}
-
-function VideoCard({ video, rank, rankingMode }: { video: RankedVideo; rank: number; rankingMode: RankingMode }) {
-  const score = rankingMode === 'library' ? null : video.scores?.[rankingMode]
-  const age = Date.now() - new Date(video.publishedAt).getTime()
-  const isNew = age >= 0 && age < 7 * 86400000
-  return (
-    <article className="video-card reveal-on-scroll">
-      <a className="cover" href={video.url} target="_blank" rel="noreferrer" aria-label={`打开 ${video.title}`}>
-        <img src={video.thumbnail} alt="" loading="lazy" referrerPolicy="no-referrer" />
-        <span className="rank-number">{String(rank).padStart(2, '0')}</span>
-        <span className="duration"><Clock3 size={13} />{durationLabel(video.durationSeconds)}</span>
-        <span className="play-orbit"><Play size={17} fill="currentColor" /></span>
-      </a>
-      <div className="video-copy">
-        <div className="eyebrow-row">
-          <span className="eyebrow-platform"><span className={`platform-tag ${video.platform}`}>{platformLabel[video.platform]}</span>{isNew && <span className="new-video-tag">近 7 天</span>}</span>
-          <span>{dateLabel(video.publishedAt)}</span>
-        </div>
-        <h3><a href={video.url} target="_blank" rel="noreferrer">{video.title}</a></h3>
-        <div className="creator-line">
-          {video.creatorAvatar ? <img src={video.creatorAvatar} alt="" referrerPolicy="no-referrer" /> : <span className="avatar-fallback" />}
-          <span>{video.creatorName}</span>
-          {video.femaleHost && <span className="female-tag">小姐姐频道</span>}
-        </div>
-        <div className="metric-row">
-          <strong>{compactNumber(video.views)} <small>播放</small></strong>
-          <span>{compactNumber(video.likes)} 赞</span>
-          {video.favorites ? <span><Star size={13} />{compactNumber(video.favorites)} 收藏</span> : null}
-          <span className="confidence"><CheckCircle2 size={14} />已通过筛选</span>
-        </div>
-        {score != null ? <div className="board-score"><span>榜单分</span><strong>{score.toFixed(4)}</strong>{rankingMode === 'longtail' ? <small>收藏率权重最高</small> : video.scores?.hasSevenDaySnapshot ? <small>真实七日增速</small> : <small>增速取中性值</small>}</div> : null}
-        <div className="category-row">
-          {video.categories.slice(0, 3).map((category) => <span key={category}>{category}</span>)}
-        </div>
-      </div>
-    </article>
-  )
-}
-
-function CreatorRow({ creator, rank }: { creator: RankedCreator; rank: number }) {
-  return (
-    <a className="creator-row reveal-on-scroll" href={creator.url} target="_blank" rel="noreferrer">
-      <span className="creator-rank">{String(rank).padStart(2, '0')}</span>
-      <span className="creator-avatar">
-        {creator.avatar ? <img src={creator.avatar} alt="" referrerPolicy="no-referrer" /> : creator.name.slice(0, 1)}
-        <i className={creator.platform} />
-      </span>
-      <span className="creator-name">
-        <strong>{creator.name}{creator.femaleHost && <span className="creator-female-tag">小姐姐频道</span>}</strong>
-        <small>{creator.topCategories.join(' · ') || '综合助眠'}</small>
-      </span>
-      <span className="creator-stat">
-        <strong>{compactNumber(creator.followers)}</strong>
-        <small>{creator.platform === 'youtube' ? '订阅' : '粉丝'}</small>
-      </span>
-      <span className="creator-stat muted">
-        <strong>{creator.qualifyingVideos}</strong>
-        <small>合格作品</small>
-      </span>
-      <ArrowUpRight size={18} />
-    </a>
-  )
-}
+function Brand() {return <a className="brand" href="#/discover" aria-label={t("静响榜首页")}><span className="brand-type">{getLanguage() === 'en' ? <strong>HUSH INDEX</strong> : <><strong>静响榜</strong><small>HUSH INDEX</small></>}</span></a>;}
+function Select({ label, value, onChange, options }: {label: string;value: string;onChange: (value: string) => void;options: Array<[string, string]>;}) {return <label className="select-field"><span>{t(label)}</span><select value={value} onChange={(e) => onChange(e.target.value)}>{options.map(([key, name]) => <option value={key} key={key}>{t(name)}</option>)}</select></label>;}
+function Empty({ title, text, action }: {title: string;text: string;action?: React.ReactNode;}) {return <div className="empty-state"><span className="empty-glyph">◇</span><h3>{title}</h3><p>{text}</p>{action}</div>;}
+const durationOptions: Array<[string, string]> = [['all', '全部时长'], ['short', '15 分钟以内'], ['medium', '15–60 分钟'], ['long', '60 分钟以上']];
+const periodOptions: Array<[string, string]> = [['all', '不限时间'], ['7', '近 7 天'], ['30', '近 30 天'], ['365', '近 1 年']];
+const sortOptions: Array<[string, string]> = [['latest', '最新发布'], ['views', '播放最多'], ['likes', '点赞最多'], ['duration', '时长最长'], ['captured', '最近有快照']];
 
 export default function App() {
-  const [data, setData] = useState<RankingData>(emptyData)
-  const [loading, setLoading] = useState(true)
-  const [loadError, setLoadError] = useState(false)
-  const [platform, setPlatform] = useState<'all' | Platform>('all')
-  const [category, setCategory] = useState('全部')
-  const [period, setPeriod] = useState<'7' | '30' | 'all'>('all')
-  const [sort, setSort] = useState<'views' | 'likes' | 'latest' | 'duration'>('latest')
-  const [duration, setDuration] = useState<'all' | 'short' | 'mid' | 'long'>('all')
-  const [search, setSearch] = useState('')
-  const [view, setView] = useState<'videos' | 'creators'>('videos')
-  const [rankingMode, setRankingMode] = useState<RankingMode>('library')
-  const [femaleOnly, setFemaleOnly] = useState(false)
-  const [visibleCount, setVisibleCount] = useState(32)
-  const [showBackToTop, setShowBackToTop] = useState(false)
-  const progressRef = useRef<HTMLSpanElement>(null)
-
+  const [local, setLocal] = useState<LocalState>(() => {const stored = readState();setLanguage(stored.language);return { ...stored, filters: fromUrl(stored.filters) };});
+  const [page, setPage] = useState<Page>(route);
+  const [data, setData] = useState<RankingData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
+  const [reload, setReload] = useState(0);
+  const [visible, setVisible] = useState(24);
+  const [rankVisible, setRankVisible] = useState(30);
+  const [creatorVisible, setCreatorVisible] = useState(24);
+  const [board, setBoard] = useState<RankingKey>('hot');
+  const [savedTab, setSavedTab] = useState<SavedTab>('videos');
+  const [creatorQuery, setCreatorQuery] = useState('');
+  const [creatorPlatform, setCreatorPlatform] = useState<Scope>('all');
+  const [creatorCategory, setCreatorCategory] = useState('全部类型');
+  const [creatorFemale, setCreatorFemale] = useState(false);
+  const [random, setRandom] = useState<RankedVideo | null>(null);
+  const [drawer, setDrawer] = useState(false);
+  const [notice, setNotice] = useState('');
+  const [showTop, setShowTop] = useState(false);
+  const fileInput = useRef<HTMLInputElement>(null);
+  const searchInput = useRef<HTMLInputElement>(null);
+  const f = local.filters;
   useEffect(() => {
-    let frame = 0
-    const updateScroll = () => {
-      frame = 0
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight
-      const progress = scrollable > 0 ? Math.min(1, window.scrollY / scrollable) : 0
-      if (progressRef.current) progressRef.current.style.transform = `scaleX(${progress})`
-      setShowBackToTop(window.scrollY > 560)
-    }
-    const onScroll = () => { if (!frame) frame = window.requestAnimationFrame(updateScroll) }
-    updateScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll)
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
-      if (frame) window.cancelAnimationFrame(frame)
-    }
-  }, [])
-
+    let active = true;
+    setLoading(true);setLoadError(false);
+    fetch(`${import.meta.env.BASE_URL}data/rankings.json`, { cache: 'no-store' }).
+    then((r) => {if (!r.ok) throw new Error('network');return r.json();}).
+    then((payload: RankingData) => {if (!payload.videos?.youtube || !payload.videos?.bilibili) throw new Error('invalid');if (active) setData(payload);}).
+    catch(() => {if (active) setLoadError(true);}).
+    finally(() => {if (active) setLoading(false);});
+    return () => {active = false;};
+  }, [reload]);
+  useEffect(() => {document.documentElement.lang = local.language === 'zh' ? 'zh-CN' : 'en'; document.title = local.language === 'zh' ? '静响榜 HUSH INDEX · ASMR 视频索引' : 'HUSH INDEX · ASMR Video Collection'; const description = document.querySelector('meta[name="description"]'); description?.setAttribute('content', local.language === 'zh' ? '静响榜汇总 YouTube 与哔哩哔哩的 ASMR 视频与创作者。搜索、筛选、收藏，然后直接前往原平台。' : 'Find ASMR videos and creators from YouTube and Bilibili. Search, filter and save, then open the original platform.'); if (!writeState(local)) setNotice(t('浏览器未开放本地存储，收藏仅在当前页面有效。'));}, [local]);
   useEffect(() => {
-    fetch('./data/rankings.json', { cache: 'no-store' })
-      .then((response) => {
-        if (!response.ok) throw new Error('data unavailable')
-        return response.json()
-      })
-      .then((payload: RankingData) => setData(payload))
-      .catch(() => setLoadError(true))
-      .finally(() => setLoading(false))
-  }, [])
-
-  const videos = useMemo(() => {
-    const cutoff = period === 'all' ? 0 : Date.now() - Number(period) * 86400000
-    const effectivePlatform = rankingMode === 'library' ? platform : 'bilibili'
-    const pool = effectivePlatform === 'all'
-      ? [...data.videos.youtube, ...data.videos.bilibili]
-      : data.videos[effectivePlatform]
-    const filtered = pool
-      .filter((video) => rankingMode === 'library' || video.scores?.[rankingMode] != null)
-      .filter((video) => !femaleOnly || video.femaleHost)
-      .filter((video) => new Date(video.publishedAt).getTime() >= cutoff)
-      .filter((video) => category === '全部' || video.categories.includes(category))
-      .filter((video) => duration === 'all'
-        || (duration === 'short' && video.durationSeconds < 900)
-        || (duration === 'mid' && video.durationSeconds >= 900 && video.durationSeconds < 3600)
-        || (duration === 'long' && video.durationSeconds >= 3600))
-      .filter((video) => `${video.title} ${video.creatorName}`.toLowerCase().includes(search.trim().toLowerCase()))
-    return filtered.sort((a, b) => {
-      if (rankingMode !== 'library') return (b.scores?.[rankingMode] || 0) - (a.scores?.[rankingMode] || 0)
-      if (sort === 'likes') return b.likes - a.likes
-      if (sort === 'latest') return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-      if (sort === 'duration') return b.durationSeconds - a.durationSeconds
-      return b.views - a.views
-    })
-  }, [data, platform, category, period, search, sort, duration, rankingMode, femaleOnly])
-
-  useEffect(() => setVisibleCount(32), [platform, category, period, search, sort, duration, view, rankingMode, femaleOnly])
-
-  const creators = useMemo(() => {
-    const pool = platform === 'all'
-      ? [...data.creators.youtube, ...data.creators.bilibili]
-      : data.creators[platform]
-    return pool
-      .filter((creator) => !femaleOnly || creator.femaleHost)
-      .filter((creator) => category === '全部' || creator.topCategories.includes(category))
-      .filter((creator) => creator.name.toLowerCase().includes(search.trim().toLowerCase()))
-      .sort((a, b) => b.followers - a.followers || b.qualifyingVideos - a.qualifyingVideos)
-  }, [data, platform, category, search, femaleOnly])
-
+    const onHash = () => {setPage(route());setLocal((previous) => ({ ...previous, filters: fromUrl(previous.filters) }));setDrawer(false);window.scrollTo(0, 0);};
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
+  useEffect(() => {if (page === 'discover') {const q = toQuery(f);history.replaceState(null, '', `${location.pathname}${location.search}#/discover${q ? '?' + q : ''}`);}}, [f, page]);
+  useEffect(() => {const onScroll = () => setShowTop(window.scrollY > 500);window.addEventListener('scroll', onScroll, { passive: true });return () => window.removeEventListener('scroll', onScroll);}, []);
   useEffect(() => {
-    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return
-        entry.target.classList.add('is-visible')
-        observer.unobserve(entry.target)
-      })
-    }, { rootMargin: '0px 0px -34px 0px', threshold: 0.04 })
-    document.querySelectorAll('.reveal-on-scroll:not(.is-visible)').forEach((element) => observer.observe(element))
-    document.documentElement.classList.add('reveal-ready')
-    return () => observer.disconnect()
-  }, [loading, view, videos, creators, visibleCount])
-
-  const totalVideos = data.videos.youtube.length + data.videos.bilibili.length
-  const recentVideos = [...data.videos.youtube, ...data.videos.bilibili]
-    .filter((video) => new Date(video.publishedAt).getTime() >= Date.now() - 30 * 86400000).length
-  const totalCreators = data.creators.youtube.length + data.creators.bilibili.length
-  const femaleVideos = data.videos.youtube.filter((video) => video.femaleHost).length + data.videos.bilibili.filter((video) => video.femaleHost).length
-  const femaleCreators = data.creators.youtube.filter((creator) => creator.femaleHost).length + data.creators.bilibili.filter((creator) => creator.femaleHost).length
-  const risingCandidates = data.videos.bilibili.filter((video) => video.scores?.rising != null)
-  const risingWithSnapshot = risingCandidates.filter((video) => video.scores?.hasSevenDaySnapshot).length
-  const risingHasCompleteGrowth = risingCandidates.length > 0 && risingWithSnapshot === risingCandidates.length
-  const featuredVideo = [...data.videos.youtube, ...data.videos.bilibili]
-    .filter((video) => !femaleOnly || video.femaleHost)
-    .sort((a, b) => b.views - a.views)[0]
-
-  function chooseListeningPath(path: 'quiet' | 'whisper' | 'long' | 'female') {
-    setView('videos')
-    setRankingMode('library')
-    setPlatform('all')
-    setPeriod('all')
-    setSearch('')
-    setSort('views')
-    setCategory(path === 'quiet' ? '无人声' : path === 'whisper' ? '耳语' : '全部')
-    setDuration(path === 'long' ? 'long' : 'all')
-    setFemaleOnly(path === 'female')
-  }
-
-  function showLatest() {
-    setView('videos')
-    setRankingMode('library')
-    setPlatform('all')
-    setPeriod('30')
-    setSort('latest')
-    setCategory('全部')
-    setDuration('all')
-    setSearch('')
-  }
-
-  function resetFilters() {
-    setRankingMode('library')
-    setPlatform('all')
-    setPeriod('all')
-    setSort('latest')
-    setCategory('全部')
-    setDuration('all')
-    setSearch('')
-    setFemaleOnly(false)
-  }
-
-  const hasActiveFilters = femaleOnly || platform !== 'all' || category !== '全部' || search.trim() !== ''
-    || (view === 'videos' && (period !== 'all' || duration !== 'all' || sort !== 'latest' || rankingMode !== 'library'))
-
-  return (
-    <main>
-      <a className="skip-link" href="#rankings">跳转到榜单</a>
-      <div className="reading-progress" aria-hidden="true"><span ref={progressRef} /></div>
-      <div className="ambient ambient-one" />
-      <div className="ambient ambient-two" />
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="静响榜首页">
-          <WaveMark />
-          <span><b>静响榜</b><small>HUSH INDEX</small></span>
-        </a>
-        <nav>
-          <a href="#rankings">探索资源</a>
-          <a href="#method">筛选方法</a>
-          <a href="#data">数据状态</a>
-        </nav>
-        <div className="live-badge"><Radio size={14} /> THE NIGHTLY EDITION</div>
-        <a className="mobile-nav" href="#rankings"><Search size={16} />浏览榜单</a>
-      </header>
-
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <div className="kicker"><MoonStar size={16} /> 双平台助眠资源索引 · 2026</div>
-          <h1>今夜，<br />听点 <em>好的。</em></h1>
-          <p>为你整理 YouTube 与哔哩哔哩的 ASMR 长视频。按声音、时长与喜欢的博主寻找内容，在原平台继续听。</p>
-          <div className="hero-actions">
-            <a className="primary-cta" href="#rankings"><Headphones size={18} />进入资源库<span>↗</span></a>
-            <a className="secondary-cta" href="#rankings" onClick={() => setFemaleOnly(true)}><Heart size={17} />只看小姐姐</a>
-            <a className="latest-cta" href="#rankings" onClick={showLatest}>看近期新作 <ArrowUpRight size={15} /></a>
-          </div>
-          <div className="hero-countline"><span><strong>{totalVideos}</strong> 支长视频</span><i /><span><strong>{totalCreators}</strong> 位创作者</span><i /><span><strong>2</strong> 个平台</span></div>
-        </div>
-        <div className="hero-feature" aria-label="精选助眠视频">
-          <div className="feature-top"><span>HUSH / EDITION 001</span><span>FEATURED LISTENING</span></div>
-          {featuredVideo ? <>
-            <a className="feature-cover" href={featuredVideo.url} target="_blank" rel="noreferrer" aria-label={`前往原平台观看：${featuredVideo.title}`}>
-              <img src={featuredVideo.thumbnail} alt="" referrerPolicy="no-referrer" />
-              <span className="feature-play"><Play size={21} fill="currentColor" /></span>
-            </a>
-            <div className="feature-caption"><span>今夜精选 · {platformLabel[featuredVideo.platform]}</span><strong>{featuredVideo.title}</strong><small>{featuredVideo.creatorName} · {durationLabel(featuredVideo.durationSeconds)}</small></div>
-          </> : <div className="feature-empty"><Waves size={60} strokeWidth={1} /><span>正在整理今晚的声音</span></div>}
-          <div className="feature-bottom"><span>CURATED FOR QUIET HOURS</span><span>01 / 02</span></div>
-          </div>
-      </section>
-
-      <section className="source-strip" id="data">
-        <div className="strip-label"><RefreshCw size={15} /> 精选快照</div>
-        {loading ? <span className="source-pending">正在读取平台数据…</span> : <>
-          <StatusPill platform="youtube" data={data} />
-          <StatusPill platform="bilibili" data={data} />
-          {!loadError && <div className="generated-time"><CalendarDays size={15} />本轮生成：{dateLabel(data.generatedAt)}</div>}
-        </>}
-      </section>
-
-      <section className="listening-paths reveal-on-scroll" aria-label="快速开始">
-        <div className="paths-intro"><span>00 / THE LISTENING ROOM</span><h2>从一种声音开始。</h2><p>给今晚一个方向，再去资源库慢慢挑。</p></div>
-        <div className="path-grid">
-          <a href="#rankings" className="path-card" onClick={() => chooseListeningPath('quiet')}><span className="path-index">01 / SILENCE</span><Waves size={28} strokeWidth={1.3} /><strong>无人声</strong><small>让触发音自己说话</small><ArrowUpRight size={17} className="path-arrow" /></a>
-          <a href="#rankings" className="path-card" onClick={() => chooseListeningPath('whisper')}><span className="path-index">02 / WHISPER</span><Radio size={28} strokeWidth={1.3} /><strong>轻声耳语</strong><small>有人在耳边轻轻陪伴</small><ArrowUpRight size={17} className="path-arrow" /></a>
-          <a href="#rankings" className="path-card" onClick={() => chooseListeningPath('long')}><span className="path-index">03 / LONG PLAY</span><Clock3 size={28} strokeWidth={1.3} /><strong>长时陪伴</strong><small>一小时以上，慢慢入睡</small><ArrowUpRight size={17} className="path-arrow" /></a>
-          <a href="#rankings" className="path-card" onClick={() => chooseListeningPath('female')}><span className="path-index">04 / HER VOICE</span><Heart size={28} strokeWidth={1.3} /><strong>小姐姐频道</strong><small>只看已标注的女性博主</small><ArrowUpRight size={17} className="path-arrow" /></a>
-        </div>
-      </section>
-
-      <section className="rankings" id="rankings">
-        <div className="section-heading reveal-on-scroll">
-          <div><span className="section-no">01</span><p>EXPLORE THE COLLECTION</p><h2>找到今晚想听的</h2></div>
-          <div className="heading-side"><p className="heading-note">从 {totalVideos} 支合格长视频和 {totalCreators} 位创作者中挑选，点开即去原平台收听。</p><button className="latest-shortcut" type="button" onClick={showLatest}><span>NEW / 近 30 天</span><strong>{recentVideos} 支近期新作</strong><ArrowUpRight size={17} /></button></div>
-        </div>
-
-        <div className="host-filter reveal-on-scroll" aria-label="博主偏好">
-          <div className="host-filter-copy"><span>YOUR LISTENING PREFERENCE</span><strong>先选你想听谁</strong><small>此偏好同时作用于视频榜与博主榜</small></div>
-          <div className="host-filter-options">
-            <button type="button" className={!femaleOnly ? 'active' : ''} aria-pressed={!femaleOnly} onClick={() => setFemaleOnly(false)}><UsersRound size={19} /><span><strong>全部博主</strong><small>{totalCreators} 位创作者 · {totalVideos} 支视频</small></span></button>
-            <button type="button" className={femaleOnly ? 'active' : ''} aria-pressed={femaleOnly} onClick={() => setFemaleOnly(true)}><Heart size={19} /><span><strong>只看小姐姐</strong><small>{femaleCreators} 位已标注博主 · {femaleVideos} 支视频</small></span></button>
-          </div>
-          <p>依据预置频道标注与明确自述筛选；未标注频道不被猜测归类。<a href="#method">了解口径 ↗</a></p>
-        </div>
-
-        <div className="controls reveal-on-scroll">
-          <div className="segmented view-switch">
-            <button className={view === 'videos' ? 'active' : ''} aria-pressed={view === 'videos'} onClick={() => setView('videos')}><Play size={15} />视频榜</button>
-            <button className={view === 'creators' ? 'active' : ''} aria-pressed={view === 'creators'} onClick={() => setView('creators')}><UsersRound size={15} />博主榜</button>
-          </div>
-          <div className="segmented platform-switch">
-            {(['all', 'youtube', 'bilibili'] as const).map((item) => (
-              <button key={item} className={platform === item ? 'active' : ''} aria-pressed={platform === item} onClick={() => { setPlatform(item); setRankingMode('library') }}>
-                {item === 'all' ? '双平台' : platformLabel[item]}
-              </button>
-            ))}
-          </div>
-          <label className="search-box"><Search size={16} /><input aria-label="搜索视频或创作者" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="搜视频或创作者" /></label>
-          {view === 'videos' && (
-            <label className="select-box"><CalendarDays size={15} /><select value={period} onChange={(event) => setPeriod(event.target.value as '7' | '30' | 'all')}><option value="7">近 7 天</option><option value="30">近 30 天</option><option value="all">全部时间</option></select><ChevronDown size={14} /></label>
-          )}
-          {view === 'videos' && (
-            <label className="select-box"><Clock3 size={15} /><select value={duration} onChange={(event) => setDuration(event.target.value as typeof duration)}><option value="all">全部时长</option><option value="short">3–15 分钟</option><option value="mid">15–60 分钟</option><option value="long">60 分钟以上</option></select><ChevronDown size={14} /></label>
-          )}
-          {view === 'videos' && rankingMode === 'library' && (
-            <label className="select-box"><Waves size={15} /><select value={sort} onChange={(event) => setSort(event.target.value as typeof sort)}><option value="latest">最新发布</option><option value="views">播放最多</option><option value="likes">点赞最多</option><option value="duration">时长最长</option></select><ChevronDown size={14} /></label>
-          )}
-          {view === 'videos' && rankingMode !== 'library' && <span className="fixed-sort"><CheckCircle2 size={15} />按榜单分排序</span>}
-        </div>
-
-        {view === 'videos' && <div className="ranking-modes reveal-on-scroll" aria-label="榜单类型">
-          {rankingModes.map((mode) => <button key={mode.key} className={rankingMode === mode.key ? 'active' : ''} aria-pressed={rankingMode === mode.key} onClick={() => { setRankingMode(mode.key); if (mode.key !== 'library') setPlatform('bilibili') }}><strong>{mode.key === 'rising' && !risingHasCompleteGrowth ? 'B站近期新作' : mode.label}</strong><small>{mode.key === 'rising' && !risingHasCompleteGrowth ? `近 30 天发布；${risingWithSnapshot}/${risingCandidates.length} 条有七日快照` : mode.note}</small></button>)}
-        </div>}
-
-        <div className="categories reveal-on-scroll" aria-label="内容分类">
-          {categoryOrder.map((item) => <button key={item} className={category === item ? 'active' : ''} aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}
-        </div>
-
-        {loading ? (
-          <div className="state-card"><RefreshCw className="spin" /><strong>正在读取这一夜的数据…</strong></div>
-        ) : loadError ? (
-          <div className="state-card warning"><Info /><strong>榜单数据读取失败</strong><span>请检查 public/data/rankings.json 是否已由采集任务生成。</span></div>
-        ) : view === 'videos' ? (
-          videos.length ? <>
-            <div className="results-toolbar"><div className="results-meta"><span className="results-kicker">LISTENING INDEX / {rankingMode === 'library' ? 'COLLECTION' : 'BILIBILI'}</span><span><strong>{videos.length}</strong> 条符合当前条件 · {femaleOnly ? '只看已标注小姐姐频道 · ' : ''}最低时长 3 分钟{rankingMode !== 'library' ? ' · B站独立公式榜' : ''}{rankingMode === 'rising' && !risingHasCompleteGrowth ? ` · ${risingWithSnapshot}/${risingCandidates.length} 条有七日快照` : ''}</span></div>{hasActiveFilters && <button className="reset-filters" type="button" onClick={resetFilters}>清除筛选 <span aria-hidden="true">×</span></button>}</div>
-            <div className="video-grid">{videos.slice(0, visibleCount).map((video, index) => <VideoCard key={`${video.platform}-${video.id}`} video={video} rank={index + 1} rankingMode={rankingMode} />)}</div>
-            {visibleCount < videos.length && <button className="load-more" onClick={() => setVisibleCount((count) => count + 24)}>再加载 24 条 <span>{visibleCount}/{videos.length}</span></button>}
-          </>
-          : <div className="state-card"><MoonStar /><strong>这个筛选下没有合格视频</strong><span>可以切换平台、时段或博主偏好。</span><button type="button" className="state-reset" onClick={resetFilters}>查看全部视频 <ArrowUpRight size={15} /></button></div>
-        ) : creators.length ? (
-          <><div className="results-toolbar"><div className="results-meta"><span className="results-kicker">LISTENING INDEX / CREATORS</span><span><strong>{creators.length}</strong> 位创作者符合当前条件</span></div>{hasActiveFilters && <button className="reset-filters" type="button" onClick={resetFilters}>清除筛选 <span aria-hidden="true">×</span></button>}</div><div className="creator-list">{creators.map((creator, index) => <CreatorRow key={`${creator.platform}-${creator.id}`} creator={creator} rank={index + 1} />)}</div></>
-        ) : <div className="state-card"><UsersRound /><strong>这个筛选下没有合格创作者</strong><button type="button" className="state-reset" onClick={() => { resetFilters(); setView('videos') }}>查看全部视频 <ArrowUpRight size={15} /></button></div>}
-      </section>
-
-      <section className="method" id="method">
-        <div className="method-title"><span className="section-no">02</span><p>THE GATEKEEPER</p><h2>标签之外，<br />我们检查什么？</h2></div>
-        <div className="method-grid">
-          <article className="reveal-on-scroll"><span>01</span><Waves /><h3>意图必须明确</h3><p>标题、简介和标签需要同时呈现睡眠、入睡、失眠或明确放松目的。只有 “ASMR” 一个词不会被收录。</p></article>
-          <article className="reveal-on-scroll"><span>02</span><Clock3 /><h3>至少三分钟</h3><p>少于 3 分钟直接排除；保留更完整的中长视频，同时过滤 Shorts、片段与高能剪辑。</p></article>
-          <article className="reveal-on-scroll"><span>03</span><CheckCircle2 /><h3>负面语义一票否决</h3><p>反应、测评、挑战、恶搞、游戏解说、教程和疑似二次搬运，即使包含助眠标签也会自动退出候选。</p></article>
-          <article className="reveal-on-scroll"><span>04</span><Heart /><h3>小姐姐频道怎么选</h3><p>根据预置频道 ID 或频道明确自述标注。新视频自动继承频道标注；未标注的频道留在“全部博主”中。此分类可能遗漏频道，也不代表平台提供的性别信息。</p></article>
-        </div>
-        <div className="method-footnote"><Info size={16} /><p>页面上的“已通过筛选”表示通过了本站的规则检查，不是平台认证；规则可能遗漏边界作品。缺少七日前快照时，榜单增速项按 0.5 的中性值计算。</p></div>
-      </section>
-
-      <footer>
-        <div className="footer-brand"><WaveMark /><strong>静响榜</strong><span>让好内容，安静地被听见。</span></div>
-        <p>非 YouTube 或哔哩哔哩官方榜单。视频版权与平台数据归各自权利人所有。本网站不缓存或下载视频内容。</p>
-        <div><a href="./privacy.html">隐私政策</a><a href="https://www.youtube.com/t/terms" target="_blank" rel="noreferrer">YouTube 条款</a><a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Google 隐私</a><a href="#method">筛选说明</a></div>
-      </footer>
-      <a className={`return-home${showBackToTop ? ' is-visible' : ''}`} href="#top" aria-label="返回首页顶部" aria-hidden={!showBackToTop} tabIndex={showBackToTop ? 0 : -1}>
-        <span className="return-home-icon"><ArrowUp size={18} strokeWidth={1.7} /></span>
-        <span className="return-home-copy"><strong>返回首页</strong><small>BACK TO TOP</small></span>
-      </a>
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== '/' || event.ctrlKey || event.metaKey || event.altKey || page !== 'discover') return;
+      if (event.target instanceof HTMLElement && (['INPUT', 'TEXTAREA', 'SELECT'].includes(event.target.tagName) || event.target.isContentEditable)) return;
+      event.preventDefault();searchInput.current?.focus();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [page]);
+  useEffect(() => {setVisible(24);setRandom(null);}, [f]);
+  useEffect(() => setRankVisible(30), [board]);
+  useEffect(() => setCreatorVisible(24), [creatorQuery, creatorPlatform, creatorCategory, creatorFemale]);
+  const videos = useMemo(() => data ? allVideos(data) : [], [data]);
+  const creators = useMemo(() => data ? allCreators(data) : [], [data]);
+  const types = useMemo(() => data ? categories(data) : ['全部类型'], [data]);
+  const found = useMemo(() => filterVideos(videos, f), [videos, f]);
+  const ranked = useMemo(() => data ? rankVideos(data, board) : [], [data, board]);
+  const weekly = useMemo(() => data ? [...data.videos.bilibili].filter((v) => Date.parse(v.publishedAt) >= Date.parse(data.generatedAt) - 7 * 86400000).sort((a, b) => b.views - a.views).slice(0, 4) : [], [data]);
+  const creatorResults = useMemo(() => filterCreators(creators, creatorQuery, creatorPlatform, creatorCategory, creatorFemale), [creators, creatorQuery, creatorPlatform, creatorCategory, creatorFemale]);
+  const featuredCreators = useMemo(() => filterCreators(creators, '', 'all', '全部类型', false).slice(0, 4), [creators]);
+  const videoMap = useMemo(() => new Map(videos.map((v) => [videoKey(v), v])), [videos]);
+  const creatorMap = useMemo(() => new Map(creators.map((c) => [creatorKey(c), c])), [creators]);
+  const works = useMemo(() => {const map = new Map<string, RankedVideo[]>();for (const v of videos) {const key = `${v.platform}:${v.creatorId}`;map.set(key, [...(map.get(key) || []), v]);}for (const items of map.values()) items.sort((a, b) => b.views - a.views);return map;}, [videos]);
+  function setFilters(change: Partial<Filters>) {setLocal((p) => ({ ...p, filters: { ...p.filters, ...change } }));}
+  function toggleVideo(v: RankedVideo) {const key = videoKey(v);setLocal((p) => ({ ...p, savedVideos: p.savedVideos.includes(key) ? p.savedVideos.filter((i) => i !== key) : [...p.savedVideos, key] }));}
+  function toggleCreator(key: string) {setLocal((p) => ({ ...p, savedCreators: p.savedCreators.includes(key) ? p.savedCreators.filter((i) => i !== key) : [...p.savedCreators, key] }));}
+  function openVideo(v: RankedVideo) {setLocal((p) => p.rememberRecent ? { ...p, recent: [{ key: videoKey(v), openedAt: new Date().toISOString() }, ...p.recent.filter((i) => i.key !== videoKey(v))].slice(0, 50) } : p);}
+  async function restore(file?: File) {if (!file) return;try {const imported = await importState(file);setLanguage(imported.language);setLocal((previous) => ({ ...imported, savedVideos: [...new Set([...previous.savedVideos, ...imported.savedVideos])], savedCreators: [...new Set([...previous.savedCreators, ...imported.savedCreators])], recent: [...imported.recent, ...previous.recent.filter((item) => !imported.recent.some((old) => old.key === item.key))].slice(0, 50) }));setNotice(t('备份已导入，收藏与现有内容合并。'));} catch (e) {setNotice(t(e instanceof Error ? e.message : '导入失败。'));}if (fileInput.current) fileInput.current.value = '';}
+  function changeLanguage() { const next = local.language === 'zh' ? 'en' : 'zh'; setLanguage(next); setLocal((previous) => ({ ...previous, language: next })); }
+  const activeFilters = JSON.stringify(f) !== JSON.stringify(defaultFilters);
+  const catalogOffset = activeFilters ? 0 : 4;
+  const videoCard = (v: RankedVideo, mode: 'grid' | 'list' = 'grid', rank?: number) => <VideoCard key={videoKey(v)} video={v} mode={mode} rank={rank} saved={local.savedVideos.includes(videoKey(v))} onSave={() => toggleVideo(v)} onOpen={() => openVideo(v)} />;
+  const creatorCard = (key: string) => {const c = creatorMap.get(key);return c ? <CreatorCard key={key} creator={c} works={works.get(key) || []} saved={local.savedCreators.includes(key)} onSave={() => toggleCreator(key)} onOpenVideo={openVideo} /> : <div className="missing-item" key={key}><strong>{key}</strong><p>{t("目前数据中找不到这位创作者，收藏记录仍已保留。")}</p><button onClick={() => toggleCreator(key)}>{t("删除记录")}</button></div>;};
+  return <div className="site-shell">
+    <a className="skip-link" href="#content">{t("跳转到内容")}</a>
+    <header className="site-header"><div className="header-inner"><Brand /><nav className="desktop-nav" aria-label={t("主导航")}>{nav.map(({ key }) => <a href={`#/${key}`} key={key} className={page === key ? 'active' : ''} aria-current={page === key ? 'page' : undefined}>{t(pageNames[key])}</a>)}</nav><div className="header-right"><span>{t("双平台 ASMR 作品索引")}</span></div><button className="language-switch" type="button" onClick={changeLanguage} aria-label={local.language === 'zh' ? 'Switch to English' : '切换为中文'}>{local.language === 'zh' ? 'EN' : '中文'}</button></div></header>
+    <main id="content" className="main-content">
+      {loading && <div className="load-state"><span className="loading-line" />{t("正在读取内容索引…")}</div>}
+      {!loading && loadError && <Empty title={t("暂时无法读取内容")} text={t("请检查网络连接，然后重新尝试。已有收藏仍保存在本机。")} action={<button className="button primary" onClick={() => setReload((n) => n + 1)}>{t("重新加载 ")}<ArrowRight size={16} /></button>} />}
+      {!loading && !loadError && data && page === 'discover' && <>
+        <div className="page-heading discover-heading"><div><h1>{t("ASMR 视频索引 ")}<span>Browse the collection</span></h1><p>{t("收录 YouTube 与哔哩哔哩的助眠作品。挑选声音，直接前往原平台。")}</p></div><span className="heading-count"><strong>{videos.length}</strong>{t(" 支作品 ")}<i>·</i> {creators.length}{t(" 位创作者")}</span></div>
+        <div className="search-shell"><Search size={21} /><input ref={searchInput} type="search" value={f.query} onChange={(e) => setFilters({ query: e.target.value })} placeholder={t("搜索视频或创作者")} aria-label={t("搜索视频或创作者")} />{f.query && <button className="icon-button" aria-label={t("清空搜索")} onClick={() => setFilters({ query: '' })}><X size={18} /></button>}<kbd>/</kbd></div>
+        <div className="filter-main"><div className="platform-switch" role="group" aria-label={t("平台筛选")}>{([['all', '全部平台'], ['bilibili', '哔哩哔哩'], ['youtube', 'YouTube']] as const).map(([key, label]) => <button key={key} className={f.platform === key ? 'selected' : ''} aria-pressed={f.platform === key} onClick={() => setFilters({ platform: key })}>{t(label)}</button>)}</div><div className="category-scroll">{types.map((type) => <button key={type} className={f.category === type ? 'selected' : ''} aria-pressed={f.category === type} onClick={() => setFilters({ category: type })}>{t(type)}</button>)}</div></div>
+        <div className="tools-row"><div className="advanced-filters"><Select label={t("时长")} value={f.duration} onChange={(v) => setFilters({ duration: v as Filters['duration'] })} options={durationOptions} /><Select label={t("发布时间")} value={f.period} onChange={(v) => setFilters({ period: v as Filters['period'] })} options={periodOptions} /><label className="female-filter"><input type="checkbox" checked={f.femaleOnly} onChange={(e) => setFilters({ femaleOnly: e.target.checked })} /><span>{t("只看小姐姐")}</span></label></div><button className="mobile-filter-button" onClick={() => setDrawer(true)}><SlidersHorizontal size={17} />{t("更多筛选")}</button><div className="tool-actions"><Select label={t("排序")} value={f.sort} onChange={(v) => setFilters({ sort: v as Filters['sort'] })} options={sortOptions} /><button className="text-button" onClick={() => setRandom(found.length ? found[Math.floor(Math.random() * found.length)] : null)}><Shuffle size={16} />{t("随机发现")}</button><div className="view-switch" role="group" aria-label={t("显示模式")}><button className={local.display === 'grid' ? 'selected' : ''} aria-label={t("网格显示")} aria-pressed={local.display === 'grid'} onClick={() => setLocal((p) => ({ ...p, display: 'grid' }))}><Grid2X2 size={17} /></button><button className={local.display === 'list' ? 'selected' : ''} aria-label={t("列表显示")} aria-pressed={local.display === 'list'} onClick={() => setLocal((p) => ({ ...p, display: 'list' }))}><List size={18} /></button></div></div></div>
+        {random && <div className="random-result"><span>{t("随机发现 / 当前筛选")}</span><strong>{random.title}</strong>{safeExternalUrl(random.url, random.platform, 'video') && <a href={safeExternalUrl(random.url, random.platform, 'video')!} target="_blank" rel="noopener noreferrer" onClick={() => openVideo(random)}>{t("前往原视频 ")}<ArrowRight size={16} /></a>}<button className="icon-button" aria-label={t("关闭随机发现")} onClick={() => setRandom(null)}><X size={18} /></button></div>}
+        {!activeFilters && <><section className="shop-section arrivals"><div className="section-heading"><div><h2>{t("新近发布 ")}<small>New Arrivals</small></h2><p>{t("按原平台发布时间整理")}</p></div></div><div className="video-grid">{found.slice(0, 4).map((v) => videoCard(v))}</div></section><div className="editorial-split"><section className="shop-section"><div className="section-heading"><div><h2>{t("本周热门 ")}<small>Weekly Chart</small></h2><p>{t("B站近 7 天发布 · 按公开播放量排列")}</p></div><a href="#/rankings">{t("更多榜单 ")}<ArrowRight size={15} /></a></div><div className="weekly-list">{weekly.map((v, i) => videoCard(v, 'list', i + 1))}</div></section><section className="shop-section artists-section"><div className="section-heading"><div><h2>{t("创作者目录 ")}<small>Artists</small></h2><p>{t("从已收录作品认识创作者")}</p></div><a href="#/creators">{t("浏览全部 ")}<ArrowRight size={15} /></a></div><div className="artist-list">{featuredCreators.map((c) => <div className="artist-entry" key={creatorKey(c)}><span className="artist-avatar">{c.avatar ? <img src={c.avatar} alt="" loading="lazy" referrerPolicy="no-referrer" /> : c.name.slice(0, 1)}</span><span><strong>{c.name}</strong><small>{t(platformName[c.platform])} · {works.get(creatorKey(c))?.length || 0}{t(" 支作品")}</small></span><a href={safeExternalUrl(c.url, c.platform, 'creator') || undefined} target="_blank" rel="noopener noreferrer" aria-label={`前往 ${c.name} 的原平台主页`}><ArrowRight size={16} /></a></div>)}</div></section></div></>}
+        <div className="results-heading"><div><h2>{t("作品目录 ")}<span>{found.length}</span></h2><p>{t(activeFilters ? '当前筛选条件已应用' : '按发布时间浏览其余作品')}{t(" · 数据更新于 ")}{formatDate(data.generatedAt)}</p></div>{activeFilters && <button className="clear-button" onClick={() => setFilters(defaultFilters)}>{t("清除筛选 ")}<X size={15} /></button>}</div>
+        {found.length ? <><div className={`video-grid ${local.display === 'list' ? 'is-list' : ''}`}>{found.slice(catalogOffset, visible + catalogOffset).map((v) => videoCard(v, local.display))}</div>{visible + catalogOffset < found.length && <button className="more-button" onClick={() => setVisible((n) => n + 24)}>{t("显示更多 ")}<span>{Math.min(24, found.length - visible - catalogOffset)}{t(" 支")}</span><ArrowRight size={16} /></button>}</> : <Empty title={t("没有匹配的作品")} text={t("试试其他关键词，或清除部分筛选条件。")} action={<button className="button" onClick={() => setFilters(defaultFilters)}>{t("清除筛选")}</button>} />}
+      </>}
+      {!loading && !loadError && data && page === 'rankings' && <><div className="page-heading"><div><span className="eyebrow">HUSH INDEX / RANKINGS</span><h1>{t("助眠内容榜单")}</h1><p>{t("用已有公开数据梳理值得听的作品。")}</p></div></div><div className="board-tabs" role="tablist" aria-label={t("选择榜单")}>{boards.map((item) => <button role="tab" aria-selected={board === item.key} key={item.key} className={board === item.key ? 'selected' : ''} onClick={() => setBoard(item.key)}>{t(item.label)}</button>)}</div><div className="board-intro"><div><h2>{t(boards.find((item) => item.key === board)?.label || "")}</h2><p>{t(boards.find((item) => item.key === board)?.note || "")} · {ranked.length}{t(" 支入榜")}</p></div><a href="#/about">{t("查看榜单口径 ")}<ArrowRight size={15} /></a></div>{board === 'rising' && ranked.some((v) => !v.scores?.hasSevenDaySnapshot) && <p className="data-note">{t("部分作品暂无完整七日快照，沿用既有算法的中性增速值；不展示虚构的排名变动。")}</p>}{ranked.length ? <><div className="ranking-list">{ranked.slice(0, rankVisible).map((v, i) => videoCard(v, 'list', i + 1))}</div>{rankVisible < ranked.length && <button className="more-button" onClick={() => setRankVisible((n) => n + 30)}>{t("显示更多 ")}<ArrowRight size={16} /></button>}</> : <Empty title={t("暂无符合条件的作品")} text={t("等待真实数据与快照更新后，榜单会自动显示。")} />}</>}
+      {!loading && !loadError && data && page === 'creators' && <><div className="page-heading"><div><span className="eyebrow">HUSH INDEX / CREATORS</span><h1>{t("创作者目录")}</h1><p>{t("找到熟悉的声音，再从代表作品开始。")}</p></div><span className="heading-count"><strong>{creators.length}</strong>{t(" 位已收录")}</span></div><div className="creator-tools"><label className="creator-search"><Search size={18} /><input value={creatorQuery} onChange={(e) => setCreatorQuery(e.target.value)} placeholder={t("搜索创作者")} aria-label={t("搜索创作者")} /></label><Select label={t("平台")} value={creatorPlatform} onChange={(v) => setCreatorPlatform(v as Scope)} options={[['all', '全部平台'], ['bilibili', '哔哩哔哩'], ['youtube', 'YouTube']]} /><Select label={t("类型")} value={creatorCategory} onChange={setCreatorCategory} options={types.map((t) => [t, t])} /><label className="female-filter"><input type="checkbox" checked={creatorFemale} onChange={(e) => setCreatorFemale(e.target.checked)} /><span>{t("只看小姐姐")}</span></label></div><div className="results-heading"><div><h2>{t("创作者 ")}<span>{creatorResults.length}</span></h2><p>{t("按公开粉丝或订阅数排序")}</p></div></div>{creatorResults.length ? <><div className="creator-grid">{creatorResults.slice(0, creatorVisible).map((c) => creatorCard(creatorKey(c)))}</div>{creatorVisible < creatorResults.length && <button className="more-button" onClick={() => setCreatorVisible((n) => n + 24)}>{t("显示更多 ")}<ArrowRight size={16} /></button>}</> : <Empty title={t("没有匹配的创作者")} text={t("请尝试其他名字或筛选条件。")} />}</>}
+      {!loading && !loadError && data && page === 'saved' && <><div className="page-heading"><div><span className="eyebrow">HUSH INDEX / SAVED</span><h1>{t("留给下次的声音")}</h1><p>{t("收藏与访问记录只保存在这台设备的浏览器中。")}</p></div></div><div className="saved-tabs" role="tablist" aria-label={t("收藏分类")}>{([['videos', '视频', local.savedVideos.length], ['creators', '创作者', local.savedCreators.length], ['recent', '最近访问', local.recent.length]] as const).map(([key, label, count]) => <button role="tab" aria-selected={savedTab === key} key={key} className={savedTab === key ? 'selected' : ''} onClick={() => setSavedTab(key)}>{t(label)} <span>{count}</span></button>)}</div>
+        {savedTab === 'videos' && (local.savedVideos.length ? <div className="video-grid">{local.savedVideos.map((key) => {const v = videoMap.get(key);return v ? videoCard(v) : <div className="missing-item" key={key}><strong>{key}</strong><p>{t("目前数据中找不到这支视频，收藏记录仍已保留。")}</p><button onClick={() => setLocal((p) => ({ ...p, savedVideos: p.savedVideos.filter((i) => i !== key) }))}>{t("删除记录")}</button></div>;})}</div> : <Empty title={t("还没有收藏视频")} text={t("在发现或榜单页点击书签图标，就能把视频留在这里。")} action={<a className="button" href="#/discover">{t("去发现作品 ")}<ArrowRight size={16} /></a>} />)}
+        {savedTab === 'creators' && (local.savedCreators.length ? <div className="creator-grid">{local.savedCreators.map(creatorCard)}</div> : <Empty title={t("还没有收藏创作者")} text={t("在创作者目录点击书签图标，即可快速找到他们。")} action={<a className="button" href="#/creators">{t("浏览创作者 ")}<ArrowRight size={16} /></a>} />)}
+        {savedTab === 'recent' && <><div className="recent-controls"><label className="female-filter"><input type="checkbox" checked={local.rememberRecent} onChange={(e) => setLocal((p) => ({ ...p, rememberRecent: e.target.checked }))} /><span>{t("记录我打开的原视频")}</span></label>{local.recent.length > 0 && <button className="clear-button" onClick={() => setLocal((p) => ({ ...p, recent: [] }))}><Trash2 size={16} />{t("清空访问记录")}</button>}</div>{local.recent.length ? <div className="recent-list">{local.recent.map((item) => {const v = videoMap.get(item.key);const href = v && safeExternalUrl(v.url, v.platform, 'video');return <div className="recent-item" key={item.key}>{v ? <>{href ? <a href={href} target="_blank" rel="noopener noreferrer" onClick={() => openVideo(v)}>{v.title}</a> : <strong>{v.title}</strong>}<small>{t(platformName[v.platform])}{t(" · 最近打开 ")}{formatDate(item.openedAt)}</small></> : <><strong>{item.key}</strong><small>{t("当前资源库中未找到")}</small></>}<button className="icon-button" aria-label={t("删除访问记录")} onClick={() => setLocal((p) => ({ ...p, recent: p.recent.filter((i) => i.key !== item.key) }))}><X size={17} /></button></div>;})}</div> : <Empty title={t("还没有访问记录")} text={t("你主动打开原平台视频后，这里会记录最近打开的链接。")} />}</>}
+        <div className="backup-panel"><div><h2>{t("本地数据备份")}</h2><p>{t("导出 JSON 可在其他设备恢复收藏。清除浏览器数据可能导致本机收藏丢失。")}</p></div><div className="backup-actions"><button className="button" onClick={() => exportState(local)}><Download size={16} />{t("导出备份")}</button><button className="button" onClick={() => fileInput.current?.click()}><Upload size={16} />{t("导入备份")}</button><input ref={fileInput} type="file" accept="application/json,.json" hidden onChange={(e) => restore(e.target.files?.[0])} /></div></div>
+      </>}
+      {page === 'about' && <><div className="page-heading"><div><span className="eyebrow">HUSH INDEX / ABOUT</span><h1>{t("关于静响榜")}</h1><p>{t("一个把你带往原平台的 ASMR 内容索引。")}</p></div></div><div className="about-grid"><section><h2>{t("内容怎样入选")}</h2><p>{t("聚合 YouTube 与哔哩哔哩的公开资料，经自动清洗规则过滤非助眠内容与三分钟以下的视频。分类与“小姐姐频道”仅依据现有数据标注。")}</p></section><section><h2>{t("榜单怎么算")}</h2><p>{t("B站热榜：0.35 播放 + 0.25 点赞率 + 0.20 收藏率 + 0.20 七日增速，乘以发布时间衰减。上升榜仅收录近 30 天作品：0.70 增速 + 0.15 点赞率 + 0.15 收藏率。长尾榜仅收录超过 30 天作品：0.45 收藏率 + 0.30 点赞率 + 0.25 播放。各分项按候选集归一化；缺少七日快照时增速取 0.5。")}</p><p>{t("YouTube 热门与 B站热门按公开播放量排序。")}</p></section><section><h2>{t("数据与隐私")}</h2><p>{t("本站不提供播放、账号或评论。收藏、筛选偏好及最近访问记录存在浏览器本地，可导入导出。数据更新时间是整份索引的更新时刻，不代表每支视频的收录时间。")}</p></section><section><h2>{t("来源与归属")}</h2><p>{t("视频、封面和创作者信息归原平台及权利人所有。静响榜与 YouTube、哔哩哔哩均无官方关联；平台数据可能有延迟或受访问限制。")}</p><a href="https://github.com/YanLvLab/asmr-rankings" target="_blank" rel="noopener noreferrer">{t("查看 GitHub 项目 ")}<ArrowRight size={16} /></a></section></div></>}
     </main>
-  )
+    <footer className="site-footer"><div><Brand /><p>{t("安静地发现，然后回到原平台聆听。")}</p>{data && <p className="footer-status">YouTube {formatDate(data.sources.youtube.updatedAt)}{data.sources.youtube.status !== 'live' ? t(' · 暂未更新') : ''}{t("\u3000/\u3000哔哩哔哩 ")}{formatDate(data.sources.bilibili.updatedAt)}{data.sources.bilibili.status !== 'live' ? t(' · 暂未更新') : ''}</p>}</div><div className="footer-links"><a href="#/about">{t("方法与说明")}</a><a href={`${import.meta.env.BASE_URL}privacy.html?lang=${local.language}`}>{t("隐私说明")}</a><a href="https://github.com/YanLvLab/asmr-rankings" target="_blank" rel="noopener noreferrer">GitHub</a><span>{t("与两平台官方无关")}</span></div></footer>
+    {showTop && <button className="back-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label={t("返回顶部")}><ArrowUp size={19} /></button>}
+    <nav className="mobile-nav" aria-label={t("移动端主导航")}>{nav.map(({ key, icon: Icon }) => <a href={`#/${key}`} key={key} className={page === key ? 'active' : ''} aria-current={page === key ? 'page' : undefined}><Icon size={20} /><span>{t(pageNames[key])}</span></a>)}</nav>
+    {drawer && <div className="drawer-backdrop" onClick={() => setDrawer(false)}><section className="filter-drawer" onClick={(e) => e.stopPropagation()} aria-label={t("更多筛选")}><div className="drawer-title"><h2>{t("更多筛选")}</h2><button className="icon-button" onClick={() => setDrawer(false)} aria-label={t("关闭筛选")}><X size={21} /></button></div><Select label={t("时长")} value={f.duration} onChange={(v) => setFilters({ duration: v as Filters['duration'] })} options={durationOptions} /><Select label={t("发布时间")} value={f.period} onChange={(v) => setFilters({ period: v as Filters['period'] })} options={periodOptions} /><Select label={t("排序")} value={f.sort} onChange={(v) => setFilters({ sort: v as Filters['sort'] })} options={sortOptions} /><label className="female-filter"><input type="checkbox" checked={f.femaleOnly} onChange={(e) => setFilters({ femaleOnly: e.target.checked })} /><span>{t("只看小姐姐")}</span></label><button className="button primary" onClick={() => setDrawer(false)}>{t("查看 ")}{found.length}{t(" 支作品")}</button></section></div>}
+    {notice && <div className="toast" role="status">{notice}<button className="icon-button" aria-label={t("关闭提示")} onClick={() => setNotice('')}><X size={16} /></button></div>}
+  </div>;
 }
