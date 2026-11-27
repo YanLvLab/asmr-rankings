@@ -65,7 +65,7 @@
           "适合长时间收听",
           "明确睡眠意图"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "lHZ2azw5LCc",
@@ -148,7 +148,7 @@
           "低刺激声音形式",
           "耳部触发音"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "2WDphvKaL7w",
@@ -381,7 +381,7 @@
           "放松用途",
           "沉浸式角色扮演"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "8mEMQPWGv6M",
@@ -1930,7 +1930,7 @@
           "低刺激声音形式",
           "耳部触发音"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "NfCbfgpc3sY",
@@ -1982,7 +1982,7 @@
           "明确睡眠意图",
           "放松用途"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "Iik0zpRfsOg",
@@ -2039,7 +2039,7 @@
           "典型 ASMR 触发",
           "放松用途"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "WpXTc1AjDlw",
@@ -2206,7 +2206,7 @@
           "典型 ASMR 触发",
           "放松用途"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "47Tep2TwUBw",
@@ -2336,7 +2336,7 @@
           "低刺激声音形式",
           "耳部触发音"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "M_r8kIeqgOY",
@@ -2413,7 +2413,7 @@
           "明确睡眠意图",
           "放松用途"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "3c175ZRuWjw",
@@ -2566,7 +2566,7 @@
           "低刺激声音形式",
           "耳部触发音"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "D48xtQZlzEY",
@@ -2707,7 +2707,7 @@
           "耳部触发音",
           "典型 ASMR 触发"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "-6V7Cel7kpI",
@@ -2815,7 +2815,7 @@
           "耳部触发音",
           "典型 ASMR 触发"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "soJBYH4zTuA",
@@ -3114,7 +3114,7 @@
           "低刺激声音形式",
           "耳部触发音"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "mgjby9AqxaM",
@@ -3165,7 +3165,7 @@
           "明确睡眠意图",
           "放松用途"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "r76DkZtzPT8",
@@ -3276,7 +3276,7 @@
           "低刺激声音形式",
           "耳部触发音"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "MHWnSqcWYU0",
@@ -3574,7 +3574,7 @@
           "耳部触发音",
           "典型 ASMR 触发"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "5WZZUiCnkig",
@@ -3654,7 +3654,7 @@
           "典型 ASMR 触发",
           "放松用途"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "J_QI97SR1nA",
@@ -4169,7 +4169,7 @@
           "耳部触发音",
           "放松用途"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "o55ymbBLlh8",
@@ -4328,7 +4328,7 @@
           "典型 ASMR 触发",
           "放松用途"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "2Kzg87hdL2A",
@@ -4784,7 +4784,7 @@
           "低刺激声音形式",
           "耳部触发音"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "woGOgiIUI2s",
@@ -5132,7 +5132,7 @@
           "低刺激声音形式",
           "典型 ASMR 触发"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "pQS96jmzmik",
@@ -5262,7 +5262,7 @@
           "明确睡眠意图",
           "放松用途"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "EJziGpUOdIs",
@@ -31176,14 +31176,14 @@
         "avatar": "",
         "description": "Tingles, cosplay, roleplays, and ASMR all for your relaxation :)\n\nCo-Owner of https://www.manatalentgroup.com/\n\nHello there YouTube! My name is Gibi - I have been watching ASMR videos by accident since I realized that some sounds and movements made me feel blissfully relaxed. I've watched the ASMR community grow into something incredible, and I decided that I wanted to hop in and be a part of it! You will see a variety of videos from me, from roleplays, to makeup, to cosplay, to original characters! I hope you very much enjoy.\n",
         "followers": 5220000,
-        "femaleHostEvidence": null,
+        "femaleHostEvidence": "curated-channel",
         "qualifyingVideos": 20,
         "topCategories": [
           "耳语",
           "敲击",
           "角色扮演"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "UCzGEGjOCbgv9z9SF71QyI7g",
@@ -31257,13 +31257,13 @@
         "avatar": "",
         "description": "",
         "followers": 2580000,
-        "femaleHostEvidence": null,
+        "femaleHostEvidence": "curated-channel",
         "qualifyingVideos": 2,
         "topCategories": [
           "综合触发",
           "角色扮演"
         ],
-        "femaleHost": false
+        "femaleHost": true
       },
       {
         "id": "UC6gLlIAnzg7eJ8VuXDCZ_vg",
