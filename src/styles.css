@@ -69,6 +69,7 @@ svg { flex: none; }
 .select-field select { height: 34px; max-width: 160px; padding: 0 9px; border: 1px solid var(--rule); background: var(--sheet); color: var(--ink); font-size: 12px; }
 .female-filter { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; color: var(--ink); font-size: 12px; white-space: nowrap; cursor: pointer; }
 .female-filter input { width: 16px; height: 16px; margin: 0; accent-color: var(--olive); }
+.filter-note { margin: 8px 0 20px; color: var(--muted); font-size: 12px; line-height: 1.6; }
 .text-button, .clear-button { display: inline-flex; align-items: center; gap: 7px; padding: 7px 0; border: 0; background: transparent; color: var(--olive); font-size: 12px; white-space: nowrap; }
 .text-button:hover, .clear-button:hover { color: var(--brown); }
 .view-switch { display: flex; border: 1px solid var(--rule); }
