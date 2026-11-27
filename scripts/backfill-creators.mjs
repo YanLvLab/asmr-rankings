@@ -12,6 +12,7 @@ const statePath = path.join(root, 'public/data/backfill-state.json')
 const maxCreators = Number(process.env.BACKFILL_CREATORS_PER_PLATFORM || 4)
 const maxDetails = Number(process.env.BACKFILL_DETAILS_PER_PLATFORM || 45)
 const maxBiliPages = Number(process.env.BACKFILL_BILI_PAGES_PER_CREATOR || 3)
+const rescanAfterMs = 7 * 86_400_000
 const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 const count = (value) => Number(String(value || 0).replace(/[^\d]/g, '')) || 0
 
@@ -74,7 +75,8 @@ async function collectYoutube(data, state) {
   let added = 0
   for (const creator of data.creators.youtube) {
     if (creators >= maxCreators || details >= maxDetails) break
-    if (state.youtube.completed[creator.id]) continue
+    const lastScan = new Date(state.youtube.completed[creator.id] || 0).getTime()
+    if (Number.isFinite(lastScan) && Date.now() - lastScan < rescanAfterMs) continue
     creators += 1
     try {
       const base = `https://www.youtube.com/channel/${encodeURIComponent(creator.id)}`
@@ -118,7 +120,7 @@ async function collectYoutube(data, state) {
         }
         await pause(300)
       }
-      if (exhausted) state.youtube.completed[creator.id] = true
+      if (exhausted) state.youtube.completed[creator.id] = new Date().toISOString()
       console.log(`youtube channel ${creator.name}: ${candidates.length} visible cards, ${added} added total`)
     } catch (error) {
       console.warn(`youtube channel ${creator.id}: ${String(error.message || error)}`)
@@ -146,15 +148,23 @@ async function collectBilibili(data, state) {
   let limited = false
   for (const creator of data.creators.bilibili) {
     if (creators >= maxCreators || details >= maxDetails || limited) break
-    const startPage = state.bilibili.nextPage[creator.id] || 1
-    if (startPage < 0) continue
+    let startPage = state.bilibili.nextPage[creator.id] || 1
+    if (startPage < 0) {
+      const lastScan = new Date(state.bilibili.completedAt?.[creator.id] || 0).getTime()
+      if (Number.isFinite(lastScan) && Date.now() - lastScan < rescanAfterMs) continue
+      startPage = 1
+    }
     creators += 1
     for (let page = startPage; page < startPage + maxBiliPages && details < maxDetails; page += 1) {
       try {
         const query = new URLSearchParams({ mid: creator.id, pn: String(page), ps: '30' })
         const listing = await biliJson(`https://api.bilibili.com/x/space/arc/search?${query}`)
         const items = listing.list?.vlist || []
-        if (!items.length) { state.bilibili.nextPage[creator.id] = -1; break }
+        if (!items.length) {
+          state.bilibili.nextPage[creator.id] = -1
+          state.bilibili.completedAt[creator.id] = new Date().toISOString()
+          break
+        }
         for (const item of items) {
           if (!item.bvid || known.has(item.bvid) || details >= maxDetails) continue
           details += 1
@@ -182,6 +192,7 @@ async function collectBilibili(data, state) {
         }
         if (limited || details >= maxDetails) break
         state.bilibili.nextPage[creator.id] = items.length < 30 ? -1 : page + 1
+        if (items.length < 30) state.bilibili.completedAt[creator.id] = new Date().toISOString()
         if (items.length < 30) break
         await pause(1800)
       } catch (error) {
@@ -203,8 +214,9 @@ async function main() {
   state.youtube ||= { completed: {}, checked: {} }
   state.youtube.completed ||= {}
   state.youtube.checked ||= {}
-  state.bilibili ||= { nextPage: {} }
+  state.bilibili ||= { nextPage: {}, completedAt: {} }
   state.bilibili.nextPage ||= {}
+  state.bilibili.completedAt ||= {}
   const youtube = await collectYoutube(data, state)
   const bilibili = await collectBilibili(data, state)
   if (youtube.added || bilibili.added) data.generatedAt = new Date().toISOString()
