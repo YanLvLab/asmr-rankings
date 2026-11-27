@@ -73,6 +73,8 @@ async function collectYoutube(data, state) {
   let creators = 0
   let details = 0
   let added = 0
+  let consecutiveDetailFailures = 0
+  let unavailable = false
   for (const creator of data.creators.youtube) {
     if (creators >= maxCreators || details >= maxDetails) break
     const lastScan = new Date(state.youtube.completed[creator.id] || 0).getTime()
@@ -109,6 +111,8 @@ async function collectYoutube(data, state) {
         details += 1
         try {
           const video = await enrichVideo(candidate)
+          if (!video.publishedAt) throw new Error('video page has no verified publication date')
+          consecutiveDetailFailures = 0
           state.youtube.checked[candidate.id] = true
           if (video.approved && video.creatorId === creator.id) {
             const { approved: _approved, followers: _followers, creatorUrl: _creatorUrl, ...record } = video
@@ -117,6 +121,13 @@ async function collectYoutube(data, state) {
           }
         } catch (error) {
           console.warn(`youtube detail ${candidate.id}: ${String(error.message || error)}`)
+          consecutiveDetailFailures += 1
+          if (consecutiveDetailFailures >= 3) {
+            unavailable = true
+            exhausted = false
+            console.warn('youtube detail pages unavailable; stop this run and retain progress')
+            break
+          }
         }
         await pause(300)
       }
@@ -125,11 +136,12 @@ async function collectYoutube(data, state) {
     } catch (error) {
       console.warn(`youtube channel ${creator.id}: ${String(error.message || error)}`)
     }
+    if (unavailable) break
     await pause(1000)
   }
   data.videos.youtube = [...known.values()].sort((a, b) => b.views - a.views)
   updateCreators(data, 'youtube', descriptions)
-  return { creators, details, added }
+  return { creators, details, added, unavailable }
 }
 
 async function biliJson(url) {
