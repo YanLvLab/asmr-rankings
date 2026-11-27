@@ -4,6 +4,7 @@ import { annotateHostProfiles, femaleLedProfile } from '../scripts/creator-profi
 
 test('labels known channels by stable platform ID and leaves unknown channels unlabelled', () => {
   assert.equal(femaleLedProfile('youtube', 'UCmZb4LwQRhEzZX5Uqpcqziw', 'Coromo Sara. ASMR'), 'curated-channel')
+  assert.equal(femaleLedProfile('youtube', 'UCE6acMV3m35znLcf0JGNn7Q', 'Gibi ASMR'), 'curated-channel')
   assert.equal(femaleLedProfile('youtube', 'unknown', 'A pretty name'), null)
   assert.equal(femaleLedProfile('bilibili', 'unknown', '女声主播助眠'), 'channel-self-description')
   assert.equal(femaleLedProfile('youtube', 'unknown', 'No face', 'I am a woman and make ASMR for sleep'), 'channel-self-description')
