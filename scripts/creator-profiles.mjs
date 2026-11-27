@@ -3,6 +3,8 @@
 // New videos from these IDs inherit the label automatically.
 const FEMALE_LED_IDS = {
   youtube: new Set([
+    'UCE6acMV3m35znLcf0JGNn7Q', // Gibi ASMR
+    'UClqNSqnWeOOUVkzcJFj4rBw', // Tingting ASMR
     'UCmZb4LwQRhEzZX5Uqpcqziw', // Coromo Sara. ASMR
     'UCAtFkapSeoEGPxm5bC3tvaw', // ASMR PPOMO
     'UC6gLlIAnzg7eJ8VuXDCZ_vg', // Gentle Whispering ASMR
