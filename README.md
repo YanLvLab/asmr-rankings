@@ -28,19 +28,20 @@ npm run build
 
 ## 数据与自动更新
 
-前端只读取 `public/data/rankings.json`。日常更新由 `.github/workflows/refresh-and-deploy.yml` 在 **main** 分支执行：分别采集双平台公开数据，重新清洗，运行测试，写回快照并构建/发布。采集失败时保留已有数据并标记来源状态。功能分支不会触发线上部署。
+前端只读取 `public/data/rankings.json`。日常更新由 `.github/workflows/refresh-and-deploy.yml` 在 **main** 分支执行：分别采集双平台公开数据，回溯已收录创作者作品，重新清洗，运行测试，写回快照并构建/发布。`public/data/backfill-state.json` 保存回溯进度。采集失败时保留已有数据并标记来源状态。功能分支不会触发线上部署。
 
 手动运行：
 
 ```powershell
 npm run collect
 npm run collect:youtube
+npm run backfill:creators
 npm run sanitize
 npm test
 npm run build
 ```
 
-采集脚本不使用 YouTube API Key，不破解平台风控。清洗规则剔除明显非助眠内容、疑似搬运及少于 3 分钟的视频；规则分数不是医学判断，也不保证每条视频都适合每位用户。女性创作者标注来自 `scripts/creator-profiles.mjs` 的已核实频道资料，未知频道不会按头像或名字猜测。视频内容与封面归原平台和权利人所有。
+采集脚本不使用 YouTube API Key，不破解平台风控。回溯任务读取已收录创作者的公开视频页与频道内搜索，每次限制频道与详情请求数，逐步补录；B站创作者接口限流时立即停止。清洗规则剔除明显非助眠内容、疑似搬运及少于 3 分钟的视频；规则分数不是医学判断，也不保证每条视频都适合每位用户。女性创作者标注来自 `scripts/creator-profiles.mjs` 的已核实频道 ID 或频道自述，未知频道不会按封面或是否露脸猜测。视频内容与封面归原平台和权利人所有。
 
 ### 榜单口径
 
@@ -55,6 +56,7 @@ npm run build
 - 现有数据没有每条 YouTube 视频的首次收录时间。“最近有快照”仅按视频已保存的快照时间排序；没有逐条快照的作品排在后面。页面中的数据更新时间指整份索引生成时间。
 - 外部视频可能因平台限制、地区限制或下架暂时无法打开；不能仅凭访问失败认定删除。
 - 搜索与内容筛选是自动规则，仍可能出现相关性误差。可在 `scripts/screening.mjs` 调整规则，随后运行测试与 `npm run sanitize`。
+- 无密钥的公开频道页只展示有限数量的作品，频道内搜索也不是完整历史归档；因此回溯是持续增量补录，不能据此保证已穷尽每位创作者的所有历史视频。B站出现限流时保留已验证条目，等待后续可用的更新。
 
 ## 设计与验收
 
