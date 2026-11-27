@@ -3,7 +3,6 @@
 // New videos from these IDs inherit the label automatically.
 const FEMALE_LED_IDS = {
   youtube: new Set([
-    'UCD_wbYHQeVbx_utWokhFdEw', // Jocie B ASMR
     'UCmZb4LwQRhEzZX5Uqpcqziw', // Coromo Sara. ASMR
     'UCAtFkapSeoEGPxm5bC3tvaw', // ASMR PPOMO
     'UC6gLlIAnzg7eJ8VuXDCZ_vg', // Gentle Whispering ASMR
@@ -68,18 +67,19 @@ const FEMALE_LED_IDS = {
   ]),
 }
 
-const SELF_DESCRIPTION = /(?:女性主理|女声主播|女主播|小姐姐助眠|female[- ]led asmr|woman[- ]led asmr)/iu
+const SELF_DESCRIPTION = /(?:女性主理|女声主播|女主播|小姐姐助眠|female[- ]led asmr|woman[- ]led asmr|i(?:'m| am) a woman|i(?:'m| am) a female asmr|female asmrtist|女孩子做的助眠)/iu
 
-export function femaleLedProfile(platform, creatorId, creatorName = '') {
+export function femaleLedProfile(platform, creatorId, creatorName = '', creatorDescription = '') {
   if (FEMALE_LED_IDS[platform]?.has(String(creatorId))) return 'curated-channel'
-  if (SELF_DESCRIPTION.test(creatorName)) return 'channel-self-description'
+  if (SELF_DESCRIPTION.test(`${creatorName} ${creatorDescription}`)) return 'channel-self-description'
   return null
 }
 
 export function annotateHostProfiles(data) {
   for (const platform of ['youtube', 'bilibili']) {
     for (const creator of data.creators?.[platform] || []) {
-      creator.femaleHostEvidence = femaleLedProfile(platform, creator.id, creator.name)
+      creator.femaleHostEvidence = femaleLedProfile(platform, creator.id, creator.name, creator.description)
+        || (creator.femaleHostEvidence === 'channel-self-description' ? creator.femaleHostEvidence : null)
       creator.femaleHost = Boolean(creator.femaleHostEvidence)
     }
     const byId = new Map((data.creators?.[platform] || []).map((creator) => [String(creator.id), creator]))

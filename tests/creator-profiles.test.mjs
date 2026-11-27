@@ -6,6 +6,7 @@ test('labels known channels by stable platform ID and leaves unknown channels un
   assert.equal(femaleLedProfile('youtube', 'UCmZb4LwQRhEzZX5Uqpcqziw', 'Coromo Sara. ASMR'), 'curated-channel')
   assert.equal(femaleLedProfile('youtube', 'unknown', 'A pretty name'), null)
   assert.equal(femaleLedProfile('bilibili', 'unknown', '女声主播助眠'), 'channel-self-description')
+  assert.equal(femaleLedProfile('youtube', 'unknown', 'No face', 'I am a woman and make ASMR for sleep'), 'channel-self-description')
 })
 
 test('new videos inherit their creator category without using video title as gender evidence', () => {

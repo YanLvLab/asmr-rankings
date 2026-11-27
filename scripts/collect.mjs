@@ -9,7 +9,7 @@ const here = path.dirname(fileURLToPath(import.meta.url))
 const outputPath = path.resolve(here, '../public/data/rankings.json')
 const lookbackDays = Number(process.env.LOOKBACK_DAYS || 3650)
 const maxVideos = Number(process.env.MAX_VIDEOS_PER_PLATFORM || 240)
-const libraryLimit = Number(process.env.LIBRARY_LIMIT_PER_PLATFORM || 400)
+const libraryLimit = Number(process.env.LIBRARY_LIMIT_PER_PLATFORM || 5000)
 const cutoff = Date.now() - lookbackDays * 86400000
 
 const queries = {
@@ -298,7 +298,9 @@ function mergeCreators(previousCreators = [], freshCreators = [], videos, platfo
       name: meta.name || group.name,
       url: meta.url || (platform === 'youtube' ? `https://www.youtube.com/channel/${id}` : `https://space.bilibili.com/${id}`),
       avatar: meta.avatar || '',
+      description: meta.description || '',
       followers: meta.followers || 0,
+      femaleHostEvidence: meta.femaleHostEvidence || null,
       qualifyingVideos: group.count,
       topCategories: [...group.categories.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3).map(([name]) => name),
     }
