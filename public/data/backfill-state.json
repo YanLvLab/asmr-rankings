@@ -1,6 +1,8 @@
 {
   "youtube": {
-    "completed": {},
+    "completed": {
+      "UCjyi6by44TTH0j_U3vXEGpA": "2026-11-27T03:24:18.285Z"
+    },
     "checked": {
       "s5Bdy7SuSso": true,
       "r76DkZtzPT8": true,
@@ -30,6 +32,7 @@
     }
   },
   "bilibili": {
-    "nextPage": {}
+    "nextPage": {},
+    "completedAt": {}
   }
 }
