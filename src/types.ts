@@ -46,6 +46,7 @@ export type RankedCreator = {
   name: string
   url: string
   avatar?: string
+  description?: string
   followers: number
   qualifyingVideos: number
   topCategories: string[]

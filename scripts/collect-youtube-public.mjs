@@ -11,7 +11,7 @@ const execFileAsync = promisify(execFile)
 const here = path.dirname(fileURLToPath(import.meta.url))
 const outputPath = path.resolve(here, '../public/data/rankings.json')
 const maxVideos = Number(process.env.MAX_YOUTUBE_VIDEOS || 240)
-const libraryLimit = Number(process.env.LIBRARY_LIMIT_PER_PLATFORM || 400)
+const libraryLimit = Number(process.env.LIBRARY_LIMIT_PER_PLATFORM || 5000)
 const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36'
 const searchQueries = [
   'ASMR sleep',
@@ -91,7 +91,7 @@ export async function fetchText(url, attempts = 3) {
   throw lastError
 }
 
-function extractAssignedJson(html, marker) {
+export function extractAssignedJson(html, marker) {
   const markerIndex = html.indexOf(marker)
   if (markerIndex < 0) return null
   const start = html.indexOf('{', markerIndex + marker.length)
@@ -117,7 +117,7 @@ function extractAssignedJson(html, marker) {
   return null
 }
 
-function collectRenderers(node, output = []) {
+export function collectRenderers(node, output = []) {
   if (!node || typeof node !== 'object') return output
   if (node.videoRenderer) output.push(node.videoRenderer)
   for (const value of Object.values(node)) collectRenderers(value, output)
@@ -138,7 +138,7 @@ function parseCount(value = '') {
   return Math.round(Number(match[1]) * multiplier)
 }
 
-function parseSearchRenderer(renderer) {
+export function parseSearchRenderer(renderer) {
   const id = renderer.videoId
   const durationSeconds = parseClockDuration(textOf(renderer.lengthText))
   const creatorRun = renderer.ownerText?.runs?.[0] || renderer.shortBylineText?.runs?.[0] || {}
@@ -157,7 +157,7 @@ function parseSearchRenderer(renderer) {
   }
 }
 
-async function enrichVideo(candidate) {
+export async function enrichVideo(candidate) {
   const html = await fetchText(`https://www.youtube.com/watch?v=${candidate.id}`)
   const player = extractAssignedJson(html, 'var ytInitialPlayerResponse = ')
     || extractAssignedJson(html, 'ytInitialPlayerResponse = ')
@@ -266,7 +266,9 @@ function creatorsForLibrary(videos, previousCreators = [], freshCreators = []) {
       name: meta.name || group.name,
       url: meta.url || `https://www.youtube.com/channel/${id}`,
       avatar: meta.avatar || '',
+      description: meta.description || '',
       followers: meta.followers || 0,
+      femaleHostEvidence: meta.femaleHostEvidence || null,
       qualifyingVideos: group.count,
       topCategories: [...group.categories.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3).map(([name]) => name),
     }

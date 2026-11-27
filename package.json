@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "collect": "node scripts/collect.mjs",
     "collect:youtube": "node scripts/collect-youtube-public.mjs",
+    "backfill:creators": "node scripts/backfill-creators.mjs",
     "repair:youtube-dates": "node scripts/repair-youtube-dates.mjs",
     "import:kimi": "node scripts/import-kimi.mjs",
     "sanitize": "node scripts/sanitize.mjs",

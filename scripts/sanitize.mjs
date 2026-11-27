@@ -36,7 +36,9 @@ function rebuildCreators(videos, previousCreators, platform) {
       name: old.name || group.name,
       url: old.url || (platform === 'youtube' ? `https://www.youtube.com/channel/${id}` : `https://space.bilibili.com/${id}`),
       avatar: old.avatar || '',
+      description: old.description || '',
       followers: old.followers || 0,
+      femaleHostEvidence: old.femaleHostEvidence || null,
       qualifyingVideos: group.count,
       topCategories: [...group.categories.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3).map(([name]) => name),
     }
